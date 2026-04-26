@@ -33,6 +33,22 @@ GRPO is good at sharpening.
 
 ---
 
+## Key paths
+
+| What | Path |
+|---|---|
+| **Mini blog post** | [`docs/blog_post.md`](docs/blog_post.md) |
+| **HF Space — custom ER scene** | [`SnehShah/house-md-env`](https://huggingface.co/spaces/SnehShah/house-md-env) → <https://snehshah-house-md-env.hf.space/> |
+| **HF Space — OpenEnv UI** | [`SnehShah/house-md-env-openenv`](https://huggingface.co/spaces/SnehShah/house-md-env-openenv) → <https://snehshah-house-md-env-openenv.hf.space/web/> |
+| **All-in-one notebook** (env tour + mini SFT + mini GRPO + eval) | [`notebooks/00_run_all.ipynb`](notebooks/00_run_all.ipynb) |
+| **SFT training notebook** | [`notebooks/02_sft.ipynb`](notebooks/02_sft.ipynb) |
+| **GRPO training notebook** | [`notebooks/03_grpo.ipynb`](notebooks/03_grpo.ipynb) |
+| **Production SFT script** (HF Jobs) | [`scripts/submit_sft_job.py`](scripts/submit_sft_job.py) → [`scripts/train_sft.py`](scripts/train_sft.py) |
+| **Production GRPO script** (HF Jobs) | [`scripts/submit_grpo_optimized_job.py`](scripts/submit_grpo_optimized_job.py) → [`scripts/train_grpo_optimized.py`](scripts/train_grpo_optimized.py) |
+| **Eval script** (HF Jobs) | [`scripts/eval.sh`](scripts/eval.sh) → [`scripts/eval_hf.py`](scripts/eval_hf.py) |
+
+---
+
 ## Repository layout
 
 ```text

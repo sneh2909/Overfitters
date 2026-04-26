@@ -2,7 +2,7 @@ spec_version: 1
 name: house_md_env
 type: space
 runtime: fastapi
-app: house_md_env.server.app:app
+app: server.app:app
 port: 8000
 description: |
   House M.D. — a POMDP RL environment where an LLM agent plays a diagnostician

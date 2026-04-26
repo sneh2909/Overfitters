@@ -1,0 +1,441 @@
+id: pneumonia
+severity: urgent
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 45
+  sex: male
+  chief_complaint: cough with green phlegm and fever
+  patient_card: 45-year-old male presents with 4 days of productive cough, fever, and chills. He reports feeling progressively
+    more tired and short of breath when walking up stairs.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 72
+  sex: male
+  chief_complaint: struggling to breathe and sweating
+  patient_card: 72-year-old male brought in by family for severe shortness of breath, high fever, and lethargy. He is using
+    accessory muscles to breathe and appears toxic.
+- variant_id: v3
+  variant_type: atypical
+  age: 85
+  sex: female
+  chief_complaint: confusion and feeling very weak
+  patient_card: 85-year-old female brought from a nursing facility due to sudden onset of confusion, generalized weakness,
+    and poor appetite. She has a mild dry cough but no reported fever.
+symptom_distribution:
+  pain_location:
+    prob: 0.4
+    responses:
+    - It hurts right here in my side.
+    - My chest aches on the right side.
+    - Mainly in my ribs on the left when I breathe.
+    denial_responses:
+    - I don't have any pain, just the cough.
+    - No specific pain anywhere.
+  pain_character:
+    prob: 0.4
+    responses:
+    - It's a sharp, stabbing pain.
+    - It feels like a sharp catch.
+    - A deep ache that gets sharp.
+    denial_responses:
+    - No pain to describe.
+    - It's not painful, just tight.
+  pain_onset:
+    prob: 0.4
+    responses:
+    - It started a couple of days ago.
+    - Came on gradually with the cough.
+    - Started yesterday when the coughing got worse.
+    denial_responses:
+    - No pain.
+    - I haven't noticed any pain.
+  pain_radiation:
+    prob: 0.1
+    responses:
+    - Sometimes it shoots to my back.
+    - It wraps around my ribs.
+    - Just stays in my chest.
+    denial_responses:
+    - No, it doesn't go anywhere.
+    - Stays right in one spot.
+  pain_severity:
+    prob: 0.4
+    responses:
+    - It's about a 6 out of 10 when I cough.
+    - Maybe a 5, but worse if I take a deep breath.
+    - Pretty bad, like a 7 when coughing.
+    denial_responses:
+    - No pain at all.
+    - Zero pain.
+  pain_timing:
+    prob: 0.4
+    responses:
+    - It only hurts when I cough or breathe deep.
+    - It comes and goes with my breathing.
+    - Mainly when I have a coughing fit.
+    denial_responses:
+    - I don't have pain.
+    - No pain timing to report.
+  pain_triggers:
+    prob: 0.5
+    responses:
+    - Taking a deep breath makes it sharp.
+    - Coughing definitely triggers it.
+    - Laughing or breathing in too much.
+    denial_responses:
+    - Nothing triggers any pain.
+    - No pain triggers.
+  nausea_vomiting:
+    prob: 0.3
+    responses:
+    - I threw up once from coughing so hard.
+    - A little nauseous, haven't eaten much.
+    - Felt sick to my stomach today.
+    denial_responses:
+    - No nausea or vomiting.
+    - My stomach is fine.
+  fever_chills:
+    prob: 0.85
+    responses:
+    - I've been freezing and shaking, then sweating.
+    - Yes, I had a fever of 102 at home.
+    - I've had the chills all night.
+    denial_responses:
+    - I haven't felt feverish.
+    - No chills or fever that I noticed.
+  cough:
+    prob: 0.95
+    responses:
+    - Yes, I'm coughing up thick yellow stuff.
+    - A really deep, hacking cough.
+    - Coughing up some rust-colored phlegm.
+    denial_responses:
+    - No cough really.
+    - Just a tiny tickle, nothing major.
+  shortness_of_breath:
+    prob: 0.85
+    responses:
+    - I get winded just walking to the bathroom.
+    - It feels hard to get a full breath in.
+    - Yes, I'm panting if I move around.
+    denial_responses:
+    - Breathing is fine.
+    - No shortness of breath.
+  chest_pain_probe:
+    prob: 0.6
+    responses:
+    - My chest feels tight and hurts when I cough.
+    - Yes, a sharp pain when I inhale.
+    - Just sore muscles from coughing so much.
+    denial_responses:
+    - No chest pain.
+    - Chest feels okay, just the cough.
+  headache_probe:
+    prob: 0.3
+    responses:
+    - A dull headache, probably from the fever.
+    - My head is pounding a bit.
+    - Just a mild ache.
+    denial_responses:
+    - No headache.
+    - My head is fine.
+  visual_neuro_changes:
+    prob: 0.15
+    responses:
+    - I've felt a little confused and foggy.
+    - Just really dizzy and weak.
+    - My family said I wasn't making sense earlier.
+    denial_responses:
+    - No vision changes or confusion.
+    - Thinking perfectly clear.
+  palpitations:
+    prob: 0.3
+    responses:
+    - My heart feels like it's racing.
+    - Beating pretty fast, probably the fever.
+    - Just fluttering a little bit.
+    denial_responses:
+    - No heart racing.
+    - Heart feels normal.
+  lmp:
+    prob: 0.05
+    responses:
+    - A couple of weeks ago.
+    - Last month, normal.
+    - I don't remember exactly.
+    denial_responses:
+    - I've gone through menopause.
+    - Not applicable.
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I suppose it's possible.
+    - Maybe, but unlikely.
+    - Could be.
+    denial_responses:
+    - No chance.
+    - Definitely not.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - Urine is a bit dark.
+    - Going a little less than usual.
+    - Maybe a slight burn.
+    denial_responses:
+    - No problems peeing.
+    - Urine is completely normal.
+  bowel_changes:
+    prob: 0.1
+    responses:
+    - Had some loose stools yesterday.
+    - A bit of diarrhea.
+    - Stomach has been a little off.
+    denial_responses:
+    - Bowel movements are normal.
+    - No diarrhea or constipation.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - I've been pretty thirsty.
+    - Drinking more water because of the fever.
+    - A bit thirsty.
+    denial_responses:
+    - No unusual thirst.
+    - Not drinking or peeing more than normal.
+  medications:
+    prob: 0.8
+    responses:
+    - Just some Tylenol for the fever.
+    - I take blood pressure pills.
+    - Some over-the-counter cough syrup.
+    denial_responses:
+    - I don't take any meds.
+    - Nothing at all.
+  allergies:
+    prob: 0.8
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No allergies.
+    - None that I know of.
+  past_medical_history:
+    prob: 0.8
+    responses:
+    - I have asthma.
+    - I've got high blood pressure.
+    - I had pneumonia a few years ago.
+    denial_responses:
+    - I'm generally very healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.2
+    responses:
+    - My dad had heart disease.
+    - Mom had diabetes.
+    - Nothing major runs in the family.
+    denial_responses:
+    - No family history of anything serious.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.6
+    responses:
+    - I smoke about a pack a day.
+    - My grandson had a cold last week.
+    - I work in a crowded office.
+    denial_responses:
+    - I don't smoke or drink.
+    - No sick contacts or recent travel.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 110, BP 118/72, RR 22, Temp 38.8°C, SpO2 92% on room air
+    - HR 125, BP 90/60, RR 28, Temp 39.2°C, SpO2 88% on room air
+    - HR 98, BP 130/80, RR 20, Temp 37.6°C, SpO2 94% on room air
+  general_appearance:
+    findings:
+    - Appears acutely ill, flushed, mild respiratory distress, coughing frequently.
+    - Toxic appearing, diaphoretic, using accessory muscles to breathe.
+    - Frail, lethargic, resting quietly in bed but appears fatigued.
+  mental_status:
+    findings:
+    - Alert and oriented x3, answers questions appropriately.
+    - Lethargic but rousable, oriented x3.
+    - Oriented to person only, confused about time and place, GCS 14.
+  heent:
+    findings:
+    - Normocephalic, PERRLA, dry mucous membranes, pharynx mildly erythematous.
+    - Unremarkable HEENT exam, no tonsillar exudates.
+    - Dry oral mucosa, no JVD, normal tympanic membranes.
+  neck_exam:
+    findings:
+    - Supple, no meningismus, no significant lymphadenopathy.
+    - Supple, no JVD, trachea midline, no cervical lymphadenopathy.
+    - No nuchal rigidity, negative Kernig/Brudzinski.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs, rubs, or gallops.
+    - Regular rate and rhythm, normal S1/S2, no murmurs.
+    - Tachycardic, no extra heart sounds, no rubs.
+  pulmonary_auscultation:
+    findings:
+    - Decreased breath sounds and coarse crackles in the right lower lobe. Egophony present.
+    - Bronchial breath sounds and rales in the left lower base, dullness to percussion.
+    - Diffuse rhonchi and focal crackles in the right middle lobe, prolonged expiratory phase.
+  peripheral_perfusion:
+    findings:
+    - Warm extremities, 2+ pulses, capillary refill 2 seconds, no edema.
+    - Cool extremities, capillary refill 3 seconds, no calf tenderness.
+    - Normal pulses, no peripheral edema, negative Homan's sign.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended, normal bowel sounds.
+    - Soft, mild upper abdominal tenderness (likely from coughing), no rebound.
+    - Non-tender, no hepatosplenomegaly, no masses.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - No costovertebral angle tenderness.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Not indicated.
+    - External genitalia normal, exam deferred.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact.
+    - Grossly intact II-XII.
+    - No focal cranial nerve deficits.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities, sensation intact.
+    - Moves all extremities well, normal tone.
+    - Generalized weakness but symmetric strength, reflexes 2+.
+  skin_exam:
+    findings:
+    - Warm and dry, no rashes.
+    - Diaphoretic, flushed, no petechiae.
+    - Decreased turgor, pale, no purpura.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness to palpation.
+    - Mild diffuse soreness of chest wall muscles, not reproducing sharp pain.
+    - No reproducible pain on rib palpation.
+test_sensitivities:
+  chest_xray:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: Focal consolidation in the right lower lobe with air bronchograms.
+      flag: H
+    - value: Dense left lower lobe infiltrate and small parapneumonic effusion.
+      flag: CRIT
+    - value: Patchy airspace opacities in the right middle lobe.
+      flag: H
+    value_normal: Clear lungs, no focal consolidation, effusion, or pneumothorax.
+    is_confirmatory: true
+  cbc:
+    prob_abnormal: 0.85
+    values_abnormal:
+    - value: WBC 16,500/μL with 85% neutrophils and 5% bands.
+      flag: H
+    - value: WBC 21,000/μL with left shift, Hgb 13.2 g/dL, Plt 310k.
+      flag: H
+    - value: WBC 14,200/μL, Hgb 11.5 g/dL, Plt 150k.
+      flag: H
+    value_normal: WBC 7,500/μL, normal differential, Hgb 14.0 g/dL, Plt 250k.
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.4
+    values_abnormal:
+    - value: Na 132 mEq/L [L], K 4.0, BUN 28 [H], Cr 1.2.
+      flag: H
+    - value: Na 135 mEq/L, K 3.8, BUN 35 [H], Cr 1.5 [H].
+      flag: H
+    - value: Na 138 mEq/L, K 4.2, BUN 20, Cr 1.0.
+      flag: N
+    value_normal: Electrolytes, BUN, and Creatinine within normal limits.
+    is_confirmatory: false
+  pulse_oximetry:
+    prob_abnormal: 0.8
+    values_abnormal:
+    - value: 91% on room air
+      flag: L
+    - value: 88% on room air
+      flag: CRIT
+    - value: 93% on room air
+      flag: L
+    value_normal: 98% on room air
+    is_confirmatory: false
+  crp_esr:
+    prob_abnormal: 0.9
+    values_abnormal:
+    - value: CRP 145 mg/L [H], ESR 65 mm/hr [H]
+      flag: H
+    - value: CRP 210 mg/L [H], ESR 80 mm/hr [H]
+      flag: H
+    - value: CRP 95 mg/L [H], ESR 45 mm/hr [H]
+      flag: H
+    value_normal: CRP <5 mg/L, ESR 10 mm/hr
+    is_confirmatory: false
+  blood_cultures:
+    prob_abnormal: 0.15
+    values_abnormal:
+    - value: Positive for Streptococcus pneumoniae in 2/2 bottles.
+      flag: CRIT
+    - value: Positive for Haemophilus influenzae in 1/2 bottles.
+      flag: H
+    - value: Pending (Gram positive cocci in pairs).
+      flag: H
+    value_normal: No growth at 48 hours.
+    is_confirmatory: false
+  lactate:
+    prob_abnormal: 0.3
+    values_abnormal:
+    - value: 2.8 mmol/L
+      flag: H
+    - value: 4.5 mmol/L
+      flag: CRIT
+    - value: 2.2 mmol/L
+      flag: H
+    value_normal: 1.1 mmol/L
+    is_confirmatory: false
+  abg:
+    prob_abnormal: 0.6
+    values_abnormal:
+    - value: pH 7.48, pCO2 30, pO2 65 on room air.
+      flag: H
+    - value: pH 7.31, pCO2 55, pO2 58 on room air.
+      flag: CRIT
+    - value: pH 7.45, pCO2 32, pO2 70 on room air.
+      flag: H
+    value_normal: pH 7.40, pCO2 40, pO2 95 on room air.
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - chest_xray
+  - ct_chest_pe_protocol
+  require: abnormal
+- any_of:
+  - cbc
+  - pulse_oximetry
+  require: abnormal
+decoy:
+  test: cbc
+  biased_finding: WBC 9,500/μL with lymphocyte predominance, no bands.
+  decoy_toward_disease: viral_uri
+  requires_followup:
+  - chest_xray
+red_herring:
+  disease: viral_uri
+  shared_features:
+  - cough
+  - fever_chills
+  - shortness_of_breath
+  - general_appearance
+  discriminating_features:
+  - pulmonary_auscultation
+  - chest_xray
+  - pulse_oximetry

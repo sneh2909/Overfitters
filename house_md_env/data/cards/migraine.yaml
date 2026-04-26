@@ -1,0 +1,393 @@
+id: migraine
+severity: stable
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 28
+  sex: female
+  chief_complaint: throbbing head pain and nausea
+  patient_card: 28-year-old woman presents with unilateral throbbing head pain and nausea for 8 hours. She prefers to sit
+    in a dark, quiet room.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 45
+  sex: female
+  chief_complaint: worst pounding headache right side
+  patient_card: 45-year-old woman presents with a severe, pounding headache on the right side and vomiting. She is visibly
+    distressed by the room lighting.
+- variant_id: v3
+  variant_type: atypical
+  age: 60
+  sex: male
+  chief_complaint: flashing lights and facial tingling
+  patient_card: 60-year-old man presents with flashing lights in his vision followed by facial tingling and mild head discomfort.
+    He has a history of similar visual changes in his twenties.
+symptom_distribution:
+  pain_location:
+    prob: 0.9
+    responses:
+    - One side of my head, mostly the right.
+    - Right behind my left eye and temple.
+    - It's localized to the right side of my skull.
+    denial_responses:
+    - It's my whole head, not just one spot.
+    - It's more in my neck than my head.
+  pain_character:
+    prob: 0.95
+    responses:
+    - It's a deep, throbbing and pulsating pain.
+    - Feels like a heartbeat pounding inside my skull.
+    - A severe pounding sensation.
+    denial_responses:
+    - It's just a dull, constant ache.
+    - Feels like a tight band around my head.
+  pain_onset:
+    prob: 0.8
+    responses:
+    - It built up gradually over a few hours.
+    - Started slowly this morning and kept getting worse.
+    - It crept up on me after lunch.
+    denial_responses:
+    - It hit me instantly like a lightning bolt.
+    - It was maximum pain the second it started.
+  pain_radiation:
+    prob: 0.3
+    responses:
+    - It radiates down into my neck a bit.
+    - Shoots from behind my eye into my jaw.
+    - Spreads across my forehead.
+    denial_responses:
+    - It stays right in one spot.
+    - Doesn't travel anywhere else.
+  pain_severity:
+    prob: 0.9
+    responses:
+    - It's an 8 out of 10, very severe.
+    - Probably a 9, I can barely function.
+    - Severe enough that I had to leave work.
+    denial_responses:
+    - It's mild, maybe a 3 out of 10.
+    - Not too bad, just annoying.
+  pain_timing:
+    prob: 0.8
+    responses:
+    - It's constant but throbs with my pulse.
+    - Hasn't let up at all since it started.
+    - Continuous pounding for hours.
+    denial_responses:
+    - It comes and goes every few seconds.
+    - Only hurts when I move my neck.
+  pain_triggers:
+    prob: 0.9
+    responses:
+    - Bright lights and loud noises make it unbearable.
+    - Moving my head makes the throbbing much worse.
+    - Strong smells and light make me feel sick.
+    denial_responses:
+    - Nothing really makes it worse.
+    - Eating makes it worse.
+  nausea_vomiting:
+    prob: 0.8
+    responses:
+    - I feel very sick to my stomach.
+    - I threw up once earlier today.
+    - So nauseous I can't even think about food.
+    denial_responses:
+    - My stomach is perfectly fine.
+    - No nausea at all.
+  fever_chills:
+    prob: 0.05
+    responses:
+    - I felt a little warm earlier.
+    - Maybe a slight chill.
+    - Slightly feverish but I didn't check.
+    denial_responses:
+    - No fever or chills.
+    - My temperature has been normal.
+  cough:
+    prob: 0.05
+    responses:
+    - Just a dry cough occasionally.
+    - Coughed a bit this morning.
+    - Just clearing my throat.
+    denial_responses:
+    - No cough at all.
+    - Breathing is completely fine.
+  shortness_of_breath:
+    prob: 0.05
+    responses:
+    - A little winded from the pain.
+    - Feel like I can't catch my breath when it throbs.
+    - Slightly breathless.
+    denial_responses:
+    - Breathing is totally normal.
+    - No issues catching my breath.
+  chest_pain_probe:
+    prob: 0.05
+    responses:
+    - My chest feels a bit tight.
+    - Slight ache in my chest.
+    - A little pressure.
+    denial_responses:
+    - No chest pain whatsoever.
+    - My heart and chest feel fine.
+  headache_probe:
+    prob: 0.99
+    responses:
+    - Yes, a terrible headache.
+    - My head is absolutely killing me.
+    - Severe head pain, one of the worst I've had.
+    denial_responses:
+    - No headache.
+    - My head feels fine.
+  visual_neuro_changes:
+    prob: 0.6
+    responses:
+    - I saw zigzag lines before the pain started.
+    - My vision got blurry on one side for a bit.
+    - Saw flashing lights for about twenty minutes.
+    denial_responses:
+    - My vision is perfectly normal.
+    - No numbness, tingling, or vision changes.
+  palpitations:
+    prob: 0.05
+    responses:
+    - My heart fluttered once.
+    - Felt a skipped beat earlier.
+    - Heart is racing a bit from the pain.
+    denial_responses:
+    - No heart racing.
+    - My pulse is steady.
+  lmp:
+    prob: 0.5
+    responses:
+    - About two weeks ago.
+    - Just finished my period a few days ago.
+    - Last week, it was normal.
+    denial_responses:
+    - I don't get periods.
+    - Menopause was years ago.
+  pregnancy_possibility:
+    prob: 0.1
+    responses:
+    - I suppose it's possible.
+    - Maybe, we aren't being careful.
+    - Could be, I'm a little late.
+    denial_responses:
+    - No chance at all.
+    - Definitely not pregnant.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - Peeing a bit more than usual.
+    - Slight burning earlier.
+    - Urine looks a bit dark.
+    denial_responses:
+    - No urinary issues.
+    - Peeing completely normally.
+  bowel_changes:
+    prob: 0.05
+    responses:
+    - A little constipated.
+    - Had loose stool once today.
+    - Stomach is gurgling a bit.
+    denial_responses:
+    - Bowels are completely normal.
+    - No diarrhea or constipation.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - Been a bit thirsty.
+    - Drinking more water than usual.
+    - Peeing a lot today.
+    denial_responses:
+    - Normal thirst.
+    - Not peeing excessively.
+  medications:
+    prob: 0.5
+    responses:
+    - I took some ibuprofen but it didn't help.
+    - Just my birth control pills.
+    - Took some acetaminophen earlier.
+    denial_responses:
+    - I don't take any medications.
+    - Nothing at all.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies to pollen.
+    denial_responses:
+    - No allergies.
+    - None that I know of.
+  past_medical_history:
+    prob: 0.4
+    responses:
+    - I get these headaches sometimes.
+    - History of tension headaches.
+    - I have mild asthma.
+    denial_responses:
+    - I'm usually very healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.6
+    responses:
+    - My mom gets bad headaches too.
+    - My sister has similar head pain.
+    - Strong family history of headaches.
+    denial_responses:
+    - No family history of anything.
+    - Everyone in my family is healthy.
+  social_travel_exposure:
+    prob: 0.2
+    responses:
+    - I drink a lot of coffee.
+    - Had a glass of red wine last night.
+    - Been very stressed at work lately.
+    denial_responses:
+    - No smoking or drinking.
+    - No recent travel or unusual stress.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 85, BP 120/80, RR 14, Temp 37.0°C, SpO2 99%
+    - HR 95, BP 135/85, RR 16, Temp 36.8°C, SpO2 98%
+    - HR 78, BP 118/76, RR 12, Temp 37.1°C, SpO2 100%
+  general_appearance:
+    findings:
+    - Patient is lying still with eyes closed, appears uncomfortable.
+    - Mild distress due to pain, wearing sunglasses in the room.
+    - Appears well-nourished, holding head, wincing at loud noises.
+  mental_status:
+    findings:
+    - Awake, alert, fully oriented. Normal speech.
+    - Intact mentation, answers questions appropriately but slowly due to pain.
+    - GCS 15, no confusion, normal cognition.
+  heent:
+    findings:
+    - Pupils equal, round, reactive to light. Normal fundoscopy. Photophobia present.
+    - PERRLA, extraocular movements intact, no papilledema.
+    - Normal tympanic membranes, no sinus tenderness, mild photophobia.
+  neck_exam:
+    findings:
+    - Supple, no nuchal rigidity. Negative Kernig/Brudzinski.
+    - Full range of motion, no meningismus, no lymphadenopathy.
+    - Neck is soft, no JVD, normal thyroid, no stiffness.
+  cardiac_auscultation:
+    findings:
+    - Regular rate and rhythm, no murmurs.
+    - Normal S1/S2, no rubs or gallops.
+    - Quiet precordium, regular rhythm.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally.
+    - Normal breath sounds, no wheezes or crackles.
+    - Good air entry, no respiratory distress.
+  peripheral_perfusion:
+    findings:
+    - Warm extremities, 2+ pulses, no edema.
+    - Capillary refill < 2 seconds, no calf tenderness.
+    - Normal pulses bilaterally, no peripheral edema.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended.
+    - No abdominal tenderness, active bowel sounds.
+    - Benign abdomen, no guarding or rebound.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for costovertebral angle tenderness.
+    - Bilateral flanks non-tender.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Not indicated.
+    - External genitalia normal, exam deferred.
+  cranial_nerves:
+    findings:
+    - CN II-XII intact. No focal deficits.
+    - Cranial nerves grossly intact, normal facial symmetry.
+    - Visual fields full, normal facial sensation and movement.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities, normal sensation.
+    - Normal gait, symmetric reflexes, intact coordination.
+    - No focal motor or sensory deficits, negative Romberg.
+  skin_exam:
+    findings:
+    - No rashes, normal turgor.
+    - Skin is warm and dry, no petechiae.
+    - No lesions or purpura, normal diaphoresis.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness, normal joint ROM.
+    - No reproducible chest pain.
+    - Normal MSK exam, no joint swelling.
+test_sensitivities:
+  ct_head_noncontrast:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: Mild age-related atrophy, no acute hemorrhage.
+      flag: N
+    - value: Small incidental arachnoid cyst, no acute intracranial abnormality.
+      flag: N
+    - value: Minimal microvascular ischemic changes, no acute bleed.
+      flag: N
+    value_normal: No acute intracranial hemorrhage, mass effect, or territorial infarction.
+    is_confirmatory: false
+  csf_analysis:
+    prob_abnormal: 0.01
+    values_abnormal:
+    - value: RBC 5, WBC 2, Glucose 60, Protein 35
+      flag: H
+    - value: RBC 10, WBC 1, Glucose 65, Protein 40
+      flag: H
+    - value: RBC 2, WBC 3, Glucose 55, Protein 30
+      flag: H
+    value_normal: Colorless, clear. 0 RBCs, 1 WBC, normal glucose and protein. No xanthochromia.
+    is_confirmatory: false
+  cbc:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: WBC 11.2, Hgb 13.5, Plt 250
+      flag: H
+    - value: WBC 10.5, Hgb 12.0, Plt 300
+      flag: H
+    - value: WBC 9.0, Hgb 11.5, Plt 200
+      flag: L
+    value_normal: WBC 7.5, Hgb 14.0, Plt 280 (within normal limits)
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: Na 134, K 4.0, Cl 100, HCO3 24, BUN 15, Cr 0.9, Gluc 95
+      flag: L
+    - value: Na 138, K 3.4, Cl 102, HCO3 26, BUN 12, Cr 0.8, Gluc 105
+      flag: L
+    - value: Na 140, K 4.2, Cl 105, HCO3 22, BUN 20, Cr 1.1, Gluc 110
+      flag: H
+    value_normal: Na 140, K 4.0, Cl 102, HCO3 24, BUN 14, Cr 0.8, Gluc 90 (within normal limits)
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - ct_head_noncontrast
+  - csf_analysis
+  require: normal
+decoy:
+  test: ct_head_noncontrast
+  biased_finding: No acute hemorrhage. Questionable mild hyperdensity in the basal cisterns, likely artifactual.
+  decoy_toward_disease: subarachnoid_hemorrhage
+  requires_followup:
+  - lumbar_puncture
+  - csf_analysis
+red_herring:
+  disease: subarachnoid_hemorrhage
+  shared_features:
+  - headache_probe
+  - pain_severity
+  - nausea_vomiting
+  discriminating_features:
+  - pain_onset
+  - neck_exam
+  - ct_head_noncontrast

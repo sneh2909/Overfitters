@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openenv-house-md-env"
+version = "0.1.0"
+description = "House M.D. — POMDP clinical-reasoning RL environment for OpenEnv"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # OpenEnv runtime
+    "openenv-core[core]>=0.2.2",
+    "fastapi>=0.115.0",
+    "pydantic>=2.0.0",
+    "uvicorn[standard]>=0.24.0",
+    "requests>=2.31.0",
+    # Disease cards / catalogs are YAML
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+]
+ui = [
+    # Optional Gradio playground at /web (set ENABLE_WEB_INTERFACE=true)
+    "gradio>=4.0.0",
+]
+
+[project.scripts]
+server = "house_md_env.server.app:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["house_md_env*"]
+exclude = ["tests*", "notebooks*", "docs*", "scripts*", "results*"]
+
+[tool.setuptools.package-data]
+"house_md_env" = ["data/*.yaml", "data/cards/*.yaml"]
+"house_md_env.server" = ["static/*.html", "static/*.js", "static/*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+# Make `clinical_rl` (vendored inside the package) importable from tests as a
+# bare top-level module — matches the in-Docker PYTHONPATH and matches the
+# imports already used inside server/ code.
+pythonpath = ["house_md_env"]

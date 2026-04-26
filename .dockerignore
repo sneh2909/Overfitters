@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.git/
+.gitignore
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+node_modules/
+
+# dev-only directories that aren't needed inside the Space image
+notebooks/
+docs/
+scripts/
+tests/
+results/
+.github/
+conftest.py
+LICENSE

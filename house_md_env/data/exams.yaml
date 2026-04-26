@@ -1,0 +1,100 @@
+# House M.D. — EXAMINE maneuver catalog (fixed menu)
+# Agent emits one `id` per EXAMINE action. Env resolves the id, charges the
+# base cost, advances the clock, and samples a finding from the disease card's
+# exam_distribution[id].
+#
+# 15 maneuvers — each discriminates ≥2 diseases and is broad enough that the
+# patient-simulator doesn't need fine-grained sub-selection (no separate
+# "left vs right CVA tenderness" etc.).
+
+version: 1
+count: 15
+
+exams:
+
+  # ---- global / screening (3) ----
+  - id: vital_signs
+    category: global
+    text: "Vital signs: HR, BP, RR, temp, SpO2."
+    cost: 10
+    time_min: 2
+  - id: general_appearance
+    category: global
+    text: "General appearance: distress, color, hydration, mentation."
+    cost: 0
+    time_min: 1
+  - id: mental_status
+    category: global
+    text: "Mental status exam: orientation, GCS, level of alertness."
+    cost: 0
+    time_min: 2
+
+  # ---- HEENT / neck (2) ----
+  - id: heent
+    category: heent
+    text: "HEENT exam: pupils, fundoscopy, oropharynx, tympanic membranes."
+    cost: 15
+    time_min: 3
+  - id: neck_exam
+    category: heent
+    text: "Neck exam: meningismus (Kernig/Brudzinski), JVD, lymphadenopathy, thyroid."
+    cost: 15
+    time_min: 3
+
+  # ---- cardiopulmonary (3) ----
+  - id: cardiac_auscultation
+    category: cv
+    text: "Cardiac auscultation: heart sounds, murmurs, rubs, gallops."
+    cost: 20
+    time_min: 3
+  - id: pulmonary_auscultation
+    category: pulm
+    text: "Pulmonary auscultation: breath sounds, crackles, wheezes, rhonchi."
+    cost: 20
+    time_min: 3
+  - id: peripheral_perfusion
+    category: cv
+    text: "Peripheral pulses, capillary refill, extremity edema, calf swelling/tenderness."
+    cost: 15
+    time_min: 3
+
+  # ---- abdomen / pelvis (3) ----
+  - id: abdominal_palpation
+    category: abd
+    text: "Abdominal palpation: tenderness, guarding, rebound, masses, McBurney/Rovsing."
+    cost: 20
+    time_min: 4
+  - id: cva_tenderness
+    category: abd
+    text: "Costovertebral angle tenderness (bilateral)."
+    cost: 10
+    time_min: 2
+  - id: pelvic_exam
+    category: abd
+    text: "Pelvic/bimanual exam: cervical motion tenderness, adnexal tenderness, discharge."
+    cost: 30
+    time_min: 5
+
+  # ---- neuro (2) ----
+  - id: cranial_nerves
+    category: neuro
+    text: "Cranial nerve exam (II–XII)."
+    cost: 15
+    time_min: 4
+  - id: motor_sensory
+    category: neuro
+    text: "Motor strength, sensation, reflexes, coordination, gait."
+    cost: 15
+    time_min: 5
+
+  # ---- skin / other (2) ----
+  - id: skin_exam
+    category: skin
+    text: "Skin: rash, petechiae/purpura, turgor, diaphoresis."
+    cost: 10
+    time_min: 2
+  - id: musculoskeletal_chest_wall
+    category: msk
+    text: "Chest wall / MSK palpation: reproducibility of chest pain, joint tenderness."
+    cost: 10
+    time_min: 2

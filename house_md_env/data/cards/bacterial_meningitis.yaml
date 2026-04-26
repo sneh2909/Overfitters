@@ -1,0 +1,423 @@
+id: bacterial_meningitis
+severity: critical
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 22
+  sex: male
+  chief_complaint: severe headache and stiff neck
+  patient_card: 22-year-old male college student presenting with severe headache and stiff neck for 24 hours. Roommate noted
+    he was sensitive to light.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 15
+  sex: female
+  chief_complaint: high fever and extreme confusion
+  patient_card: 15-year-old female brought in by parents with high fever and extreme confusion starting this morning. She
+    has a rapidly spreading rash.
+- variant_id: v3
+  variant_type: atypical
+  age: 68
+  sex: male
+  chief_complaint: just feeling weak and sleepy
+  patient_card: 68-year-old male presenting with profound lethargy and weakness over the past two days. History of hypertension
+    and recent ear infection.
+symptom_distribution:
+  pain_location:
+    prob: 0.85
+    responses:
+    - My whole head hurts, especially the back.
+    - It's all over my head and down my neck.
+    - Right at the base of my skull.
+    denial_responses:
+    - I don't have any pain right now.
+    - Nothing hurts specifically.
+  pain_character:
+    prob: 0.85
+    responses:
+    - It's a constant, intense pounding.
+    - Feels like my head is going to explode.
+    - A deep, throbbing ache that won't stop.
+    denial_responses:
+    - It's not really a pain, just pressure.
+    - I wouldn't call it painful.
+  pain_onset:
+    prob: 0.9
+    responses:
+    - It came on really fast over the last day.
+    - Started yesterday and just got worse and worse.
+    - Woke up with it this morning and it's unbearable.
+    denial_responses:
+    - I've had it for weeks.
+    - It's been coming and going for a long time.
+  pain_radiation:
+    prob: 0.7
+    responses:
+    - It shoots down into my neck and shoulders.
+    - Travels from my head down my spine.
+    - Radiates down the back of my neck.
+    denial_responses:
+    - No, it stays right in my head.
+    - Doesn't go anywhere else.
+  pain_severity:
+    prob: 0.9
+    responses:
+    - It's a 10 out of 10, easily.
+    - The worst pain I've ever felt in my life.
+    - At least a 9, I can barely keep my eyes open.
+    denial_responses:
+    - It's just a mild ache.
+    - Maybe a 2 or 3.
+  pain_timing:
+    prob: 0.9
+    responses:
+    - It's constant, it never lets up.
+    - Hasn't stopped since it started.
+    - It's there every single second.
+    denial_responses:
+    - It comes and goes.
+    - Only hurts sometimes.
+  pain_triggers:
+    prob: 0.85
+    responses:
+    - Bright lights make it so much worse.
+    - Any time I move my head, it kills me.
+    - Loud noises and light are unbearable.
+    denial_responses:
+    - Nothing really changes it.
+    - It hurts the same no matter what I do.
+  nausea_vomiting:
+    prob: 0.8
+    responses:
+    - I threw up twice this morning.
+    - I feel incredibly sick to my stomach.
+    - Yes, I've been vomiting and can't keep water down.
+    denial_responses:
+    - My stomach is fine.
+    - No nausea at all.
+  fever_chills:
+    prob: 0.95
+    responses:
+    - I've been burning up and shivering.
+    - My temperature was 103 at home.
+    - Yes, terrible chills and sweating.
+    denial_responses:
+    - I haven't felt feverish.
+    - My temperature is normal.
+  cough:
+    prob: 0.1
+    responses:
+    - Just a little dry cough.
+    - I had a cough a few days ago.
+    - Maybe a slight tickle in my throat.
+    denial_responses:
+    - No cough at all.
+    - Breathing fine, no coughing.
+  shortness_of_breath:
+    prob: 0.1
+    responses:
+    - Only when I try to move around.
+    - I feel a little winded from the fever.
+    - Just breathing fast because it hurts.
+    denial_responses:
+    - Breathing is totally normal.
+    - No shortness of breath.
+  chest_pain_probe:
+    prob: 0.05
+    responses:
+    - My chest feels a bit tight.
+    - Only when I take a really deep breath.
+    - Maybe a little ache from shivering.
+    denial_responses:
+    - No chest pain.
+    - My chest feels completely fine.
+  headache_probe:
+    prob: 0.95
+    responses:
+    - Yes, absolutely the worst headache of my life.
+    - My head is pounding relentlessly.
+    - It's an agonizing headache.
+    denial_responses:
+    - No headache, just tired.
+    - My head is fine.
+  visual_neuro_changes:
+    prob: 0.8
+    responses:
+    - The light hurts my eyes so much.
+    - I feel really confused and out of it.
+    - Things look a little blurry and I feel dizzy.
+    denial_responses:
+    - My vision is normal.
+    - No numbness or confusion.
+  palpitations:
+    prob: 0.2
+    responses:
+    - My heart is racing, probably from the fever.
+    - I can feel my heart beating fast.
+    - Just a fast heartbeat.
+    denial_responses:
+    - Heart feels normal.
+    - No racing heart.
+  lmp:
+    prob: 0.05
+    responses:
+    - A couple of weeks ago, completely normal.
+    - Last month, on time.
+    - I just finished my period.
+    denial_responses:
+    - I don't get periods.
+    - Not applicable.
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I suppose it's possible, but unlikely.
+    - Maybe, I haven't checked.
+    - There's a small chance.
+    denial_responses:
+    - Definitely not.
+    - No chance at all.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - Urine is a bit dark, probably dehydrated.
+    - Just haven't peed much today.
+    - Maybe a little concentrated.
+    denial_responses:
+    - Peeing normally.
+    - No burning or issues.
+  bowel_changes:
+    prob: 0.05
+    responses:
+    - Haven't had an appetite to eat anything.
+    - A little constipated.
+    - Stomach is just upset.
+    denial_responses:
+    - Bowels are normal.
+    - No diarrhea or anything.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - I'm thirsty but I throw up if I drink.
+    - Just dry mouth from the fever.
+    - Drinking a bit more because I'm hot.
+    denial_responses:
+    - No unusual thirst.
+    - Normal urination.
+  medications:
+    prob: 0.6
+    responses:
+    - I took some ibuprofen but it didn't touch the pain.
+    - Just Tylenol for the fever.
+    - Nothing besides some over-the-counter painkillers.
+    denial_responses:
+    - I don't take any medications.
+    - Nothing at all.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No allergies that I know of.
+    - None.
+  past_medical_history:
+    prob: 0.3
+    responses:
+    - I had an ear infection last week.
+    - I get sinus infections sometimes.
+    - I've been healthy until this.
+    denial_responses:
+    - No major medical problems.
+    - I'm generally very healthy.
+  family_history:
+    prob: 0.05
+    responses:
+    - My mom has migraines.
+    - Dad has high blood pressure.
+    - Nothing major in the family.
+    denial_responses:
+    - No family history of anything serious.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.4
+    responses:
+    - I live in a college dorm.
+    - A guy on my floor was sick a few days ago.
+    - I was at a crowded concert last weekend.
+    denial_responses:
+    - No recent travel or sick contacts.
+    - Just been at home.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 115, BP 105/65, RR 20, Temp 39.2°C, SpO2 98%
+    - HR 125, BP 90/55, RR 24, Temp 39.8°C, SpO2 96%
+    - HR 98, BP 130/80, RR 18, Temp 38.5°C, SpO2 99%
+  general_appearance:
+    findings:
+    - Patient is ill-appearing, lying still with eyes closed, photophobic.
+    - Toxic appearance, lethargic, difficult to arouse.
+    - Uncomfortable, shielding eyes from light, mild distress.
+  mental_status:
+    findings:
+    - Awake but slow to respond, oriented to person and place only.
+    - Lethargic, confused, GCS 13 (E3 V4 M6).
+    - Alert but irritable, follows commands appropriately.
+  heent:
+    findings:
+    - Marked photophobia, PERRL, normal fundi, TMs clear.
+    - Pupils equal and reactive, mild papilledema noted, dry mucous membranes.
+    - Photophobia present, no papilledema, oropharynx clear.
+  neck_exam:
+    findings:
+    - Significant nuchal rigidity, positive Brudzinski's sign.
+    - Stiff neck, positive Kernig's sign, no JVD.
+    - Resistance to passive neck flexion, tender posterior cervical musculature.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs, rubs, or gallops.
+    - Fast regular rate, normal S1/S2, no murmurs.
+    - Tachycardia, no extra heart sounds.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, no wheezes or crackles.
+    - Lungs clear, normal respiratory effort.
+    - Good air movement bilaterally, no adventitious sounds.
+  peripheral_perfusion:
+    findings:
+    - Capillary refill 2 seconds, 2+ pulses, no edema.
+    - Capillary refill delayed (4 seconds), weak peripheral pulses.
+    - Warm extremities, brisk capillary refill, normal pulses.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended, normal bowel sounds.
+    - Soft, mild diffuse discomfort, no guarding or rebound.
+    - Non-tender, no masses or hepatosplenomegaly.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - Bilateral CVA non-tender.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - External genitalia normal, deferred internal exam.
+    - Not indicated, deferred.
+  cranial_nerves:
+    findings:
+    - CN II-XII grossly intact, photophobia limits full CN II testing.
+    - Mild left CN VI palsy, otherwise CNs intact.
+    - Cranial nerves intact, no focal deficits.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities, sensation intact, reflexes 2+.
+    - Moves all extremities spontaneously, reflexes 3+ bilaterally.
+    - Normal tone and bulk, strength symmetric, no sensory deficits.
+  skin_exam:
+    findings:
+    - Scattered petechial rash on lower extremities and trunk.
+    - Purpuric lesions on ankles and wrists, warm to touch.
+    - No rashes, petechiae, or purpura. Normal turgor.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness, joints have full range of motion.
+    - No joint effusions or tenderness.
+    - Normal MSK exam, no reproducible chest pain.
+test_sensitivities:
+  cbc:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: WBC 18,500/μL (85% neutrophils), Hgb 14.2 g/dL, Plt 210k
+      flag: H
+    - value: WBC 22,000/μL (90% neutrophils), Hgb 13.5 g/dL, Plt 150k
+      flag: H
+    - value: WBC 15,400/μL (80% neutrophils), Hgb 12.8 g/dL, Plt 250k
+      flag: H
+    value_normal: WBC 7,500/μL, Hgb 14.0 g/dL, Plt 250k
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.4
+    values_abnormal:
+    - value: Na 131 mEq/L, K 4.0 mEq/L, Cr 0.9 mg/dL
+      flag: L
+    - value: Na 128 mEq/L, K 3.8 mEq/L, Cr 1.2 mg/dL
+      flag: L
+    - value: Na 133 mEq/L, K 4.2 mEq/L, Cr 1.0 mg/dL
+      flag: L
+    value_normal: Na 140 mEq/L, K 4.0 mEq/L, Cr 0.8 mg/dL
+    is_confirmatory: false
+  blood_cultures:
+    prob_abnormal: 0.7
+    values_abnormal:
+    - value: Positive for Streptococcus pneumoniae
+      flag: CRIT
+    - value: Positive for Neisseria meningitidis
+      flag: CRIT
+    - value: Gram-positive diplococci in clusters
+      flag: CRIT
+    value_normal: No growth at 48 hours
+    is_confirmatory: false
+  ct_head_noncontrast:
+    prob_abnormal: 0.1
+    values_abnormal:
+    - value: Mild diffuse cerebral edema, no midline shift.
+      flag: H
+    - value: Loss of gray-white differentiation suggestive of edema.
+      flag: H
+    - value: Subtle sulcal effacement, no hemorrhage.
+      flag: H
+    value_normal: No acute intracranial abnormality. No hemorrhage, mass effect, or hydrocephalus.
+    is_confirmatory: false
+  csf_analysis:
+    prob_abnormal: 0.99
+    values_abnormal:
+    - value: WBC 1200 (90% PMNs), Glucose 20 mg/dL, Protein 150 mg/dL, Gram stain positive for Gram-positive diplococci
+      flag: CRIT
+    - value: WBC 4500 (95% PMNs), Glucose 15 mg/dL, Protein 220 mg/dL, Gram stain positive for Gram-negative diplococci
+      flag: CRIT
+    - value: WBC 800 (85% PMNs), Glucose 35 mg/dL, Protein 110 mg/dL, Gram stain pending
+      flag: CRIT
+    value_normal: WBC 2, Glucose 60 mg/dL, Protein 30 mg/dL, Gram stain negative
+    is_confirmatory: true
+  lactate:
+    prob_abnormal: 0.6
+    values_abnormal:
+    - value: 3.2 mmol/L
+      flag: H
+    - value: 4.5 mmol/L
+      flag: H
+    - value: 2.8 mmol/L
+      flag: H
+    value_normal: 1.2 mmol/L
+    is_confirmatory: false
+  crp_esr:
+    prob_abnormal: 0.9
+    values_abnormal:
+    - value: CRP 150 mg/L, ESR 65 mm/hr
+      flag: H
+    - value: CRP 210 mg/L, ESR 80 mm/hr
+      flag: H
+    - value: CRP 95 mg/L, ESR 50 mm/hr
+      flag: H
+    value_normal: CRP <5 mg/L, ESR 10 mm/hr
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - csf_analysis
+  require: abnormal
+decoy: null
+red_herring:
+  disease: migraine
+  shared_features:
+  - pain_location
+  - pain_severity
+  - pain_triggers
+  - nausea_vomiting
+  - headache_probe
+  - visual_neuro_changes
+  discriminating_features:
+  - fever_chills
+  - neck_exam
+  - mental_status
+  - csf_analysis

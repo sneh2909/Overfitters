@@ -1,0 +1,449 @@
+id: pulmonary_embolism
+severity: critical
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 45
+  sex: female
+  chief_complaint: sudden sharp chest pain breathing
+  patient_card: 45-year-old woman presents with sudden onset of sharp, right-sided chest pain that worsens with deep breaths,
+    accompanied by mild shortness of breath. She recently returned from a long-haul flight.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 62
+  sex: male
+  chief_complaint: gasping for air passing out
+  patient_card: 62-year-old man brought in after a syncopal episode at home. He is profoundly dyspneic, tachycardic, and hypotensive,
+    with cool extremities.
+- variant_id: v3
+  variant_type: atypical
+  age: 30
+  sex: female
+  chief_complaint: racing heart and leg swelling
+  patient_card: 30-year-old woman on oral contraceptives complaining primarily of a swollen, painful left calf for two days
+    and a sensation of her heart racing today.
+symptom_distribution:
+  pain_location:
+    prob: 0.8
+    responses:
+    - Right here on the side of my chest.
+    - It's in my back and side, mostly on the right.
+    - Deep in my chest, hard to pinpoint exactly.
+    denial_responses:
+    - I don't have any pain, just can't catch my breath.
+    - No chest pain at all.
+  pain_character:
+    prob: 0.8
+    responses:
+    - It's a sharp, stabbing feeling.
+    - Like a knife catching me when I inhale.
+    - Very sharp and sudden.
+    denial_responses:
+    - It's not painful, just tight.
+    - No pain, just pressure.
+  pain_onset:
+    prob: 0.9
+    responses:
+    - It hit me out of nowhere this morning.
+    - Very suddenly, like a switch flipped.
+    - Started abruptly while I was just sitting there.
+    denial_responses:
+    - It's been slowly building up over weeks.
+    - Gradual onset, nothing sudden.
+  pain_radiation:
+    prob: 0.3
+    responses:
+    - It shoots to my back sometimes.
+    - I feel it in my shoulder a bit.
+    - Radiates around my ribcage.
+    denial_responses:
+    - No, it stays right in one spot.
+    - Doesn't travel anywhere else.
+  pain_severity:
+    prob: 0.8
+    responses:
+    - It's an 8 out of 10 when I breathe in.
+    - Pretty bad, maybe a 7.
+    - At least a 9, it hurts so much to take a breath.
+    denial_responses:
+    - It's just a mild ache, maybe a 2.
+    - Not severe at all.
+  pain_timing:
+    prob: 0.8
+    responses:
+    - It's constant but spikes when I breathe.
+    - Always there, but taking a breath makes it sharp.
+    - It hasn't gone away since it started.
+    denial_responses:
+    - It comes and goes completely.
+    - Only lasts a few seconds at a time.
+  pain_triggers:
+    prob: 0.85
+    responses:
+    - Taking a deep breath makes it much worse.
+    - Coughing or breathing in deeply kills me.
+    - Moving around and trying to breathe deeply.
+    denial_responses:
+    - Nothing seems to make it worse.
+    - Breathing doesn't change it at all.
+  nausea_vomiting:
+    prob: 0.1
+    responses:
+    - I felt a little sick to my stomach earlier.
+    - Slight nausea, but no vomiting.
+    - Threw up once, probably from the pain.
+    denial_responses:
+    - No nausea or vomiting.
+    - My stomach feels fine.
+  fever_chills:
+    prob: 0.15
+    responses:
+    - I felt a little warm earlier.
+    - Maybe a low-grade fever.
+    - I had some mild chills last night.
+    denial_responses:
+    - No fever or chills.
+    - Haven't felt hot or cold.
+  cough:
+    prob: 0.4
+    responses:
+    - I have a dry cough that just started.
+    - Coughing a bit, and I saw a streak of blood once.
+    - Just a nagging, dry cough.
+    denial_responses:
+    - No cough at all.
+    - Haven't been coughing.
+  shortness_of_breath:
+    prob: 0.95
+    responses:
+    - I just can't get enough air.
+    - Even sitting still, I feel winded.
+    - I'm gasping if I try to walk to the bathroom.
+    denial_responses:
+    - My breathing is completely normal.
+    - No trouble breathing.
+  chest_pain_probe:
+    prob: 0.85
+    responses:
+    - Yes, sharp pain in my chest.
+    - It hurts my chest to breathe.
+    - Chest feels tight and painful.
+    denial_responses:
+    - No chest pain.
+    - Chest feels totally fine.
+  headache_probe:
+    prob: 0.05
+    responses:
+    - Just a mild headache from the stress.
+    - My head aches a little.
+    - Slight throbbing in my temples.
+    denial_responses:
+    - No headache.
+    - My head is fine.
+  visual_neuro_changes:
+    prob: 0.15
+    responses:
+    - I felt really dizzy and actually passed out.
+    - Things went black for a second earlier.
+    - I felt lightheaded when I stood up.
+    denial_responses:
+    - No vision changes or numbness.
+    - No dizziness or passing out.
+  palpitations:
+    prob: 0.6
+    responses:
+    - My heart is racing out of my chest.
+    - I can feel my pulse pounding fast.
+    - Feels like my heart is fluttering.
+    denial_responses:
+    - Heart rate feels normal to me.
+    - No racing heart.
+  lmp:
+    prob: 0.1
+    responses:
+    - A couple of weeks ago.
+    - Last month, totally normal.
+    - I'm on the pill, so it's very regular.
+    denial_responses:
+    - I've gone through menopause.
+    - Not applicable.
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I suppose it's possible.
+    - Maybe, we haven't been careful.
+    - I am currently pregnant.
+    denial_responses:
+    - No chance, I'm on birth control.
+    - Definitely not pregnant.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - Maybe going a little more often.
+    - Slight burning, but nothing major.
+    - Urine looks a bit dark.
+    denial_responses:
+    - No issues with urination.
+    - Peeing normally.
+  bowel_changes:
+    prob: 0.05
+    responses:
+    - A little constipated lately.
+    - Slight diarrhea yesterday.
+    - Stomach's been a bit off.
+    denial_responses:
+    - Bowel movements are normal.
+    - No changes in my stool.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - I've been a bit thirsty.
+    - Drinking more water than usual.
+    - Mouth feels dry.
+    denial_responses:
+    - No unusual thirst.
+    - Not peeing more than normal.
+  medications:
+    prob: 0.4
+    responses:
+    - I take birth control pills.
+    - Just some hormone replacement therapy.
+    - I'm on some meds for my recent surgery.
+    denial_responses:
+    - I don't take any prescription meds.
+    - Nothing besides a multivitamin.
+  allergies:
+    prob: 0.05
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No known allergies.
+    - I'm not allergic to anything.
+  past_medical_history:
+    prob: 0.4
+    responses:
+    - I had a blood clot in my leg years ago.
+    - I was recently treated for cancer.
+    - I just had knee surgery last month.
+    denial_responses:
+    - I've always been completely healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.2
+    responses:
+    - My mom had a pulmonary embolism.
+    - There's a history of blood clots in my family.
+    - My sister has Factor V Leiden.
+    denial_responses:
+    - No family history of anything serious.
+    - No heart or clotting issues in the family.
+  social_travel_exposure:
+    prob: 0.5
+    responses:
+    - I just got off a 12-hour flight yesterday.
+    - I smoke about a pack a day.
+    - I've been on bed rest for the last week.
+    denial_responses:
+    - I don't smoke and haven't traveled.
+    - Very active, no recent travel.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 115, BP 110/70, RR 24, Temp 37.2°C, SpO2 91% on room air.
+    - HR 130, BP 85/50, RR 30, Temp 36.8°C, SpO2 88% on room air.
+    - HR 105, BP 120/80, RR 20, Temp 37.0°C, SpO2 94% on room air.
+  general_appearance:
+    findings:
+    - Patient appears anxious and in mild respiratory distress.
+    - Patient is pale, diaphoretic, and gasping for air.
+    - Alert and oriented, but visibly uncomfortable when taking deep breaths.
+  mental_status:
+    findings:
+    - Alert and oriented x3, though anxious.
+    - Lethargic and confused, arousable to voice.
+    - Normal mental status, GCS 15.
+  heent:
+    findings:
+    - Normocephalic, atraumatic, pupils equal and reactive.
+    - Mucous membranes slightly dry, no pallor.
+    - Unremarkable HEENT exam.
+  neck_exam:
+    findings:
+    - Supple, no lymphadenopathy, mild jugular venous distension present.
+    - Significant JVD noted, trachea midline.
+    - Supple neck, no JVD, no meningismus.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, loud P2, no murmurs.
+    - Tachycardic, regular rhythm, right ventricular heave appreciated.
+    - Tachycardic, no murmurs, rubs, or gallops.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, despite tachypnea.
+    - Mild bibasilar crackles, otherwise clear.
+    - Focal wheezing in the right lower lobe, otherwise clear.
+  peripheral_perfusion:
+    findings:
+    - Left calf is swollen, erythematous, and tender to palpation. 2+ pulses.
+    - Cool extremities, delayed capillary refill >3 seconds, no edema.
+    - Pulses 2+ bilaterally, no calf tenderness or edema.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended, normal bowel sounds.
+    - Mild right upper quadrant tenderness (hepatic congestion), no rebound.
+    - Soft, non-tender, no masses or organomegaly.
+  cva_tenderness:
+    findings:
+    - No costovertebral angle tenderness bilaterally.
+    - Negative CVA tenderness.
+    - Bilateral CVA non-tender.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Normal external genitalia, no bleeding.
+    - Not indicated, deferred.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII grossly intact.
+    - CN II-XII intact, no focal deficits.
+    - Grossly normal cranial nerve exam.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities, sensation intact.
+    - Moves all extremities well, no focal weakness.
+    - Normal bulk, tone, and strength bilaterally.
+  skin_exam:
+    findings:
+    - No rashes. Skin is warm and dry.
+    - Skin is cool, clammy, with mild peripheral cyanosis.
+    - Normal turgor, no petechiae or purpura.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness to palpation.
+    - Mild diffuse chest wall tenderness, pain not perfectly reproducible.
+    - Chest wall non-tender, normal range of motion.
+test_sensitivities:
+  d_dimer:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: 1,450 ng/mL FEU
+      flag: H
+    - value: 3,200 ng/mL FEU
+      flag: H
+    - value: 850 ng/mL FEU
+      flag: H
+    value_normal: <500 ng/mL FEU
+    is_confirmatory: false
+  ct_chest_pe_protocol:
+    prob_abnormal: 0.98
+    values_abnormal:
+    - value: Large filling defect in the right main pulmonary artery extending into lobar branches.
+      flag: CRIT
+    - value: Bilateral segmental pulmonary emboli. Right ventricular strain pattern noted.
+      flag: CRIT
+    - value: Small subsegmental pulmonary embolus in the left lower lobe.
+      flag: H
+    value_normal: No evidence of pulmonary embolism. Lungs are clear.
+    is_confirmatory: true
+  ecg:
+    prob_abnormal: 0.85
+    values_abnormal:
+    - value: Sinus tachycardia at 115 bpm. S1Q3T3 pattern present.
+      flag: H
+    - value: Sinus tachycardia at 125 bpm. Right bundle branch block and T-wave inversions in V1-V4.
+      flag: H
+    - value: Sinus tachycardia at 105 bpm. Nonspecific ST-T wave changes.
+      flag: H
+    value_normal: Normal sinus rhythm at 75 bpm. Normal axis and intervals.
+    is_confirmatory: false
+  troponin:
+    prob_abnormal: 0.4
+    values_abnormal:
+    - value: 45 ng/L
+      flag: H
+    - value: 120 ng/L
+      flag: H
+    - value: 35 ng/L
+      flag: H
+    value_normal: <14 ng/L
+    is_confirmatory: false
+  bnp:
+    prob_abnormal: 0.5
+    values_abnormal:
+    - value: 450 pg/mL
+      flag: H
+    - value: 800 pg/mL
+      flag: H
+    - value: 300 pg/mL
+      flag: H
+    value_normal: <100 pg/mL
+    is_confirmatory: false
+  chest_xray:
+    prob_abnormal: 0.3
+    values_abnormal:
+    - value: Wedge-shaped opacity in the right lower lobe (Hampton's hump).
+      flag: H
+    - value: Prominent central pulmonary artery with oligemia in the right lung (Westermark sign).
+      flag: H
+    - value: Small right-sided pleural effusion, otherwise clear.
+      flag: H
+    value_normal: Clear lungs, normal cardiac silhouette, no acute cardiopulmonary process.
+    is_confirmatory: false
+  abg:
+    prob_abnormal: 0.8
+    values_abnormal:
+    - value: pH 7.48, pCO2 30 mmHg, pO2 65 mmHg on room air.
+      flag: H
+    - value: pH 7.50, pCO2 28 mmHg, pO2 55 mmHg on room air.
+      flag: CRIT
+    - value: pH 7.45, pCO2 32 mmHg, pO2 70 mmHg on room air.
+      flag: H
+    value_normal: pH 7.40, pCO2 40 mmHg, pO2 95 mmHg on room air.
+    is_confirmatory: false
+  doppler_us_extremity:
+    prob_abnormal: 0.4
+    values_abnormal:
+    - value: Non-compressible left popliteal vein consistent with deep vein thrombosis.
+      flag: H
+    - value: Extensive acute DVT involving the right femoral and popliteal veins.
+      flag: H
+    - value: Echogenic thrombus in the left posterior tibial vein.
+      flag: H
+    value_normal: Normal compressibility and flow in bilateral lower extremity deep veins. No evidence of DVT.
+    is_confirmatory: false
+  pulse_oximetry:
+    prob_abnormal: 0.85
+    values_abnormal:
+    - value: 91% on room air
+      flag: L
+    - value: 86% on room air
+      flag: CRIT
+    - value: 93% on room air
+      flag: L
+    value_normal: 98% on room air
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - ct_chest_pe_protocol
+  require: abnormal
+decoy:
+  test: chest_xray
+  biased_finding: Clear lungs, normal cardiac silhouette, no acute cardiopulmonary process.
+  decoy_toward_disease: anxiety_attack
+  requires_followup:
+  - d_dimer
+  - ct_chest_pe_protocol
+red_herring:
+  disease: anxiety_attack
+  shared_features:
+  - shortness_of_breath
+  - palpitations
+  - chest_pain_probe
+  - vital_signs
+  - general_appearance
+  discriminating_features:
+  - pulse_oximetry
+  - d_dimer
+  - ct_chest_pe_protocol

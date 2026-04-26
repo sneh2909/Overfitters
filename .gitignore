@@ -1,0 +1,59 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Notebooks — keep source, drop checkpoints + executed copies
+.ipynb_checkpoints/
+notebooks/executed_*.ipynb
+
+# Local-only data + secrets
+.env
+*.env.local
+**/secrets.json
+**/service_account*.json
+data/sft_dataset.jsonl
+data/oracle_trajectories.jsonl
+data/parser_sft/
+
+# Logs / runtime
+logs/
+*.log
+wandb/
+outputs/
+checkpoints/
+
+# OpenEnv
+uv.lock-old
+.uv-cache/

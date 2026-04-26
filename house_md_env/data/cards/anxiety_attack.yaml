@@ -1,0 +1,419 @@
+id: anxiety_attack
+severity: stable
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 25
+  sex: female
+  chief_complaint: sudden chest tightness and racing heart
+  patient_card: 25-year-old woman presents with sudden onset of chest tightness, palpitations, and shortness of breath that
+    started 30 minutes ago while resting.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 35
+  sex: male
+  chief_complaint: severe chest pain and sweating
+  patient_card: 35-year-old man brought in for severe chest pain, diaphoresis, and a feeling of impending doom. Vitals show
+    marked tachycardia and tachypnea.
+- variant_id: v3
+  variant_type: atypical
+  age: 55
+  sex: female
+  chief_complaint: dizziness and tingling in hands
+  patient_card: 55-year-old woman presents with lightheadedness, perioral numbness, and tingling in both hands. She feels
+    restless and unable to catch her breath.
+symptom_distribution:
+  pain_location:
+    prob: 0.8
+    responses:
+    - Right in the middle of my chest.
+    - All over my chest, it feels tight.
+    - My whole chest feels squeezed.
+    denial_responses:
+    - I don't have any pain, just feel like I can't breathe.
+    - No pain, just my heart is pounding out of my chest.
+  pain_character:
+    prob: 0.8
+    responses:
+    - It's a heavy pressure, like someone is sitting on me.
+    - It feels very tight and squeezing.
+    - A sharp, terrifying tightness.
+    denial_responses:
+    - It's not really pain, just a fluttery feeling.
+    - No pain, just numbness and tingling.
+  pain_onset:
+    prob: 0.9
+    responses:
+    - It hit me completely out of nowhere about 20 minutes ago.
+    - Very sudden, like a wave crashing over me.
+    - It started abruptly while I was just sitting there.
+    denial_responses:
+    - It's been building up slowly all day.
+    - I've had it off and on for weeks.
+  pain_radiation:
+    prob: 0.3
+    responses:
+    - My left arm feels a bit numb actually.
+    - It kind of goes up into my neck.
+    - My fingers are tingling, if that counts.
+    denial_responses:
+    - No, it stays right in my chest.
+    - It doesn't travel anywhere else.
+  pain_severity:
+    prob: 0.8
+    responses:
+    - It's an 8, it's really scary.
+    - At least a 9, I thought I was dying.
+    - It feels like a 10 because I can't breathe.
+    denial_responses:
+    - It's not severe pain, maybe a 2, just uncomfortable.
+    - The pain isn't bad, the breathing is the problem.
+  pain_timing:
+    prob: 0.9
+    responses:
+    - It's been constant since it started.
+    - It hasn't let up for the last half hour.
+    - Steady pressure that isn't going away.
+    denial_responses:
+    - It comes and goes in quick flashes.
+    - It only hurts when I take a deep breath.
+  pain_triggers:
+    prob: 0.6
+    responses:
+    - Nothing makes it better. I was just stressed earlier.
+    - I was thinking about work and it just happened.
+    - Nothing triggered it, it just came on.
+    denial_responses:
+    - It hurts more when I press on it.
+    - Taking a deep breath makes it worse.
+  nausea_vomiting:
+    prob: 0.4
+    responses:
+    - I feel a little sick to my stomach.
+    - Yes, I feel very nauseous right now.
+    - My stomach is in knots, but I haven't thrown up.
+    denial_responses:
+    - No nausea at all.
+    - My stomach is fine.
+  fever_chills:
+    prob: 0.5
+    responses:
+    - I had a hot flash and then started shivering.
+    - I feel sweaty and cold at the same time.
+    - I've been trembling and feeling chilled.
+    denial_responses:
+    - No fever or chills.
+    - My temperature feels normal.
+  cough:
+    prob: 0.05
+    responses:
+    - Just a dry cough because my throat feels tight.
+    - I coughed a little trying to catch my breath.
+    - A small tickle in my throat.
+    denial_responses:
+    - No cough at all.
+    - I haven't been coughing.
+  shortness_of_breath:
+    prob: 0.95
+    responses:
+    - I can't get a deep breath in.
+    - I feel like I'm suffocating.
+    - I'm breathing fast but not getting enough air.
+    denial_responses:
+    - My breathing is totally normal.
+    - I can breathe fine, it's just the pain.
+  chest_pain_probe:
+    prob: 0.85
+    responses:
+    - Yes, my chest feels incredibly tight.
+    - There's a heavy weight on my chest.
+    - It feels like a band squeezing my ribs.
+    denial_responses:
+    - No chest pain, just the racing heart.
+    - My chest feels fine, I just feel dizzy.
+  headache_probe:
+    prob: 0.2
+    responses:
+    - My head feels a bit light and achy.
+    - Just a tension headache.
+    - A mild throbbing in my temples.
+    denial_responses:
+    - No headache.
+    - My head is fine.
+  visual_neuro_changes:
+    prob: 0.7
+    responses:
+    - My hands and lips are tingling.
+    - I feel very dizzy and lightheaded.
+    - My fingers feel numb and stiff.
+    denial_responses:
+    - No numbness or vision changes.
+    - My vision is clear and no weakness.
+  palpitations:
+    prob: 0.95
+    responses:
+    - My heart is beating out of my chest.
+    - It feels like my heart is fluttering and racing.
+    - I can feel my pulse pounding in my ears.
+    denial_responses:
+    - My heart rate feels normal.
+    - No racing heart.
+  lmp:
+    prob: 0.05
+    responses:
+    - A couple of weeks ago, normal.
+    - Last month, regular.
+    - I'm on my period now.
+    denial_responses:
+    - I don't get periods.
+    - Menopause was years ago.
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I suppose it's possible.
+    - Maybe, I haven't checked.
+    - There's a small chance.
+    denial_responses:
+    - No chance at all.
+    - Definitely not pregnant.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - I had to pee a lot right before this started.
+    - Just frequent urination today.
+    - A little urgency.
+    denial_responses:
+    - No problems peeing.
+    - Urine is totally normal.
+  bowel_changes:
+    prob: 0.1
+    responses:
+    - My stomach has been upset today.
+    - I had some loose stools earlier.
+    - Just feeling nervous in my gut.
+    denial_responses:
+    - Bowel movements are normal.
+    - No diarrhea or constipation.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - My mouth is really dry.
+    - I've been drinking a lot of water nervously.
+    - Just a dry mouth.
+    denial_responses:
+    - No unusual thirst.
+    - Not peeing more than usual.
+  medications:
+    prob: 0.3
+    responses:
+    - I take something for my mood sometimes.
+    - Just some vitamins and occasional ibuprofen.
+    - I have a prescription for stress but I ran out.
+    denial_responses:
+    - I don't take any daily medications.
+    - Nothing at all.
+  allergies:
+    prob: 0.05
+    responses:
+    - I'm allergic to penicillin.
+    - Just seasonal pollen allergies.
+    - Sulfa drugs give me a rash.
+    denial_responses:
+    - No allergies that I know of.
+    - None.
+  past_medical_history:
+    prob: 0.5
+    responses:
+    - I've had episodes like this years ago.
+    - I was told I had a nervous stomach once.
+    - I've been to the ER for this before and they said my heart was fine.
+    denial_responses:
+    - I've always been perfectly healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.1
+    responses:
+    - My mom has a lot of stress issues.
+    - My dad had a heart attack at 70.
+    - Some high blood pressure in the family.
+    denial_responses:
+    - No family history of heart problems.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.6
+    responses:
+    - I've been under a massive amount of stress at work.
+    - I drink a lot of coffee, maybe 5 cups today.
+    - I haven't been sleeping well due to personal issues.
+    denial_responses:
+    - I don't smoke or drink.
+    - No recent travel or unusual exposures.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 115, BP 145/90, RR 24, Temp 37.0°C, SpO2 99%
+    - HR 125, BP 150/95, RR 28, Temp 36.8°C, SpO2 100%
+    - HR 105, BP 135/85, RR 20, Temp 37.1°C, SpO2 98%
+  general_appearance:
+    findings:
+    - Patient appears anxious, restless, and is breathing rapidly.
+    - Diaphoretic, clutching chest, appears in moderate distress.
+    - Alert, tearful, hyperventilating, but easily redirectable.
+  mental_status:
+    findings:
+    - Alert and oriented x3, anxious affect.
+    - GCS 15, highly agitated but cooperative.
+    - Alert, oriented, speech is rapid.
+  heent:
+    findings:
+    - Pupils equal and reactive, mucous membranes moist.
+    - Normocephalic, atraumatic, clear oropharynx.
+    - Unremarkable HEENT exam, no scleral icterus.
+  neck_exam:
+    findings:
+    - Supple, no JVD, no lymphadenopathy.
+    - No thyromegaly, no carotid bruits, no JVD.
+    - Trachea midline, no meningismus.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs, rubs, or gallops.
+    - Rapid regular rate, normal S1/S2, no extra sounds.
+    - Sinus tachycardia, no murmurs appreciated.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, good air movement.
+    - Lungs clear, tachypneic but no wheezes or crackles.
+    - Normal breath sounds bilaterally, no respiratory distress other than tachypnea.
+  peripheral_perfusion:
+    findings:
+    - 2+ pulses x4, capillary refill < 2 seconds, no edema.
+    - Warm extremities, brisk capillary refill, no calf tenderness.
+    - No cyanosis, clubbing, or edema. Pulses are bounding.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended, normal bowel sounds.
+    - No tenderness, no guarding or rebound.
+    - Benign abdomen, no hepatosplenomegaly.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - No flank pain on percussion.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Not indicated, external genitalia visually normal.
+    - Deferred as clinically not indicated.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact.
+    - Grossly intact CN II-XII.
+    - No focal cranial nerve deficits.
+  motor_sensory:
+    findings:
+    - 5/5 strength throughout, sensation intact, subjective tingling in hands.
+    - Normal strength and tone, reflexes 2+ symmetric.
+    - No focal motor deficits, patient reports perioral numbness.
+  skin_exam:
+    findings:
+    - Cool and clammy, diaphoretic, no rashes.
+    - Flushed face, sweating, normal turgor.
+    - Warm, dry, no petechiae or purpura.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness to palpation.
+    - Chest pain is not reproducible with palpation.
+    - Normal MSK exam, no reproducible chest wall pain.
+test_sensitivities:
+  ecg:
+    prob_abnormal: 0.9
+    values_abnormal:
+    - value: Sinus tachycardia at 115 bpm, no ST-T wave changes.
+      flag: H
+    - value: Sinus tachycardia at 125 bpm, normal axis.
+      flag: H
+    - value: Sinus tachycardia at 105 bpm, nonspecific T wave flattening.
+      flag: H
+    value_normal: Normal sinus rhythm at 85 bpm, no ischemic changes.
+    is_confirmatory: false
+  troponin:
+    prob_abnormal: 0.01
+    values_abnormal:
+    - value: 18 ng/L
+      flag: H
+    - value: 22 ng/L
+      flag: H
+    - value: 15 ng/L
+      flag: H
+    value_normal: < 5 ng/L (Normal)
+    is_confirmatory: false
+  chest_xray:
+    prob_abnormal: 0.01
+    values_abnormal:
+    - value: Mild hyperinflation, clear lungs.
+      flag: H
+    - value: Prominent interstitial markings, no consolidation.
+      flag: H
+    - value: Suboptimal inspiration, otherwise clear.
+      flag: H
+    value_normal: Clear lungs, normal cardiac silhouette, no acute cardiopulmonary process.
+    is_confirmatory: false
+  d_dimer:
+    prob_abnormal: 0.15
+    values_abnormal:
+    - value: 0.55 mg/L FEU
+      flag: H
+    - value: 0.62 mg/L FEU
+      flag: H
+    - value: 0.51 mg/L FEU
+      flag: H
+    value_normal: 0.20 mg/L FEU (< 0.50 mg/L FEU)
+    is_confirmatory: false
+  ct_chest_pe_protocol:
+    prob_abnormal: 0.01
+    values_abnormal:
+    - value: No pulmonary embolism. Mild dependent atelectasis.
+      flag: N
+    - value: No PE. Small apical bleb.
+      flag: N
+    - value: Negative for pulmonary embolism.
+      flag: N
+    value_normal: Negative for pulmonary embolism. No acute intrathoracic pathology.
+    is_confirmatory: false
+  pulse_oximetry:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: 94% on room air
+      flag: L
+    - value: 95% on room air
+      flag: L
+    - value: 93% on room air
+      flag: L
+    value_normal: 99% on room air
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - ecg
+  require: normal
+- any_of:
+  - troponin
+  - d_dimer
+  - ct_chest_pe_protocol
+  require: normal
+decoy:
+  test: d_dimer
+  biased_finding: 0.55 mg/L FEU (borderline elevated)
+  decoy_toward_disease: pulmonary_embolism
+  requires_followup:
+  - ct_chest_pe_protocol
+red_herring:
+  disease: pulmonary_embolism
+  shared_features:
+  - shortness_of_breath
+  - chest_pain_probe
+  - palpitations
+  - vital_signs
+  discriminating_features:
+  - d_dimer
+  - ct_chest_pe_protocol
+  - pulse_oximetry

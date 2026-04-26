@@ -1,0 +1,97 @@
+# House M.D. — INTERVIEW question catalog (fixed menu)
+# The agent emits one `id` per INTERVIEW action. The env resolves the id to the
+# `text` (shown in the action log) and samples a response from the patient's
+# symptom_distribution in the active disease card.
+#
+# Design principles:
+# - 25 questions, each discriminates ≥2 diseases in the corpus.
+# - Categorized so the prompt renderer can group them as a menu.
+# - IDs are snake_case and FINAL — changing them breaks all 15 disease cards.
+
+version: 1
+count: 25
+
+questions:
+
+  # ---- pain characterization (7) ----
+  - id: pain_location
+    category: pain
+    text: "Where exactly does it hurt? Can you point to it?"
+  - id: pain_character
+    category: pain
+    text: "How would you describe the pain — sharp, dull, cramping, burning, pressure?"
+  - id: pain_onset
+    category: pain
+    text: "When did this start? Was it sudden or gradual?"
+  - id: pain_radiation
+    category: pain
+    text: "Does the pain travel anywhere — to the back, arm, jaw, groin?"
+  - id: pain_severity
+    category: pain
+    text: "On a scale of 0 to 10, how bad is the pain right now?"
+  - id: pain_timing
+    category: pain
+    text: "Is the pain constant, or does it come and go?"
+  - id: pain_triggers
+    category: pain
+    text: "What makes it better or worse — movement, eating, breathing?"
+
+  # ---- associated systemic symptoms (8) ----
+  - id: nausea_vomiting
+    category: associated
+    text: "Any nausea or vomiting? What does the vomit look like?"
+  - id: fever_chills
+    category: associated
+    text: "Have you had a fever or chills?"
+  - id: cough
+    category: associated
+    text: "Any cough? Is it productive? Have you coughed up blood?"
+  - id: shortness_of_breath
+    category: associated
+    text: "Are you short of breath? At rest or with exertion?"
+  - id: chest_pain_probe
+    category: associated
+    text: "Any chest pain, pressure, or tightness?"
+  - id: headache_probe
+    category: associated
+    text: "Any headache? Worst headache you've ever had?"
+  - id: visual_neuro_changes
+    category: associated
+    text: "Any vision changes, double vision, weakness, numbness, or confusion?"
+  - id: palpitations
+    category: associated
+    text: "Do you feel your heart racing or skipping?"
+
+  # ---- system-specific probes (5) ----
+  - id: lmp
+    category: obgyn
+    text: "When was your last menstrual period? Are your periods regular?"
+  - id: pregnancy_possibility
+    category: obgyn
+    text: "Is there any chance you could be pregnant?"
+  - id: urinary_symptoms
+    category: gu
+    text: "Any burning with urination, blood in the urine, or needing to go often?"
+  - id: bowel_changes
+    category: gi
+    text: "Any change in bowel habits — diarrhea, constipation, or blood in stool?"
+  - id: polyuria_polydipsia
+    category: endocrine
+    text: "Have you been unusually thirsty or urinating more than normal?"
+
+  # ---- history & context (5) ----
+  - id: medications
+    category: history
+    text: "What medications are you taking, including over-the-counter?"
+  - id: allergies
+    category: history
+    text: "Any drug allergies?"
+  - id: past_medical_history
+    category: history
+    text: "Any medical conditions — diabetes, hypertension, heart problems, clotting disorders?"
+  - id: family_history
+    category: history
+    text: "Any family history of heart attacks, strokes, sudden death, or clotting problems?"
+  - id: social_travel_exposure
+    category: history
+    text: "Do you smoke, drink, or use drugs? Any recent travel, immobilization, or sick contacts?"

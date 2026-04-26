@@ -1,0 +1,444 @@
+id: sepsis_uti
+severity: urgent
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 68
+  sex: female
+  chief_complaint: fever and burning with urination
+  patient_card: 68-year-old woman presents with three days of dysuria, frequency, and subjective fevers. She reports feeling
+    increasingly weak and lethargic today.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 82
+  sex: male
+  chief_complaint: severe confusion and shaking chills
+  patient_card: 82-year-old man brought in by family due to acute altered mental status and rigors. He has a history of benign
+    prostatic hyperplasia.
+- variant_id: v3
+  variant_type: atypical
+  age: 45
+  sex: female
+  chief_complaint: extreme weakness and feeling cold
+  patient_card: 45-year-old woman with poorly controlled diabetes presents with profound fatigue, generalized malaise, and
+    feeling cold. Denies localized pain.
+symptom_distribution:
+  pain_location:
+    prob: 0.65
+    responses:
+    - It hurts in my lower belly and my lower back.
+    - Mostly in my flank area, on the right side.
+    - Down low in my pelvis.
+    denial_responses:
+    - I don't really have any pain, just feel awful.
+    - No specific pain anywhere.
+  pain_character:
+    prob: 0.6
+    responses:
+    - It's a dull, constant ache in my back.
+    - A burning feeling when I go to the bathroom.
+    - Just a heavy pressure down low.
+    denial_responses:
+    - No pain to describe.
+    - I wouldn't call it pain, just discomfort.
+  pain_onset:
+    prob: 0.65
+    responses:
+    - It started gradually a few days ago.
+    - Been getting worse over the last 48 hours.
+    - Started as a mild ache yesterday and got much worse today.
+    denial_responses:
+    - I don't have any pain.
+    - N/A, no pain.
+  pain_radiation:
+    prob: 0.4
+    responses:
+    - It shoots around to my groin.
+    - Radiates from my back down to my side.
+    - Moves from my lower belly to my back.
+    denial_responses:
+    - No, it stays in one spot.
+    - Doesn't travel anywhere.
+  pain_severity:
+    prob: 0.65
+    responses:
+    - It's about a 6 out of 10.
+    - Pretty uncomfortable, maybe a 7.
+    - Not agonizing, but a solid 5.
+    denial_responses:
+    - I'm not in pain.
+    - Zero out of 10.
+  pain_timing:
+    prob: 0.65
+    responses:
+    - It's pretty much constant.
+    - It aches all the time, but gets sharper when I pee.
+    - Doesn't really let up.
+    denial_responses:
+    - I don't have pain.
+    - No pain.
+  pain_triggers:
+    prob: 0.7
+    responses:
+    - It's definitely worse when I urinate.
+    - Pressing on my lower back makes it hurt more.
+    - Moving around makes the back ache worse.
+    denial_responses:
+    - Nothing makes it better or worse.
+    - Not that I've noticed.
+  nausea_vomiting:
+    prob: 0.5
+    responses:
+    - I've been feeling very nauseous and threw up once.
+    - Just sick to my stomach, no vomiting.
+    - I vomited my breakfast this morning.
+    denial_responses:
+    - My stomach is fine.
+    - No nausea or vomiting.
+  fever_chills:
+    prob: 0.95
+    responses:
+    - I've been shivering uncontrollably.
+    - Yes, I feel burning hot and then freezing cold.
+    - I took my temperature and it was 102.
+    denial_responses:
+    - I haven't felt feverish.
+    - No chills or fever.
+  cough:
+    prob: 0.05
+    responses:
+    - Just a little dry cough from the dry air.
+    - Maybe a slight tickle in my throat.
+    - I coughed a bit this morning.
+    denial_responses:
+    - No cough at all.
+    - Breathing is fine, no coughing.
+  shortness_of_breath:
+    prob: 0.3
+    responses:
+    - I feel a bit winded just walking to the bathroom.
+    - Breathing feels a little fast because I'm so weak.
+    - A little short of breath when I exert myself.
+    denial_responses:
+    - Breathing is totally normal.
+    - No shortness of breath.
+  chest_pain_probe:
+    prob: 0.05
+    responses:
+    - My chest feels a little heavy, maybe from breathing fast.
+    - Just a tiny twinge, nothing major.
+    - Only when I take a very deep breath.
+    denial_responses:
+    - No chest pain whatsoever.
+    - My chest feels fine.
+  headache_probe:
+    prob: 0.2
+    responses:
+    - I have a dull headache, probably from the fever.
+    - My head is throbbing a bit.
+    - Just a mild ache all over my head.
+    denial_responses:
+    - No headache.
+    - My head is clear.
+  visual_neuro_changes:
+    prob: 0.4
+    responses:
+    - I feel really dizzy and confused.
+    - Everything is a bit foggy right now.
+    - I feel lightheaded when I stand up.
+    denial_responses:
+    - My vision is fine and I'm thinking clearly.
+    - No numbness, weakness, or confusion.
+  palpitations:
+    prob: 0.6
+    responses:
+    - My heart feels like it's racing.
+    - I can feel my heart pounding in my chest.
+    - It's beating much faster than normal.
+    denial_responses:
+    - Heart feels normal.
+    - No racing heart.
+  lmp:
+    prob: 0.1
+    responses:
+    - I went through menopause years ago.
+    - I don't remember, it's been a long time.
+    - A few weeks ago, but it's not related.
+    denial_responses:
+    - Not applicable.
+    - I don't track it.
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I suppose it's a tiny possibility.
+    - Maybe, but highly unlikely.
+    - I haven't had a period, so maybe?
+    denial_responses:
+    - Absolutely not.
+    - Zero chance.
+  urinary_symptoms:
+    prob: 0.85
+    responses:
+    - It burns terribly when I pee, and I have to go constantly.
+    - My urine smells very strong and looks cloudy.
+    - I feel like I have to go all the time but only a little comes out.
+    denial_responses:
+    - No issues with urination.
+    - Urine looks and feels normal.
+  bowel_changes:
+    prob: 0.1
+    responses:
+    - Maybe a little loose stool today.
+    - I haven't gone in a couple of days.
+    - Just some mild diarrhea.
+    denial_responses:
+    - Bowel movements are normal.
+    - No changes in my bowels.
+  polyuria_polydipsia:
+    prob: 0.2
+    responses:
+    - I've been very thirsty because of the fever.
+    - Drinking a lot of water but peeing small amounts.
+    - My mouth is very dry.
+    denial_responses:
+    - No unusual thirst.
+    - Drinking normally.
+  medications:
+    prob: 0.7
+    responses:
+    - I take some blood pressure pills and a multivitamin.
+    - Just metformin for my diabetes.
+    - I took some Tylenol for the fever.
+    denial_responses:
+    - I don't take any medications.
+    - Nothing at all.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just some seasonal pollen allergies.
+    denial_responses:
+    - No known allergies.
+    - None.
+  past_medical_history:
+    prob: 0.6
+    responses:
+    - I have type 2 diabetes and high blood pressure.
+    - I've had kidney stones in the past.
+    - I get urinary tract infections pretty often.
+    denial_responses:
+    - I'm generally very healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.1
+    responses:
+    - My mother had diabetes.
+    - Dad had high blood pressure.
+    - Some heart disease in the family.
+    denial_responses:
+    - No significant family history.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.1
+    responses:
+    - I live in a nursing facility.
+    - I had a catheter in a few weeks ago for a surgery.
+    - I drink occasionally, no smoking.
+    denial_responses:
+    - No recent travel or sick contacts.
+    - I live alone, don't smoke or drink.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 115, BP 88/54, RR 22, Temp 39.2°C, SpO2 96%
+    - HR 125, BP 95/60, RR 24, Temp 38.8°C, SpO2 95%
+    - HR 108, BP 102/65, RR 20, Temp 39.5°C, SpO2 97%
+  general_appearance:
+    findings:
+    - Ill-appearing, flushed, diaphoretic, experiencing visible rigors.
+    - Lethargic, pale, appears toxic and uncomfortable.
+    - Fatigued, dry mucous membranes, resting with eyes closed.
+  mental_status:
+    findings:
+    - Alert but slow to respond, oriented to person only.
+    - Confused, lethargic, GCS 13.
+    - Awake, alert, and fully oriented, though fatigued.
+  heent:
+    findings:
+    - Dry mucous membranes, no pharyngeal erythema, PERRL.
+    - Normocephalic, dry oral mucosa, no scleral icterus.
+    - Unremarkable HEENT exam, pupils equal and reactive.
+  neck_exam:
+    findings:
+    - Supple, no JVD, no lymphadenopathy, negative Brudzinski's.
+    - Full range of motion, no meningismus, thyroid normal.
+    - No masses, trachea midline, no carotid bruits.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs, rubs, or gallops.
+    - Rapid regular rate, normal S1/S2, no extra sounds.
+    - Tachycardia present, no murmurs appreciated.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, no wheezes or crackles.
+    - Tachypneic but lungs are clear in all fields.
+    - Diminished breath sounds at bases, otherwise clear.
+  peripheral_perfusion:
+    findings:
+    - Warm extremities, bounding pulses, capillary refill 2 seconds.
+    - Cool, mottled extremities, thready pulses, capillary refill 4 seconds.
+    - Pulses 2+ bilaterally, no edema, capillary refill 3 seconds.
+  abdominal_palpation:
+    findings:
+    - Suprapubic tenderness to palpation, no rebound or guarding.
+    - Soft, mild diffuse lower abdominal tenderness, non-distended.
+    - No abdominal tenderness, bowel sounds present.
+  cva_tenderness:
+    findings:
+    - Positive right costovertebral angle tenderness.
+    - Bilateral CVA tenderness elicited.
+    - No CVA tenderness appreciated.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Normal external genitalia, no discharge or lesions.
+    - No cervical motion tenderness, no adnexal masses.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII grossly intact.
+    - Pupils reactive, facial symmetry preserved, gag reflex intact.
+    - Grossly normal CN II-XII.
+  motor_sensory:
+    findings:
+    - Moves all extremities symmetrically, strength 5/5, sensation intact.
+    - Generalized weakness but symmetric, reflexes 2+.
+    - Normal tone and bulk, no focal deficits.
+  skin_exam:
+    findings:
+    - Flushed, warm, and diaphoretic, no rashes.
+    - Mottled skin on lower extremities, poor turgor.
+    - Warm to touch, no petechiae or purpura.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness, normal range of motion in joints.
+    - No reproducible chest pain on palpation.
+    - Unremarkable MSK exam, no joint effusions.
+test_sensitivities:
+  urinalysis:
+    prob_abnormal: 0.98
+    values_abnormal:
+    - value: WBC >50/hpf, +Nitrite, +Leukocyte Esterase, Many bacteria
+      flag: H
+    - value: WBC TNTC, +Leukocyte Esterase, Moderate bacteria
+      flag: H
+    - value: WBC 30/hpf, Trace blood, +Nitrite
+      flag: H
+    value_normal: WBC 0-2/hpf, Negative LE/Nitrite
+    is_confirmatory: false
+  urine_culture:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: '>100,000 CFU/mL Escherichia coli'
+      flag: H
+    - value: '>100,000 CFU/mL Klebsiella pneumoniae'
+      flag: H
+    - value: 50,000 CFU/mL Proteus mirabilis
+      flag: H
+    value_normal: No growth
+    is_confirmatory: true
+  cbc:
+    prob_abnormal: 0.9
+    values_abnormal:
+    - value: WBC 18.5k, 85% neutrophils, 10% bands
+      flag: H
+    - value: WBC 22.1k, 88% neutrophils
+      flag: H
+    - value: WBC 3.2k (leukopenia), 20% bands
+      flag: L
+    value_normal: WBC 7.5k, normal differential
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.75
+    values_abnormal:
+    - value: BUN 35, Cr 1.8 (baseline 1.0), HCO3 18
+      flag: H
+    - value: BUN 42, Cr 2.1, K 5.1
+      flag: H
+    - value: BUN 28, Cr 1.4, HCO3 20
+      flag: H
+    value_normal: BUN 15, Cr 0.9, electrolytes normal
+    is_confirmatory: false
+  lactate:
+    prob_abnormal: 0.85
+    values_abnormal:
+    - value: 4.2 mmol/L
+      flag: CRIT
+    - value: 3.5 mmol/L
+      flag: H
+    - value: 5.8 mmol/L
+      flag: CRIT
+    value_normal: 1.1 mmol/L
+    is_confirmatory: false
+  blood_cultures:
+    prob_abnormal: 0.6
+    values_abnormal:
+    - value: 2/2 bottles positive for Gram-negative rods (E. coli)
+      flag: CRIT
+    - value: 1/2 bottles positive for Gram-negative rods
+      flag: H
+    - value: 2/2 bottles positive for Klebsiella pneumoniae
+      flag: CRIT
+    value_normal: No growth at 5 days
+    is_confirmatory: true
+  abg:
+    prob_abnormal: 0.6
+    values_abnormal:
+    - value: pH 7.28, pCO2 30, pO2 85, HCO3 14
+      flag: L
+    - value: pH 7.31, pCO2 32, pO2 90, HCO3 16
+      flag: L
+    - value: pH 7.25, pCO2 28, pO2 88, HCO3 12
+      flag: CRIT
+    value_normal: pH 7.40, pCO2 40, pO2 95, HCO3 24
+    is_confirmatory: false
+  chest_xray:
+    prob_abnormal: 0.3
+    values_abnormal:
+    - value: Mild bibasilar atelectasis, cannot exclude early infiltrate.
+      flag: H
+    - value: Low lung volumes with basilar subsegmental atelectasis.
+      flag: H
+    - value: Patchy opacity at the left base, possibly atelectasis.
+      flag: H
+    value_normal: Clear lungs, normal cardiac silhouette.
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - urinalysis
+  - urine_culture
+  require: abnormal
+- any_of:
+  - lactate
+  - blood_cultures
+  - cbc
+  require: abnormal
+decoy:
+  test: chest_xray
+  biased_finding: Mild bibasilar atelectasis, cannot exclude early infiltrate.
+  decoy_toward_disease: pneumonia
+  requires_followup:
+  - urinalysis
+  - urine_culture
+red_herring:
+  disease: pneumonia
+  shared_features:
+  - fever_chills
+  - shortness_of_breath
+  - vital_signs
+  - general_appearance
+  discriminating_features:
+  - urinary_symptoms
+  - cough
+  - pulmonary_auscultation
+  - urinalysis

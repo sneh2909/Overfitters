@@ -1,0 +1,185 @@
+# House M.D. — disease corpus (Phase 0 metadata + demographic constraints)
+# Full symptom_distribution, exam_distribution, test_sensitivities, etc. are
+# generated per-disease into data/cards/<id>.yaml during Phase 1 (Gemini Pro).
+#
+# Families: abdominal | chest | respiratory | neuro | endocrine | infectious | benign
+# Severity: stable | urgent | critical
+#
+# constraints.sex_allowed: list of ["male","female"] — validator rejects variants outside
+# constraints.age_range: [min_inclusive, max_inclusive] — validator rejects out-of-range
+#
+# suggested_red_herring points to another disease that shares ≥3 features.
+# The actual red_herring wiring (shared/discriminating features) lives in the card.
+
+version: 2
+count: 15
+
+diseases:
+
+  # ---------------------------------------------------------------- critical
+  - id: ectopic_pregnancy
+    name: "Ectopic pregnancy"
+    family: abdominal
+    severity: critical
+    deterioration_rate: 0.20
+    suggested_red_herring: appendicitis
+    constraints:
+      sex_allowed: [female]
+      age_range: [15, 50]
+    note: "Canonical demo case — 34yo pelvic pain, missed = crash."
+
+  - id: stemi
+    name: "ST-elevation myocardial infarction"
+    family: chest
+    severity: critical
+    deterioration_rate: 0.25
+    suggested_red_herring: costochondritis
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [30, 90]
+    note: "Time-critical; ECG + troponin decisive."
+
+  - id: pulmonary_embolism
+    name: "Pulmonary embolism"
+    family: chest
+    severity: critical
+    deterioration_rate: 0.15
+    suggested_red_herring: anxiety_attack
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [18, 90]
+    note: "Wells score drives workup; D-dimer then CT-PA."
+
+  - id: subarachnoid_hemorrhage
+    name: "Subarachnoid hemorrhage"
+    family: neuro
+    severity: critical
+    deterioration_rate: 0.20
+    suggested_red_herring: migraine
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [25, 85]
+    note: "Thunderclap onset; CT head first, LP if negative."
+
+  - id: bacterial_meningitis
+    name: "Bacterial meningitis"
+    family: infectious
+    severity: critical
+    deterioration_rate: 0.20
+    suggested_red_herring: migraine
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [5, 85]
+    note: "Fever + headache + neck stiffness; LP confirmatory."
+
+  # ------------------------------------------------------------------ urgent
+  - id: appendicitis
+    name: "Acute appendicitis"
+    family: abdominal
+    severity: urgent
+    deterioration_rate: 0.10
+    suggested_red_herring: ovarian_torsion
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [8, 75]
+    note: "Classic RLQ pain; CT abd/pelvis confirmatory."
+
+  - id: ovarian_torsion
+    name: "Ovarian torsion"
+    family: abdominal
+    severity: urgent
+    deterioration_rate: 0.15
+    suggested_red_herring: appendicitis
+    constraints:
+      sex_allowed: [female]
+      age_range: [10, 60]
+    note: "Pelvic US with Doppler decisive."
+
+  - id: pneumonia
+    name: "Community-acquired pneumonia"
+    family: respiratory
+    severity: urgent
+    deterioration_rate: 0.08
+    suggested_red_herring: viral_uri
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [5, 95]
+    note: "CXR + CBC + pulse ox; distinguishes from simple URI."
+
+  - id: dka
+    name: "Diabetic ketoacidosis"
+    family: endocrine
+    severity: urgent
+    deterioration_rate: 0.12
+    suggested_red_herring: viral_gastroenteritis
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [8, 80]
+    note: "Polyuria + n/v; BMP + ABG + fingerstick glucose."
+
+  - id: sepsis_uti
+    name: "Urosepsis"
+    family: infectious
+    severity: urgent
+    deterioration_rate: 0.15
+    suggested_red_herring: viral_uri
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [18, 95]
+    note: "Fever + dysuria + lactate; UA + cultures."
+
+  # -------------------------------------------------------------- stable/benign
+  - id: migraine
+    name: "Migraine headache"
+    family: neuro
+    severity: stable
+    deterioration_rate: 0.02
+    suggested_red_herring: subarachnoid_hemorrhage
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [10, 70]
+    note: "Decoy pair with SAH — teaches anchoring resistance both ways."
+
+  - id: costochondritis
+    name: "Costochondritis"
+    family: chest
+    severity: stable
+    deterioration_rate: 0.01
+    suggested_red_herring: stemi
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [15, 75]
+    note: "Benign chest pain; teaches restraint after ruling out STEMI."
+
+  - id: viral_uri
+    name: "Viral upper respiratory infection"
+    family: benign
+    severity: stable
+    deterioration_rate: 0.01
+    suggested_red_herring: pneumonia
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [2, 95]
+    note: "Common cold — correct answer is often NO tests. Teaches R2."
+
+  - id: viral_gastroenteritis
+    name: "Viral gastroenteritis"
+    family: benign
+    severity: stable
+    deterioration_rate: 0.02
+    suggested_red_herring: appendicitis
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [2, 95]
+    note: "Self-limited n/v/d; history + normal exam sufficient."
+
+  - id: anxiety_attack
+    name: "Panic/anxiety attack"
+    family: benign
+    severity: stable
+    deterioration_rate: 0.01
+    suggested_red_herring: pulmonary_embolism
+    constraints:
+      sex_allowed: [male, female]
+      age_range: [15, 65]
+    note: "Chest pain + SOB + palpitations — PE/STEMI mimic. Teaches restraint."

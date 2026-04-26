@@ -1,0 +1,432 @@
+id: ectopic_pregnancy
+severity: critical
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 34
+  sex: female
+  chief_complaint: lower abdominal pain three days
+  patient_card: 34-year-old woman presents with three days of lower abdominal pain and fatigue. Last menstrual period is uncertain.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 28
+  sex: female
+  chief_complaint: sudden pelvic pain and fainting
+  patient_card: 28-year-old woman with sudden-onset severe right pelvic pain this morning and a syncopal episode. Appears
+    pale and diaphoretic.
+- variant_id: v3
+  variant_type: atypical
+  age: 41
+  sex: female
+  chief_complaint: dizziness and shoulder discomfort
+  patient_card: 41-year-old woman presenting with near-syncope and vague shoulder discomfort. Dismissed mild abdominal cramping
+    as indigestion.
+symptom_distribution:
+  pain_location:
+    prob: 0.95
+    responses:
+    - Lower belly, more on the right side.
+    - Down low, right of center, deep inside.
+    - Right lower pelvic area.
+    denial_responses:
+    - The pain is in my chest, not my belly.
+    - It's more in my back than anywhere else.
+  pain_character:
+    prob: 0.9
+    responses:
+    - It feels like a sharp, stabbing pain.
+    - It's a deep, constant cramping ache.
+    - Very sharp and localized.
+    denial_responses:
+    - It's not really pain, just a vague discomfort.
+    - I wouldn't say it hurts, just feels heavy.
+  pain_onset:
+    prob: 0.9
+    responses:
+    - It started gradually a few days ago but got much worse today.
+    - It hit me suddenly this morning out of nowhere.
+    - Been building up since yesterday evening.
+    denial_responses:
+    - I've had this for months.
+    - It comes and goes over the last few years.
+  pain_radiation:
+    prob: 0.4
+    responses:
+    - Sometimes I feel it up in my right shoulder.
+    - It shoots down into my groin a bit.
+    - I have this weird ache in my shoulder tip.
+    denial_responses:
+    - No, it stays right in my lower belly.
+    - It doesn't travel anywhere else.
+  pain_severity:
+    prob: 0.95
+    responses:
+    - It's an 8 out of 10 right now.
+    - Very bad, at least a 9.
+    - It's excruciating, maybe a 7 or 8.
+    denial_responses:
+    - It's barely a 2 out of 10.
+    - Not severe at all, just annoying.
+  pain_timing:
+    prob: 0.85
+    responses:
+    - It's pretty constant now.
+    - It comes in waves but never fully goes away.
+    - It's been steady for the last few hours.
+    denial_responses:
+    - It only lasts a few seconds and disappears.
+    - It's completely gone right now.
+  pain_triggers:
+    prob: 0.7
+    responses:
+    - Moving around or walking makes it much worse.
+    - Pressing on it definitely hurts more.
+    - Any sudden movement sends a jolt of pain.
+    denial_responses:
+    - Nothing really makes it better or worse.
+    - Eating makes it worse, but movement is fine.
+  nausea_vomiting:
+    prob: 0.6
+    responses:
+    - I feel really nauseous, but haven't thrown up.
+    - I threw up once this morning.
+    - Just waves of nausea.
+    denial_responses:
+    - No nausea at all.
+    - My stomach feels fine.
+  fever_chills:
+    prob: 0.15
+    responses:
+    - I felt a little warm earlier.
+    - Maybe some mild chills.
+    - I haven't checked, but I feel a bit flushed.
+    denial_responses:
+    - No fever or chills.
+    - My temperature has been totally normal.
+  cough:
+    prob: 0.05
+    responses:
+    - Just a slight dry cough.
+    - A little tickle in my throat.
+    - Occasional cough, nothing major.
+    denial_responses:
+    - No cough at all.
+    - Breathing is totally fine, no coughing.
+  shortness_of_breath:
+    prob: 0.3
+    responses:
+    - I feel a bit winded when I stand up.
+    - It's hard to catch my breath when the pain spikes.
+    - I feel a little breathless and dizzy.
+    denial_responses:
+    - Breathing is completely normal.
+    - No shortness of breath.
+  chest_pain_probe:
+    prob: 0.1
+    responses:
+    - My chest feels a little tight, maybe from anxiety.
+    - Just a flutter, no real pain.
+    - Only when I take a really deep breath.
+    denial_responses:
+    - No chest pain whatsoever.
+    - My chest feels completely fine.
+  headache_probe:
+    prob: 0.15
+    responses:
+    - I have a mild headache, probably from stress.
+    - Just a dull ache in my temples.
+    - A little lightheaded, which feels like a headache.
+    denial_responses:
+    - No headache.
+    - My head is clear.
+  visual_neuro_changes:
+    prob: 0.4
+    responses:
+    - I got really dizzy and saw stars earlier.
+    - I actually passed out for a second this morning.
+    - I feel very lightheaded when I stand.
+    denial_responses:
+    - No vision changes or dizziness.
+    - I feel completely alert and steady.
+  palpitations:
+    prob: 0.45
+    responses:
+    - My heart feels like it's racing.
+    - I can feel my pulse pounding in my chest.
+    - It feels like my heart is beating really fast.
+    denial_responses:
+    - No, my heartbeat feels normal.
+    - I haven't noticed any racing heart.
+  lmp:
+    prob: 0.95
+    responses:
+    - About 6 weeks ago, but they've been irregular.
+    - Maybe mid-last month? I honestly don't track it carefully.
+    - Six weeks ago I think, kind of overdue for this one.
+    denial_responses:
+    - Two weeks ago, totally regular.
+    - Last week, came right on schedule.
+  pregnancy_possibility:
+    prob: 0.85
+    responses:
+    - It's possible, I haven't been careful.
+    - I suppose so, I'm not using contraception.
+    - Maybe, but my periods have been weird.
+    denial_responses:
+    - No, I had my tubes tied years ago.
+    - Definitely not, we're not trying and using protection.
+  urinary_symptoms:
+    prob: 0.15
+    responses:
+    - I've had to pee a little more often.
+    - Maybe a slight pressure when I pee.
+    - Just going a bit more frequently than usual.
+    denial_responses:
+    - No burning or frequent urination.
+    - Urine looks and feels completely normal.
+  bowel_changes:
+    prob: 0.25
+    responses:
+    - I feel like I need to have a bowel movement but can't.
+    - A little bit of diarrhea yesterday.
+    - Just some pressure down there.
+    denial_responses:
+    - Bowel movements are completely normal.
+    - No diarrhea or constipation.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - I've been a bit thirsty today.
+    - Drinking a little more water than usual.
+    - Maybe slightly more thirsty.
+    denial_responses:
+    - No unusual thirst.
+    - Not drinking or peeing more than normal.
+  medications:
+    prob: 0.3
+    responses:
+    - Just some ibuprofen for the pain.
+    - I took Tylenol earlier.
+    - Nothing besides over-the-counter painkillers.
+    denial_responses:
+    - I don't take any medications.
+    - Nothing at all.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No known drug allergies.
+    - None that I know of.
+  past_medical_history:
+    prob: 0.4
+    responses:
+    - I had chlamydia a few years ago.
+    - I've had pelvic inflammatory disease before.
+    - I had an ectopic pregnancy on the other side two years ago.
+    denial_responses:
+    - I'm generally very healthy.
+    - No major medical problems in the past.
+  family_history:
+    prob: 0.1
+    responses:
+    - My mom has high blood pressure.
+    - My sister had endometriosis.
+    - Nothing major runs in the family.
+    denial_responses:
+    - No significant family medical history.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.2
+    responses:
+    - I smoke about half a pack a day.
+    - I vape occasionally.
+    - I drink socially on weekends.
+    denial_responses:
+    - I don't smoke, drink, or use drugs.
+    - No recent travel or sick contacts.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 108, BP 104/68, RR 18, Temp 37.1°C, SpO2 98%
+    - HR 125, BP 88/50, RR 22, Temp 36.8°C, SpO2 97%
+    - HR 95, BP 112/72, RR 16, Temp 37.0°C, SpO2 99%
+  general_appearance:
+    findings:
+    - Patient appears in moderate distress, clutching lower abdomen.
+    - Pale, diaphoretic, and anxious appearing.
+    - Alert and oriented, resting in bed, appears mildly uncomfortable.
+  mental_status:
+    findings:
+    - Alert and oriented x3, normal mentation.
+    - Awake but lethargic, answers questions appropriately.
+    - Alert, oriented, GCS 15.
+  heent:
+    findings:
+    - Normocephalic, atraumatic, pale conjunctivae.
+    - Pupils equal and reactive, mucous membranes slightly dry.
+    - Unremarkable HEENT exam, pink conjunctivae.
+  neck_exam:
+    findings:
+    - Supple, no JVD, no lymphadenopathy.
+    - Trachea midline, no meningismus, flat neck veins.
+    - Normal range of motion, no masses or bruits.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs, rubs, or gallops.
+    - Regular rate and rhythm, normal S1/S2.
+    - Fast regular rhythm, no extra heart sounds.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, no wheezes or crackles.
+    - Good air movement bilaterally, unlabored breathing.
+    - Lungs clear bilaterally, normal respiratory effort.
+  peripheral_perfusion:
+    findings:
+    - Pulses 2+ bilaterally, capillary refill 2 seconds.
+    - Cool extremities, thready radial pulses, capillary refill 4 seconds.
+    - Warm and well perfused, no lower extremity edema.
+  abdominal_palpation:
+    findings:
+    - Tenderness in right lower quadrant, mild voluntary guarding, no rebound.
+    - Diffuse lower abdominal tenderness, right worse than left, focal rebound tenderness present.
+    - Focal RLQ tenderness, negative McBurney, mild suprapubic discomfort.
+  cva_tenderness:
+    findings:
+    - No costovertebral angle tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - No pain on percussion of the flank.
+  pelvic_exam:
+    findings:
+    - Right adnexal tenderness, closed cervix, scant old blood in vault.
+    - Marked right adnexal fullness and tenderness, cervical motion tenderness present.
+    - Mild bilateral adnexal tenderness, no visible bleeding, cervix closed.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact.
+    - Grossly intact cranial nerves.
+    - No focal cranial nerve deficits.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities, sensation intact.
+    - Normal tone and bulk, symmetric reflexes.
+    - Moves all extremities well, no sensory deficits.
+  skin_exam:
+    findings:
+    - Skin is cool and clammy, no rashes.
+    - Pale skin, diaphoretic, normal turgor.
+    - Warm, dry, no petechiae or purpura.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness, normal range of motion in joints.
+    - Non-tender to palpation over the chest wall.
+    - No reproducible chest pain on palpation.
+test_sensitivities:
+  beta_hcg_quant:
+    prob_abnormal: 0.98
+    values_abnormal:
+    - value: 2,840 mIU/mL
+      flag: H
+    - value: 4,120 mIU/mL
+      flag: H
+    - value: 890 mIU/mL
+      flag: H
+    value_normal: <5 mIU/mL (negative)
+    is_confirmatory: false
+  urine_pregnancy_qualitative:
+    prob_abnormal: 0.97
+    values_abnormal:
+    - value: Positive
+      flag: H
+    - value: Positive
+      flag: H
+    - value: Positive (faint)
+      flag: H
+    value_normal: Negative
+    is_confirmatory: false
+  pelvic_ultrasound_tv:
+    prob_abnormal: 0.9
+    values_abnormal:
+    - value: No IUP. 2.3 cm complex right adnexal mass. Free fluid in cul-de-sac.
+      flag: CRIT
+    - value: Empty uterus with thickened endometrium. 3.1 cm tubal ring right adnexa. Moderate free fluid.
+      flag: CRIT
+    - value: No intrauterine gestation visualized. Small right adnexal mass, trace free fluid.
+      flag: H
+    value_normal: Intrauterine pregnancy with fetal pole and cardiac activity, no free fluid.
+    is_confirmatory: true
+  ct_abdomen_pelvis:
+    prob_abnormal: 0.75
+    values_abnormal:
+    - value: Complex right adnexal mass, moderate free pelvic fluid, no appendiceal abnormality.
+      flag: H
+    - value: Hyperdense fluid in cul-de-sac, right adnexal mass, appendix unremarkable.
+      flag: H
+    - value: Nonspecific pelvic inflammatory changes, small volume free fluid.
+      flag: H
+    value_normal: Unremarkable abdomen and pelvis.
+    is_confirmatory: false
+  cbc:
+    prob_abnormal: 0.6
+    values_abnormal:
+    - value: Hgb 10.8 g/dL [L], WBC 11,200/μL, Plt 245k
+      flag: L
+    - value: Hgb 8.2 g/dL [L], WBC 9,800/μL, Plt 210k
+      flag: CRIT
+    - value: Hgb 12.1 g/dL, WBC 13,400/μL [H], Plt 260k
+      flag: H
+    value_normal: Hgb 13.4, WBC 7,800, Plt 250k (all within normal limits)
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.2
+    values_abnormal:
+    - value: Na 138, K 4.0, Cl 102, HCO3 22, BUN 24 [H], Cr 1.1
+      flag: H
+    - value: Na 140, K 3.8, Cl 100, HCO3 20 [L], BUN 18, Cr 0.9
+      flag: L
+    - value: Na 136, K 4.2, Cl 98, HCO3 24, BUN 20, Cr 1.0
+      flag: N
+    value_normal: All values within normal limits.
+    is_confirmatory: false
+  lactate:
+    prob_abnormal: 0.3
+    values_abnormal:
+    - value: 2.8 mmol/L
+      flag: H
+    - value: 4.1 mmol/L
+      flag: CRIT
+    - value: 2.2 mmol/L
+      flag: H
+    value_normal: 1.1 mmol/L
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - beta_hcg_quant
+  - urine_pregnancy_qualitative
+  require: abnormal
+- any_of:
+  - pelvic_ultrasound_tv
+  - ct_abdomen_pelvis
+  require: abnormal
+decoy:
+  test: ct_abdomen_pelvis
+  biased_finding: Nonspecific pelvic inflammatory changes, small volume free fluid.
+  decoy_toward_disease: appendicitis
+  requires_followup:
+  - beta_hcg_quant
+  - urine_pregnancy_qualitative
+  - pelvic_ultrasound_tv
+red_herring:
+  disease: appendicitis
+  shared_features:
+  - pain_location
+  - nausea_vomiting
+  - abdominal_palpation
+  - fever_chills
+  discriminating_features:
+  - lmp
+  - pregnancy_possibility
+  - pelvic_exam
+  - beta_hcg_quant

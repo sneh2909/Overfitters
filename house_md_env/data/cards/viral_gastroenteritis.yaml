@@ -1,0 +1,416 @@
+id: viral_gastroenteritis
+severity: stable
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 25
+  sex: male
+  chief_complaint: stomach cramps and watery diarrhea
+  patient_card: 25-year-old male presents with 24 hours of diffuse stomach cramps, frequent watery stools, and nausea. Sick
+    contacts at work.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 35
+  sex: female
+  chief_complaint: severe vomiting and unable to drink
+  patient_card: 35-year-old female presents with intractable vomiting and diarrhea for two days. She feels lightheaded when
+    standing and has not kept fluids down.
+- variant_id: v3
+  variant_type: atypical
+  age: 65
+  sex: male
+  chief_complaint: dizziness and generalized weakness
+  patient_card: 65-year-old male presents with near-syncope and profound weakness. Upon further questioning, he admits to
+    several days of loose stools and poor appetite.
+symptom_distribution:
+  pain_location:
+    prob: 0.85
+    responses:
+    - It's all over my belly.
+    - Mostly around my belly button.
+    - It's a generalized cramping everywhere in my stomach.
+    denial_responses:
+    - I don't really have pain, just nausea.
+    - No specific pain, just a lot of rumbling.
+  pain_character:
+    prob: 0.85
+    responses:
+    - It's a cramping feeling.
+    - Feels like my stomach is tying in knots.
+    - Dull, achy cramps that come in waves.
+    denial_responses:
+    - It's not painful, just uncomfortable.
+    - I wouldn't call it pain.
+  pain_onset:
+    prob: 0.9
+    responses:
+    - It started suddenly yesterday morning.
+    - Hit me out of nowhere last night.
+    - Started gradually over the last day or two.
+    denial_responses:
+    - I haven't had any pain.
+    - No pain to speak of.
+  pain_radiation:
+    prob: 0.1
+    responses:
+    - Sometimes it shoots to my back when I cramp.
+    - It just radiates all over my stomach.
+    - Maybe a little to my lower back.
+    denial_responses:
+    - No, it stays right in my belly.
+    - Doesn't travel anywhere else.
+  pain_severity:
+    prob: 0.85
+    responses:
+    - It's about a 5 out of 10 when the cramps hit.
+    - Maybe a 6, it's pretty uncomfortable.
+    - It fluctuates, but peaks at a 7 before I use the bathroom.
+    denial_responses:
+    - It's not severe at all.
+    - Barely a 1 or 2.
+  pain_timing:
+    prob: 0.9
+    responses:
+    - It comes and goes in waves.
+    - It's intermittent, usually right before I have diarrhea.
+    - Spasms that last a few minutes then fade.
+    denial_responses:
+    - It's just a constant dull feeling.
+    - Doesn't really change.
+  pain_triggers:
+    prob: 0.8
+    responses:
+    - Eating or drinking anything makes the cramps worse.
+    - Moving around too much upsets my stomach.
+    - Trying to eat sets it off immediately.
+    denial_responses:
+    - Nothing specific makes it worse.
+    - It just happens randomly.
+  nausea_vomiting:
+    prob: 0.95
+    responses:
+    - Yes, I've been throwing up everything I drink.
+    - Lots of nausea and I vomited three times today.
+    - Just dry heaving now, there's nothing left in my stomach.
+    denial_responses:
+    - No vomiting, just diarrhea.
+    - I feel a little queasy but haven't thrown up.
+  fever_chills:
+    prob: 0.6
+    responses:
+    - I felt feverish and had some chills last night.
+    - I've been sweating and shivering.
+    - My temperature was 100.2 at home.
+    denial_responses:
+    - No fever that I know of.
+    - Haven't felt hot or cold.
+  cough:
+    prob: 0.05
+    responses:
+    - Just a little dry cough.
+    - Maybe a slight tickle in my throat.
+    - I coughed a bit yesterday.
+    denial_responses:
+    - No cough at all.
+    - Breathing is fine, no coughing.
+  shortness_of_breath:
+    prob: 0.05
+    responses:
+    - Only when I'm actively throwing up.
+    - I feel a bit winded because I'm so weak.
+    - Just a little out of breath when I stand up fast.
+    denial_responses:
+    - No shortness of breath.
+    - Breathing is completely normal.
+  chest_pain_probe:
+    prob: 0.05
+    responses:
+    - My chest hurts a bit from dry heaving.
+    - Just some soreness in my ribs from vomiting.
+    - A little heartburn, but no real chest pain.
+    denial_responses:
+    - No chest pain at all.
+    - My chest feels fine.
+  headache_probe:
+    prob: 0.4
+    responses:
+    - I have a dull headache, probably from not drinking water.
+    - My head is pounding a bit.
+    - Just a mild ache all over my head.
+    denial_responses:
+    - No headache.
+    - My head feels fine.
+  visual_neuro_changes:
+    prob: 0.1
+    responses:
+    - I got a little dizzy and my vision blurred when I stood up.
+    - Just lightheadedness.
+    - Felt faint on the way to the bathroom.
+    denial_responses:
+    - No vision changes or numbness.
+    - Everything is normal neurologically.
+  palpitations:
+    prob: 0.2
+    responses:
+    - My heart feels like it's beating fast when I stand.
+    - A little racing heart, probably because I'm dehydrated.
+    - Just a flutter when I feel weak.
+    denial_responses:
+    - No heart racing.
+    - Heart feels normal.
+  lmp:
+    prob: 0.5
+    responses:
+    - It was two weeks ago, totally normal.
+    - Last month, right on schedule.
+    - I just finished my period a few days ago.
+    denial_responses:
+    - I don't get periods anymore.
+    - Not applicable.
+  pregnancy_possibility:
+    prob: 0.5
+    responses:
+    - I suppose it's possible, but unlikely.
+    - Maybe, we aren't using protection.
+    - There is a small chance.
+    denial_responses:
+    - No, definitely not pregnant.
+    - Zero chance.
+  urinary_symptoms:
+    prob: 0.4
+    responses:
+    - My urine is really dark and I haven't gone much.
+    - I haven't peed since yesterday morning.
+    - Just going a lot less than usual.
+    denial_responses:
+    - Urinating normally.
+    - No burning or changes in my urine.
+  bowel_changes:
+    prob: 0.95
+    responses:
+    - I've had watery diarrhea like ten times today.
+    - Constant liquid stools, no blood though.
+    - Everything runs right through me.
+    denial_responses:
+    - My bowels are actually fine, just vomiting.
+    - No diarrhea yet.
+  polyuria_polydipsia:
+    prob: 0.3
+    responses:
+    - I'm super thirsty but I can't keep anything down.
+    - My mouth is incredibly dry.
+    - I want to drink a gallon of water but I know I'll throw it up.
+    denial_responses:
+    - Not unusually thirsty.
+    - No changes in thirst.
+  medications:
+    prob: 0.3
+    responses:
+    - I took some Pepto-Bismol but it didn't help.
+    - Just some Tylenol for the fever.
+    - I tried an anti-nausea pill I had left over.
+    denial_responses:
+    - I don't take any medications.
+    - Nothing at all.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No allergies.
+    - None that I know of.
+  past_medical_history:
+    prob: 0.2
+    responses:
+    - I have mild high blood pressure.
+    - I had my gallbladder out years ago.
+    - Just some mild asthma.
+    denial_responses:
+    - I'm generally very healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.1
+    responses:
+    - My dad has high blood pressure.
+    - Heart disease runs in my family.
+    - My mother had diabetes.
+    denial_responses:
+    - No significant family history.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.8
+    responses:
+    - My kids had a stomach bug last week.
+    - A few people at work have been out with the same thing.
+    - I ate at a sketchy buffet two days ago.
+    denial_responses:
+    - No sick contacts or travel.
+    - Haven't been anywhere unusual.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 105, BP 110/70, RR 16, Temp 37.8°C, SpO2 99%
+    - HR 115, BP 95/60, RR 18, Temp 37.2°C, SpO2 98%
+    - HR 90, BP 120/80, RR 14, Temp 37.0°C, SpO2 100%
+  general_appearance:
+    findings:
+    - Mildly ill-appearing, holding emesis basin, dry mucous membranes.
+    - Tired appearing, pale, resting comfortably in bed.
+    - Non-toxic, alert, appears mildly dehydrated.
+  mental_status:
+    findings:
+    - Alert and oriented x3, normal speech.
+    - Awake, slightly lethargic but easily arousable and oriented.
+    - Alert, appropriate, follows commands.
+  heent:
+    findings:
+    - Mucous membranes are dry. No pharyngeal erythema.
+    - Tacky oral mucosa, sunken eyes, PERRL.
+    - Moist mucous membranes, normal conjunctivae.
+  neck_exam:
+    findings:
+    - Supple, no JVD, no lymphadenopathy.
+    - Full range of motion, no meningismus.
+    - Supple neck, trachea midline, no masses.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs.
+    - Regular rate and rhythm, normal S1/S2.
+    - Mild tachycardia, no rubs or gallops.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, no wheezes.
+    - Good air entry bilaterally, no crackles.
+    - Lungs clear, normal respiratory effort.
+  peripheral_perfusion:
+    findings:
+    - Capillary refill 3 seconds, pulses 2+ and symmetric.
+    - Slightly delayed capillary refill, no edema.
+    - Warm extremities, brisk capillary refill.
+  abdominal_palpation:
+    findings:
+    - Hyperactive bowel sounds, diffuse mild tenderness, soft, no rebound or guarding.
+    - Soft, non-distended, mild periumbilical tenderness, negative McBurney's point tenderness.
+    - Hyperactive bowel sounds, non-tender to palpation, no masses.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - No flank pain on percussion.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Normal external genitalia, deferred internal exam.
+    - Not indicated, deferred.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact.
+    - Grossly intact CN II-XII.
+    - No focal cranial nerve deficits.
+  motor_sensory:
+    findings:
+    - 5/5 strength throughout, sensation intact.
+    - Normal bulk and tone, no focal deficits.
+    - Moves all extremities well, normal gait.
+  skin_exam:
+    findings:
+    - Decreased skin turgor, no rashes.
+    - Warm and dry, mild tenting of skin.
+    - Normal turgor, no petechiae or purpura.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness, normal ROM.
+    - Non-tender to palpation over chest wall.
+    - No joint effusions or tenderness.
+test_sensitivities:
+  cbc:
+    prob_abnormal: 0.4
+    values_abnormal:
+    - value: WBC 11.5 x10^3/uL, Hgb 15.2 g/dL, Plt 250k
+      flag: H
+    - value: WBC 12.1 x10^3/uL, Hgb 14.8 g/dL, Plt 280k
+      flag: H
+    - value: WBC 10.8 x10^3/uL, Hgb 16.1 g/dL (hemoconcentration), Plt 210k
+      flag: H
+    value_normal: WBC 7.5 x10^3/uL, Hgb 14.0 g/dL, Plt 240k
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.6
+    values_abnormal:
+    - value: Na 138, K 3.2 [L], Cl 105, HCO3 22, BUN 28 [H], Cr 1.2 [H], Gluc 95
+      flag: H
+    - value: Na 140, K 3.4 [L], Cl 102, HCO3 24, BUN 32 [H], Cr 1.4 [H], Gluc 105
+      flag: H
+    - value: Na 136, K 3.1 [L], Cl 100, HCO3 20, BUN 25 [H], Cr 1.1, Gluc 88
+      flag: L
+    value_normal: Na 140, K 4.0, Cl 102, HCO3 24, BUN 15, Cr 0.8, Gluc 90
+    is_confirmatory: false
+  lipase:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: 85 U/L
+      flag: H
+    - value: 90 U/L
+      flag: H
+    - value: 78 U/L
+      flag: H
+    value_normal: 35 U/L
+    is_confirmatory: false
+  urinalysis:
+    prob_abnormal: 0.7
+    values_abnormal:
+    - value: SG 1.030, Ketones 2+, no LE, no nitrites
+      flag: H
+    - value: SG 1.035, Ketones 3+, no blood, no WBCs
+      flag: H
+    - value: SG 1.028, Ketones 1+, trace protein, no infection signs
+      flag: H
+    value_normal: SG 1.015, negative ketones, negative LE/nitrite
+    is_confirmatory: false
+  ct_abdomen_pelvis:
+    prob_abnormal: 0.1
+    values_abnormal:
+    - value: Fluid-filled loops of bowel, normal appendix.
+      flag: N
+    - value: Mild mesenteric adenopathy, appendix unremarkable.
+      flag: N
+    - value: Prominent small bowel folds consistent with enteritis, normal appendix.
+      flag: N
+    value_normal: Unremarkable CT abdomen and pelvis. Normal appendix.
+    is_confirmatory: false
+  abdominal_ultrasound:
+    prob_abnormal: 0.1
+    values_abnormal:
+    - value: Hyperperistalsis of small bowel, appendix normal.
+      flag: N
+    - value: Trace free fluid in RLQ, appendix compressible and normal.
+      flag: N
+    - value: Prominent bowel loops, no acute cholecystitis or appendicitis.
+      flag: N
+    value_normal: Normal abdominal ultrasound. Appendix normal where visualized.
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - ct_abdomen_pelvis
+  - abdominal_ultrasound
+  require: normal
+decoy:
+  test: cbc
+  biased_finding: WBC 11.5 x10^3/uL (mildly elevated), Hgb 14.2 g/dL, Plt 250k
+  decoy_toward_disease: appendicitis
+  requires_followup:
+  - ct_abdomen_pelvis
+  - abdominal_ultrasound
+red_herring:
+  disease: appendicitis
+  shared_features:
+  - nausea_vomiting
+  - pain_location
+  - fever_chills
+  - abdominal_palpation
+  discriminating_features:
+  - bowel_changes
+  - ct_abdomen_pelvis
+  - abdominal_ultrasound

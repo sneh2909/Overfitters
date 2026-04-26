@@ -1,0 +1,417 @@
+id: subarachnoid_hemorrhage
+severity: critical
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 45
+  sex: female
+  chief_complaint: worst headache of my life
+  patient_card: 45-year-old female presenting with a sudden, explosive headache that began 2 hours ago. She describes it as
+    the worst of her life and is experiencing photophobia.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 60
+  sex: male
+  chief_complaint: sudden head pain and vomiting
+  patient_card: 60-year-old male brought in by EMS after sudden onset of severe head pain followed by intractable vomiting
+    and declining mental status. BP is markedly elevated.
+- variant_id: v3
+  variant_type: atypical
+  age: 75
+  sex: female
+  chief_complaint: passed out and feeling confused
+  patient_card: 75-year-old female who experienced a brief syncopal episode at home. Now awake but confused, complaining of
+    a stiff neck and generalized discomfort.
+symptom_distribution:
+  headache_probe:
+    prob: 0.99
+    responses:
+    - It hit me like a thunderclap, absolutely unbearable.
+    - This is the worst headache I have ever had in my entire life.
+    - My head feels like it exploded instantly.
+    denial_responses:
+    - I don't really have a headache right now.
+    - Just a mild ache, nothing serious.
+  pain_onset:
+    prob: 0.95
+    responses:
+    - It started instantly, out of nowhere.
+    - Like a light switch, one second fine, the next in agony.
+    - It peaked in seconds, totally sudden.
+    denial_responses:
+    - It's been building up slowly over a few days.
+    - It came on gradually this morning.
+  pain_severity:
+    prob: 0.95
+    responses:
+    - Ten out of ten, easily.
+    - Off the charts, I can't even think straight.
+    - Worse than anything I've ever felt.
+    denial_responses:
+    - It's not too bad, maybe a 3 out of 10.
+    - It's uncomfortable but manageable.
+  pain_location:
+    prob: 0.9
+    responses:
+    - All over my head, but especially the back.
+    - Base of my skull and into my neck.
+    - It feels like my whole brain is throbbing.
+    denial_responses:
+    - It's just in my stomach.
+    - My chest is what hurts.
+  pain_character:
+    prob: 0.85
+    responses:
+    - Explosive and bursting pressure.
+    - A sharp, blinding throb.
+    - Like my head is being crushed in a vise.
+    denial_responses:
+    - It's more of a dull, achy feeling.
+    - Just a mild cramping.
+  pain_radiation:
+    prob: 0.6
+    responses:
+    - It shoots down into my neck and back.
+    - Radiates right down my spine.
+    - My shoulders and neck are incredibly stiff and painful.
+    denial_responses:
+    - No, it stays right in one spot.
+    - It doesn't travel anywhere else.
+  pain_timing:
+    prob: 0.85
+    responses:
+    - It hasn't stopped for a second since it started.
+    - Constant, unrelenting pain.
+    - It's been a steady, horrible ache the whole time.
+    denial_responses:
+    - It comes and goes in waves.
+    - It only hurts for a few minutes at a time.
+  pain_triggers:
+    prob: 0.5
+    responses:
+    - The light makes it so much worse.
+    - Moving my head even a little bit is agonizing.
+    - Loud noises and bright lights are killing me.
+    denial_responses:
+    - Nothing really makes it better or worse.
+    - It hurts the same no matter what I do.
+  nausea_vomiting:
+    prob: 0.8
+    responses:
+    - I threw up twice already.
+    - I feel incredibly nauseous and keep retching.
+    - I felt sick to my stomach right after the pain hit.
+    denial_responses:
+    - No nausea at all.
+    - My stomach feels fine.
+  visual_neuro_changes:
+    prob: 0.6
+    responses:
+    - Things look a bit blurry and double.
+    - I feel really out of it and confused.
+    - My vision went dark for a second when it started.
+    denial_responses:
+    - My vision is perfectly normal.
+    - No numbness, weakness, or vision issues.
+  fever_chills:
+    prob: 0.1
+    responses:
+    - I feel a little flushed.
+    - Maybe a slight fever.
+    - I had some mild chills earlier.
+    denial_responses:
+    - No fever or chills.
+    - My temperature feels normal.
+  cough:
+    prob: 0.05
+    responses:
+    - Just a small dry cough.
+    - I coughed a bit earlier today.
+    - A little tickle in my throat.
+    denial_responses:
+    - No cough at all.
+    - I haven't been coughing.
+  shortness_of_breath:
+    prob: 0.1
+    responses:
+    - I feel a little breathless from the pain.
+    - Breathing feels a bit fast.
+    - I was panting when the pain first hit.
+    denial_responses:
+    - Breathing is fine.
+    - No shortness of breath.
+  chest_pain_probe:
+    prob: 0.05
+    responses:
+    - My chest feels a little tight.
+    - Maybe a twinge in my chest.
+    - Just some mild pressure.
+    denial_responses:
+    - No chest pain.
+    - My chest feels completely normal.
+  palpitations:
+    prob: 0.15
+    responses:
+    - My heart is racing from the pain.
+    - I can feel my heart pounding in my chest.
+    - It feels like my heart is beating really fast.
+    denial_responses:
+    - No heart racing.
+    - My heartbeat feels normal.
+  lmp:
+    prob: 0.05
+    responses:
+    - A couple of weeks ago.
+    - Last month, it was normal.
+    - I'm in menopause.
+    denial_responses:
+    - I don't get periods anymore.
+    - Not applicable.
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I suppose it's possible.
+    - Maybe, but unlikely.
+    - I haven't taken a test.
+    denial_responses:
+    - Definitely not.
+    - No chance at all.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - I had to pee a lot earlier.
+    - Maybe a little urgency.
+    - Just normal urination.
+    denial_responses:
+    - No burning or blood.
+    - Urine is completely normal.
+  bowel_changes:
+    prob: 0.05
+    responses:
+    - A little constipated lately.
+    - Maybe some mild diarrhea yesterday.
+    - Just normal bowel movements.
+    denial_responses:
+    - No changes in my bowels.
+    - Everything is normal down there.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - I've been a bit thirsty.
+    - Drinking a lot of water today.
+    - Peeing a bit more than usual.
+    denial_responses:
+    - No unusual thirst.
+    - Not drinking or peeing more than normal.
+  medications:
+    prob: 0.5
+    responses:
+    - I take blood pressure medicine.
+    - Just some ibuprofen for headaches usually.
+    - I'm on a statin and a beta blocker.
+    denial_responses:
+    - I don't take any prescription meds.
+    - Nothing but vitamins.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No allergies that I know of.
+    - I'm not allergic to any medications.
+  past_medical_history:
+    prob: 0.6
+    responses:
+    - I have high blood pressure.
+    - I've been told I have hypertension and I smoke.
+    - I have polycystic kidney disease.
+    denial_responses:
+    - I'm generally very healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.3
+    responses:
+    - My aunt died of a brain aneurysm.
+    - My father had a stroke at a young age.
+    - There's some history of sudden death in my family.
+    denial_responses:
+    - No family history of anything like this.
+    - Everyone in my family is pretty healthy.
+  social_travel_exposure:
+    prob: 0.5
+    responses:
+    - I smoke about a pack a day.
+    - I drink a few beers on the weekends and smoke.
+    - I use a vaporizer daily.
+    denial_responses:
+    - I don't smoke or use drugs.
+    - No recent travel or sick contacts.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 95, BP 185/105, RR 18, Temp 37.1°C, SpO2 98%
+    - HR 110, BP 210/115, RR 22, Temp 37.3°C, SpO2 96%
+    - HR 88, BP 160/90, RR 16, Temp 36.9°C, SpO2 99%
+  general_appearance:
+    findings:
+    - Patient is in acute distress, clutching head, keeping eyes closed due to photophobia.
+    - Lethargic, groaning in pain, appears acutely ill and diaphoretic.
+    - Awake but uncomfortable, shielding eyes from room light, pale.
+  mental_status:
+    findings:
+    - GCS 15, oriented x3, but easily distracted by severe pain.
+    - GCS 13 (E3 V4 M6), confused, slow to respond to questions.
+    - GCS 14, oriented to person and place but not time, lethargic.
+  heent:
+    findings:
+    - Pupils equal and reactive. Marked photophobia. No obvious papilledema.
+    - Right pupil 5mm and sluggish, left 3mm and brisk. Subhyaloid hemorrhage noted on fundoscopy.
+    - Pupils 3mm bilaterally. Severe photophobia. Tympanic membranes clear.
+  neck_exam:
+    findings:
+    - Significant nuchal rigidity. Positive Kernig's and Brudzinski's signs.
+    - Mild resistance to passive neck flexion. No JVD or lymphadenopathy.
+    - Marked meningismus, patient refuses to flex neck due to pain.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact. No facial droop.
+    - Partial right CN III palsy with ptosis and dilated pupil. Other CNs intact.
+    - CN II-XII grossly intact, though exam limited by photophobia and pain.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities. Sensation intact globally. Normal reflexes.
+    - Mild pronator drift on the left. Sensation intact. Reflexes 2+ symmetric.
+    - Moves all extremities spontaneously with 5/5 strength. Gait not tested.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm. No murmurs, rubs, or gallops.
+    - Regular rate and rhythm. Normal S1/S2.
+    - Slightly tachycardic, otherwise unremarkable cardiac exam.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally. No wheezes or crackles.
+    - Normal breath sounds in all lung fields.
+    - Lungs clear, good air movement bilaterally.
+  peripheral_perfusion:
+    findings:
+    - 2+ pulses x4, capillary refill < 2 seconds. No edema.
+    - Warm extremities, normal pulses, no calf tenderness.
+    - Normal peripheral perfusion, no cyanosis or clubbing.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended. Normal bowel sounds.
+    - Abdomen is soft, no guarding or rebound tenderness.
+    - Benign abdomen, no masses or organomegaly.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - Bilateral flanks non-tender.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Exam deferred, not clinically indicated.
+    - External genitalia normal, no exam performed.
+  skin_exam:
+    findings:
+    - No rashes, petechiae, or purpura. Skin is warm and dry.
+    - Diaphoretic, pale. No rash noted.
+    - Normal skin turgor, no lesions or ecchymosis.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness. Joints have normal range of motion.
+    - Non-tender to palpation over the chest wall.
+    - MSK exam unremarkable, no reproducible chest pain.
+test_sensitivities:
+  ct_head_noncontrast:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: Hyperdense material in the basal cisterns and Sylvian fissures consistent with acute subarachnoid hemorrhage.
+      flag: CRIT
+    - value: Diffuse subarachnoid hemorrhage with early hydrocephalus. No midline shift.
+      flag: CRIT
+    - value: Trace hyperdensity in the interhemispheric fissure suspicious for small subarachnoid hemorrhage.
+      flag: H
+    value_normal: No acute intracranial hemorrhage, mass effect, or midline shift.
+    is_confirmatory: true
+  lumbar_puncture:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: Opening pressure 24 cm H2O. Fluid is grossly bloody.
+      flag: H
+    - value: Opening pressure 28 cm H2O. Fluid is xanthochromic.
+      flag: H
+    - value: Opening pressure 20 cm H2O. Pink-tinged fluid.
+      flag: H
+    value_normal: Opening pressure 14 cm H2O. Fluid is clear and colorless.
+    is_confirmatory: false
+  csf_analysis:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: 'Tube 1: 45,000 RBCs. Tube 4: 43,000 RBCs. Xanthochromia present. WBC 12.'
+      flag: CRIT
+    - value: 'Tube 1: 120,000 RBCs. Tube 4: 118,000 RBCs. Xanthochromia positive. Protein 85.'
+      flag: CRIT
+    - value: 'Tube 1: 15,000 RBCs. Tube 4: 14,500 RBCs. Xanthochromia present.'
+      flag: CRIT
+    value_normal: 0 RBCs, 2 WBCs, Protein 30, Glucose 60. No xanthochromia.
+    is_confirmatory: true
+  ecg:
+    prob_abnormal: 0.4
+    values_abnormal:
+    - value: Sinus rhythm with deep, symmetric T-wave inversions in precordial leads (cerebral T-waves).
+      flag: H
+    - value: Sinus tachycardia, prolonged QTc 510ms.
+      flag: H
+    - value: Sinus rhythm with non-specific ST-T wave changes.
+      flag: H
+    value_normal: Normal sinus rhythm, normal axis, no ST-T wave abnormalities.
+    is_confirmatory: false
+  cbc:
+    prob_abnormal: 0.3
+    values_abnormal:
+    - value: WBC 14.2, Hgb 13.5, Plt 250k
+      flag: H
+    - value: WBC 16.5, Hgb 14.1, Plt 280k
+      flag: H
+    - value: WBC 12.8, Hgb 12.9, Plt 210k
+      flag: H
+    value_normal: WBC 8.5, Hgb 14.0, Plt 240k
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.2
+    values_abnormal:
+    - value: Na 130, K 4.0, Cl 98, HCO3 24, BUN 15, Cr 0.9, Gluc 110
+      flag: L
+    - value: Na 128, K 3.8, Cl 95, HCO3 22, BUN 12, Cr 0.8, Gluc 125
+      flag: L
+    - value: Na 132, K 4.2, Cl 100, HCO3 24, BUN 18, Cr 1.0, Gluc 140
+      flag: L
+    value_normal: Na 140, K 4.0, Cl 102, HCO3 24, BUN 14, Cr 0.9, Gluc 95
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - ct_head_noncontrast
+  - csf_analysis
+  require: abnormal
+decoy:
+  test: ct_head_noncontrast
+  biased_finding: No acute intracranial hemorrhage, mass effect, or midline shift.
+  decoy_toward_disease: migraine
+  requires_followup:
+  - lumbar_puncture
+  - csf_analysis
+red_herring:
+  disease: migraine
+  shared_features:
+  - headache_probe
+  - nausea_vomiting
+  - pain_triggers
+  - heent
+  discriminating_features:
+  - neck_exam
+  - ct_head_noncontrast
+  - csf_analysis
+  - pain_onset

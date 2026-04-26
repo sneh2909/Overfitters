@@ -1,0 +1,416 @@
+id: dka
+severity: urgent
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 22
+  sex: male
+  chief_complaint: excessive thirst and frequent urination
+  patient_card: 22-year-old male presents with excessive thirst, frequent urination, and nausea for two days. Known type 1
+    diabetic who recently ran out of insulin.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 15
+  sex: female
+  chief_complaint: vomiting and deep rapid breathing
+  patient_card: 15-year-old female brought in with intractable vomiting, diffuse abdominal pain, and deep rapid breathing.
+    Appears lethargic and profoundly dehydrated.
+- variant_id: v3
+  variant_type: atypical
+  age: 45
+  sex: male
+  chief_complaint: belly pain and feeling weak
+  patient_card: 45-year-old male with type 2 diabetes presenting with diffuse belly pain and profound weakness after a recent
+    mild respiratory illness. Dismissed his symptoms as a stomach bug.
+symptom_distribution:
+  polyuria_polydipsia:
+    prob: 0.95
+    responses:
+    - I can't stop drinking water and peeing.
+    - I'm so thirsty all the time, my mouth is dry.
+    - I've been peeing every hour and chugging water.
+    denial_responses:
+    - No, my thirst and urination are normal.
+    - Haven't noticed any changes in my bathroom habits.
+  nausea_vomiting:
+    prob: 0.9
+    responses:
+    - I've thrown up five times today.
+    - I can't keep any water down, just keep retching.
+    - Felt sick to my stomach and puked twice this morning.
+    denial_responses:
+    - No nausea or vomiting.
+    - My stomach feels fine.
+  pain_location:
+    prob: 0.65
+    responses:
+    - My whole belly hurts.
+    - It's just an ache all over my stomach.
+    - Right in the middle of my gut.
+    denial_responses:
+    - I don't have any pain.
+    - Nothing hurts right now.
+  pain_character:
+    prob: 0.65
+    responses:
+    - It's a cramping feeling.
+    - Just a dull, constant ache.
+    - Feels like my stomach is tied in knots.
+    denial_responses:
+    - I wouldn't describe it as pain.
+    - No pain to describe.
+  pain_onset:
+    prob: 0.65
+    responses:
+    - It started yesterday and got worse.
+    - Been building up over the last two days.
+    - Came on slowly since yesterday morning.
+    denial_responses:
+    - I don't have any pain.
+    - N/A, no pain.
+  pain_radiation:
+    prob: 0.1
+    responses:
+    - Sometimes it shoots to my back.
+    - It radiates a bit to my sides.
+    - Moves around my whole abdomen.
+    denial_responses:
+    - No, just stays in my belly.
+    - Doesn't move anywhere.
+  pain_severity:
+    prob: 0.65
+    responses:
+    - About a 6 out of 10.
+    - It's pretty uncomfortable, maybe a 7.
+    - Not agonizing, but a solid 5.
+    denial_responses:
+    - Zero pain.
+    - It doesn't hurt at all.
+  pain_timing:
+    prob: 0.65
+    responses:
+    - It's been pretty constant.
+    - Hasn't let up since it started.
+    - It's there all the time.
+    denial_responses:
+    - I don't have pain.
+    - No pain.
+  pain_triggers:
+    prob: 0.4
+    responses:
+    - Eating makes the nausea and pain worse.
+    - Moving around makes me feel sicker.
+    - Drinking water seems to upset my stomach more.
+    denial_responses:
+    - Nothing really makes it better or worse.
+    - Not that I've noticed.
+  fever_chills:
+    prob: 0.25
+    responses:
+    - I felt a little warm yesterday.
+    - Maybe some mild chills.
+    - I think I had a low fever a couple days ago.
+    denial_responses:
+    - No fever or chills.
+    - My temperature has been normal.
+  cough:
+    prob: 0.15
+    responses:
+    - Just a slight tickle in my throat.
+    - A little dry cough.
+    - Coughed a bit yesterday, nothing major.
+    denial_responses:
+    - No cough at all.
+    - Breathing fine, no coughing.
+  shortness_of_breath:
+    prob: 0.75
+    responses:
+    - I feel like I have to take deep breaths.
+    - Breathing feels heavy and fast.
+    - I'm panting a bit even when sitting still.
+    denial_responses:
+    - Breathing is totally normal.
+    - No shortness of breath.
+  chest_pain_probe:
+    prob: 0.1
+    responses:
+    - Maybe a little tightness from breathing so hard.
+    - Just a dull ache in my chest.
+    - A little pressure, but mostly my belly hurts.
+    denial_responses:
+    - No chest pain.
+    - My chest feels fine.
+  headache_probe:
+    prob: 0.4
+    responses:
+    - My head is pounding a bit.
+    - Just a dull headache.
+    - A little headache, probably from being dehydrated.
+    denial_responses:
+    - No headache.
+    - My head feels fine.
+  visual_neuro_changes:
+    prob: 0.45
+    responses:
+    - Things look a little blurry.
+    - I feel really fuzzy-headed and confused.
+    - Just dizzy and weak.
+    denial_responses:
+    - Vision is normal, no numbness.
+    - No vision changes or confusion.
+  palpitations:
+    prob: 0.6
+    responses:
+    - My heart feels like it's racing.
+    - I can feel my heart beating fast in my chest.
+    - Fluttering in my chest.
+    denial_responses:
+    - Heart rate feels normal.
+    - No palpitations.
+  lmp:
+    prob: 0.05
+    responses:
+    - A couple of weeks ago.
+    - Regular time last month.
+    - I don't remember exactly, but it was normal.
+    denial_responses:
+    - I don't get periods.
+    - N/A
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I suppose it's possible.
+    - Maybe, I haven't been careful.
+    - There's a small chance.
+    denial_responses:
+    - No, definitely not.
+    - Zero chance.
+  urinary_symptoms:
+    prob: 0.15
+    responses:
+    - A little burning when I go.
+    - Urine is cloudy and I pee constantly.
+    - Feels like I have a UTI.
+    denial_responses:
+    - No burning, just going a lot.
+    - No pain when I pee.
+  bowel_changes:
+    prob: 0.2
+    responses:
+    - Haven't pooped in a couple days.
+    - Maybe a little constipated.
+    - Had some loose stools yesterday.
+    denial_responses:
+    - Stools have been normal.
+    - No changes in my bowels.
+  medications:
+    prob: 0.9
+    responses:
+    - I take insulin, but I missed a few doses.
+    - Just my diabetes meds, metformin and glipizide.
+    - Insulin glargine and lispro, but I ran out.
+    denial_responses:
+    - I don't take any daily medications.
+    - Nothing prescribed.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No allergies.
+    - None that I know of.
+  past_medical_history:
+    prob: 0.95
+    responses:
+    - I have type 1 diabetes.
+    - Diagnosed with diabetes a few years ago.
+    - Just the diabetes and some mild asthma.
+    denial_responses:
+    - I'm generally very healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.5
+    responses:
+    - My brother has type 1 diabetes too.
+    - Dad has thyroid issues and diabetes.
+    - Autoimmune stuff runs in the family.
+    denial_responses:
+    - No major family health issues.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.1
+    responses:
+    - I drink occasionally.
+    - I smoke a pack a day.
+    - Just got back from a trip.
+    denial_responses:
+    - No recent travel, don't smoke or drink.
+    - Nothing unusual lately.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 115, BP 100/65, RR 26, Temp 37.2°C, SpO2 98%
+    - HR 125, BP 90/60, RR 30, Temp 36.8°C, SpO2 99%
+    - HR 105, BP 110/70, RR 22, Temp 37.5°C, SpO2 97%
+  general_appearance:
+    findings:
+    - Ill-appearing, dry mucous membranes, fruity breath odor.
+    - Lethargic, sunken eyes, deep rapid breathing.
+    - Fatigued, mild distress, flushed face.
+  mental_status:
+    findings:
+    - Alert but slow to respond, oriented x3.
+    - Drowsy, awakens to voice, oriented x3.
+    - Alert and oriented, slightly anxious.
+  heent:
+    findings:
+    - Mucous membranes extremely dry, no scleral icterus.
+    - Dry lips and tongue, PERRLA.
+    - Tacky oral mucosa, normal conjunctivae.
+  neck_exam:
+    findings:
+    - Supple, no JVD, no lymphadenopathy.
+    - No meningismus, trachea midline.
+    - Normal range of motion, no masses.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs.
+    - Rapid heart rate, normal S1/S2.
+    - Tachycardia, no rubs or gallops.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, deep rapid respirations (Kussmaul).
+    - Tachypneic with deep breaths, lungs clear.
+    - Clear breath sounds, increased work of breathing.
+  peripheral_perfusion:
+    findings:
+    - Capillary refill 3 seconds, pulses weak.
+    - Cool extremities, delayed cap refill.
+    - Pulses 2+ but tachycardic, no edema.
+  abdominal_palpation:
+    findings:
+    - Diffuse mild tenderness, no rebound or guarding.
+    - Soft, generalized tenderness, non-distended.
+    - Mild epigastric and periumbilical tenderness, bowel sounds hypoactive.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - No flank pain on percussion.
+  pelvic_exam:
+    findings:
+    - Normal external genitalia, no discharge.
+    - Deferred, no specific indications.
+    - Unremarkable.
+  cranial_nerves:
+    findings:
+    - CN II-XII grossly intact.
+    - Cranial nerves intact, no focal deficits.
+    - Pupils reactive, facial symmetry normal.
+  motor_sensory:
+    findings:
+    - Normal strength and sensation, generalized weakness.
+    - Moves all extremities well, reflexes 2+.
+    - No focal motor or sensory deficits.
+  skin_exam:
+    findings:
+    - Decreased skin turgor, warm and dry.
+    - Poor turgor, no rashes.
+    - Dry skin, no petechiae.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness.
+    - Normal MSK exam.
+    - No joint swelling or tenderness.
+test_sensitivities:
+  bmp:
+    prob_abnormal: 1.0
+    values_abnormal:
+    - value: Na 132, K 4.8, Cl 98, HCO3 12, BUN 30, Cr 1.4, Glucose 450, Anion Gap 22
+      flag: CRIT
+    - value: Na 128, K 5.2, Cl 95, HCO3 8, BUN 45, Cr 1.8, Glucose 620, Anion Gap 25
+      flag: CRIT
+    - value: Na 135, K 4.1, Cl 102, HCO3 16, BUN 22, Cr 1.1, Glucose 310, Anion Gap 17
+      flag: H
+    value_normal: Na 140, K 4.0, Cl 100, HCO3 24, BUN 15, Cr 0.9, Glucose 90
+    is_confirmatory: true
+  abg:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: pH 7.18, pCO2 22, pO2 95, HCO3 12
+      flag: CRIT
+    - value: pH 7.05, pCO2 18, pO2 98, HCO3 8
+      flag: CRIT
+    - value: pH 7.28, pCO2 28, pO2 92, HCO3 16
+      flag: H
+    value_normal: pH 7.40, pCO2 40, pO2 95, HCO3 24
+    is_confirmatory: true
+  urinalysis:
+    prob_abnormal: 1.0
+    values_abnormal:
+    - value: SG 1.025, pH 5.0, Glucose >1000 mg/dL, Ketones Large, Protein Neg
+      flag: H
+    - value: SG 1.030, pH 5.5, Glucose >1000 mg/dL, Ketones Large, Protein Trace
+      flag: H
+    - value: SG 1.020, pH 6.0, Glucose 500 mg/dL, Ketones Moderate, Protein Neg
+      flag: H
+    value_normal: SG 1.015, pH 6.0, Glucose Neg, Ketones Neg, Protein Neg
+    is_confirmatory: false
+  blood_glucose_fingerstick:
+    prob_abnormal: 1.0
+    values_abnormal:
+    - value: 480 mg/dL
+      flag: H
+    - value: HIGH (>600 mg/dL)
+      flag: CRIT
+    - value: 345 mg/dL
+      flag: H
+    value_normal: 95 mg/dL
+    is_confirmatory: false
+  cbc:
+    prob_abnormal: 0.8
+    values_abnormal:
+    - value: WBC 14.5k, Hgb 15.2, Plt 250k
+      flag: H
+    - value: WBC 18.2k, Hgb 16.1, Plt 280k
+      flag: H
+    - value: WBC 12.1k, Hgb 14.8, Plt 210k
+      flag: H
+    value_normal: WBC 8.0k, Hgb 14.0, Plt 250k
+    is_confirmatory: false
+  ecg:
+    prob_abnormal: 0.7
+    values_abnormal:
+    - value: Sinus tachycardia, rate 115, normal axis and intervals.
+      flag: H
+    - value: Sinus tachycardia, rate 125, peaked T waves.
+      flag: H
+    - value: Sinus tachycardia, rate 105, no ST-T changes.
+      flag: H
+    value_normal: Normal sinus rhythm, rate 75.
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - bmp
+  require: abnormal
+- any_of:
+  - abg
+  - urinalysis
+  require: abnormal
+- any_of:
+  - blood_glucose_fingerstick
+  require: abnormal
+decoy: null
+red_herring:
+  disease: viral_gastroenteritis
+  shared_features:
+  - nausea_vomiting
+  - abdominal_palpation
+  - general_appearance
+  discriminating_features:
+  - polyuria_polydipsia
+  - shortness_of_breath
+  - blood_glucose_fingerstick
+  - bmp

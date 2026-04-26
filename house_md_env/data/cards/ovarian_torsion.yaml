@@ -1,0 +1,413 @@
+id: ovarian_torsion
+severity: urgent
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 28
+  sex: female
+  chief_complaint: sudden sharp lower belly pain
+  patient_card: 28-year-old female presents with sudden onset of sharp, severe right lower quadrant abdominal pain that started
+    4 hours ago, accompanied by nausea.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 38
+  sex: female
+  chief_complaint: intense pelvic cramping and vomiting
+  patient_card: 38-year-old female arrives in obvious distress with excruciating, unrelenting pelvic pain and multiple episodes
+    of non-bilious emesis. She is tachycardic and diaphoretic.
+- variant_id: v3
+  variant_type: atypical
+  age: 15
+  sex: female
+  chief_complaint: dizziness and right sided ache
+  patient_card: 15-year-old female brought in for near-syncope and a dull ache in her right flank and lower abdomen, initially
+    attributed to a pulled muscle.
+symptom_distribution:
+  pain_location:
+    prob: 0.95
+    responses:
+    - It's deep in my lower right side.
+    - Down low in my pelvis, mostly on the left.
+    - Right here in the lower belly.
+    denial_responses:
+    - I don't have any pain there.
+    - It's not in my belly.
+  pain_character:
+    prob: 0.9
+    responses:
+    - It's a sharp, stabbing pain.
+    - It feels like a severe, twisting cramp.
+    - It's a really intense, sharp ache.
+    denial_responses:
+    - It's not really sharp.
+    - It doesn't feel like a cramp.
+  pain_onset:
+    prob: 0.95
+    responses:
+    - It hit me out of nowhere a few hours ago.
+    - It started very suddenly this morning.
+    - It came on instantly, like a light switch.
+    denial_responses:
+    - It's been slowly getting worse for weeks.
+    - It was a gradual thing.
+  pain_radiation:
+    prob: 0.6
+    responses:
+    - It shoots around to my lower back.
+    - Sometimes I feel it down my thigh.
+    - It radiates into my groin area.
+    denial_responses:
+    - It stays right in one spot.
+    - It doesn't travel anywhere else.
+  pain_severity:
+    prob: 0.95
+    responses:
+    - It's easily a 9 or 10, it's unbearable.
+    - At least an 8 out of 10.
+    - It's the worst pain I've ever felt.
+    denial_responses:
+    - It's just a mild ache, maybe a 2.
+    - It's not that bad, just annoying.
+  pain_timing:
+    prob: 0.85
+    responses:
+    - It comes in waves of terrible pain.
+    - It's constant but sometimes spikes and gets even worse.
+    - It hasn't stopped since it started.
+    denial_responses:
+    - It only hurts for a second and goes away.
+    - It's very brief.
+  pain_triggers:
+    prob: 0.5
+    responses:
+    - Moving around definitely makes it worse.
+    - Any jarring motion or walking hurts more.
+    - Pressing on it makes it shoot with pain.
+    denial_responses:
+    - Nothing really changes it.
+    - Movement doesn't seem to affect it.
+  nausea_vomiting:
+    prob: 0.85
+    responses:
+    - I've thrown up three times since the pain started.
+    - I feel incredibly nauseous.
+    - I can't keep anything down, just dry heaving.
+    denial_responses:
+    - My stomach feels fine.
+    - No nausea at all.
+  fever_chills:
+    prob: 0.2
+    responses:
+    - I felt a little warm earlier.
+    - Maybe a low-grade fever.
+    - I had some mild chills.
+    denial_responses:
+    - No fever that I know of.
+    - I haven't felt hot or cold.
+  cough:
+    prob: 0.05
+    responses:
+    - Just a little dry cough.
+    - I've had a tickle in my throat.
+    - I cough occasionally.
+    denial_responses:
+    - No cough at all.
+    - I haven't been coughing.
+  shortness_of_breath:
+    prob: 0.1
+    responses:
+    - Only because the pain takes my breath away.
+    - I'm breathing fast because it hurts so much.
+    - Just when a bad wave of pain hits.
+    denial_responses:
+    - My breathing is totally normal.
+    - No trouble catching my breath.
+  chest_pain_probe:
+    prob: 0.05
+    responses:
+    - Maybe a little tightness from stress.
+    - My chest feels a bit heavy.
+    - Just a twinge here and there.
+    denial_responses:
+    - No chest pain whatsoever.
+    - My chest is completely fine.
+  headache_probe:
+    prob: 0.05
+    responses:
+    - A mild headache from the stress.
+    - Just a little tension headache.
+    - My head hurts slightly.
+    denial_responses:
+    - No headache.
+    - My head is fine.
+  visual_neuro_changes:
+    prob: 0.05
+    responses:
+    - I got a little dizzy when I stood up.
+    - Things went blurry for a second from the pain.
+    - Just some lightheadedness.
+    denial_responses:
+    - No vision changes.
+    - No numbness or tingling.
+  palpitations:
+    prob: 0.15
+    responses:
+    - My heart is racing, probably from the pain.
+    - I can feel my heart pounding.
+    - It feels like my heart is beating really fast.
+    denial_responses:
+    - My heart rate feels normal.
+    - No fluttering or racing.
+  lmp:
+    prob: 0.9
+    responses:
+    - About two weeks ago, totally normal.
+    - Last month, they are pretty regular.
+    - I just finished my period a few days ago.
+    denial_responses:
+    - I haven't had a period in years.
+    - I don't get periods anymore.
+  pregnancy_possibility:
+    prob: 0.5
+    responses:
+    - I don't think so, but I guess it's possible.
+    - We use protection, but you never know.
+    - I highly doubt it, but I'm sexually active.
+    denial_responses:
+    - Zero chance, I'm not active.
+    - No, I have an IUD and just had my period.
+  urinary_symptoms:
+    prob: 0.15
+    responses:
+    - I feel like I need to pee more often.
+    - A little pressure when I urinate.
+    - Maybe a slight urge to go.
+    denial_responses:
+    - No burning or blood.
+    - Urinating is completely normal.
+  bowel_changes:
+    prob: 0.1
+    responses:
+    - I've been a little constipated.
+    - Maybe some mild diarrhea earlier.
+    - My stomach has just been upset.
+    denial_responses:
+    - Bowel movements are normal.
+    - No changes in my stool.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - I've been a bit thirsty.
+    - Drinking a normal amount of water.
+    - Maybe slightly more thirsty than usual.
+    denial_responses:
+    - No unusual thirst.
+    - Not peeing more than normal.
+  medications:
+    prob: 0.2
+    responses:
+    - I take birth control pills.
+    - Just some ibuprofen for the pain.
+    - I was taking some fertility medications.
+    denial_responses:
+    - I don't take any prescription meds.
+    - Nothing at all.
+  allergies:
+    prob: 0.05
+    responses:
+    - I'm allergic to penicillin.
+    - Just some seasonal allergies.
+    - Sulfa drugs give me a rash.
+    denial_responses:
+    - No known allergies.
+    - I'm not allergic to anything.
+  past_medical_history:
+    prob: 0.3
+    responses:
+    - I've had ovarian cysts in the past.
+    - They told me I have PCOS.
+    - I had a cyst rupture a few years ago.
+    denial_responses:
+    - I'm generally very healthy.
+    - No major medical problems.
+  family_history:
+    prob: 0.05
+    responses:
+    - My mom had some female issues.
+    - My sister had cysts.
+    - Nothing major runs in the family.
+    denial_responses:
+    - No family history of anything serious.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.05
+    responses:
+    - I drink occasionally on weekends.
+    - I smoke a few cigarettes a day.
+    - No recent travel or sick contacts.
+    denial_responses:
+    - I don't smoke or drink.
+    - No travel or drug use.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 110, BP 120/80, RR 18, Temp 37.2°C, SpO2 99%
+    - HR 95, BP 130/85, RR 16, Temp 37.0°C, SpO2 98%
+    - HR 125, BP 115/75, RR 22, Temp 37.4°C, SpO2 97%
+  general_appearance:
+    findings:
+    - Patient is writhing in pain on the stretcher, unable to find a comfortable position.
+    - Appears in acute distress, clutching her lower abdomen.
+    - Pale, diaphoretic, and visibly uncomfortable.
+  mental_status:
+    findings:
+    - Alert and oriented x3, though distracted by pain.
+    - GCS 15, normal mentation.
+    - Awake, alert, answering questions appropriately.
+  heent:
+    findings:
+    - Normocephalic, atraumatic, PERRLA, mucous membranes moist.
+    - Unremarkable HEENT exam.
+    - Pupils equal and reactive, clear oropharynx.
+  neck_exam:
+    findings:
+    - Supple, no JVD, no lymphadenopathy.
+    - No meningismus, thyroid normal.
+    - Trachea midline, no masses.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, no murmurs.
+    - Normal S1/S2, regular rate and rhythm.
+    - Tachycardia present, no rubs or gallops.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally.
+    - Good air movement, no wheezes or crackles.
+    - Lungs clear, normal respiratory effort.
+  peripheral_perfusion:
+    findings:
+    - 2+ pulses x4, capillary refill < 2 seconds.
+    - No lower extremity edema, normal pulses.
+    - Warm extremities, normal perfusion.
+  abdominal_palpation:
+    findings:
+    - Significant tenderness in the right lower quadrant with voluntary guarding. No rebound.
+    - Focal left lower quadrant tenderness, palpable fullness, mild rigidity.
+    - Exquisite tenderness in the suprapubic and right iliac fossa regions.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Mild right-sided CVA tenderness, likely referred.
+    - Negative for costovertebral angle tenderness.
+  pelvic_exam:
+    findings:
+    - Extreme right adnexal tenderness, palpable 5cm mass. Cervix closed.
+    - Marked left adnexal tenderness and fullness. No cervical motion tenderness.
+    - Severe unilateral adnexal pain on palpation, difficult to assess for mass due to guarding.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact.
+    - No focal cranial nerve deficits.
+    - CN II-XII grossly normal.
+  motor_sensory:
+    findings:
+    - 5/5 strength throughout, normal sensation.
+    - Normal gait, intact reflexes.
+    - No focal motor or sensory deficits.
+  skin_exam:
+    findings:
+    - Skin is pale and diaphoretic.
+    - Cool and clammy skin, no rashes.
+    - Normal turgor, no petechiae or purpura.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness.
+    - Normal MSK exam, non-tender joints.
+    - No reproducible chest pain on palpation.
+test_sensitivities:
+  pelvic_ultrasound_tv:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: Enlarged right ovary (6cm) with peripheral follicles and absent arterial/venous Doppler flow. Free fluid in cul-de-sac.
+      flag: CRIT
+    - value: Asymmetrically enlarged left ovary with heterogeneous echotexture and decreased venous flow. Suspicious for torsion.
+      flag: CRIT
+    - value: 5.5cm right ovarian cyst. The ovary is edematous with twisted vascular pedicle (whirlpool sign).
+      flag: CRIT
+    value_normal: Normal size and echotexture of both ovaries with robust symmetric Doppler flow.
+    is_confirmatory: true
+  beta_hcg_quant:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: 15 mIU/mL
+      flag: H
+    - value: 22 mIU/mL
+      flag: H
+    - value: 10 mIU/mL
+      flag: H
+    value_normal: <5 mIU/mL (negative)
+    is_confirmatory: false
+  urine_pregnancy_qualitative:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: Positive
+      flag: H
+    - value: Positive
+      flag: H
+    - value: Positive
+      flag: H
+    value_normal: Negative
+    is_confirmatory: false
+  cbc:
+    prob_abnormal: 0.6
+    values_abnormal:
+    - value: WBC 13,500/μL, Hgb 13.2 g/dL, Plt 250k
+      flag: H
+    - value: WBC 15,200/μL, Hgb 12.8 g/dL, Plt 280k
+      flag: H
+    - value: WBC 11,800/μL, Hgb 14.0 g/dL, Plt 210k
+      flag: H
+    value_normal: WBC 8,500/μL, Hgb 13.5 g/dL, Plt 240k
+    is_confirmatory: false
+  ct_abdomen_pelvis:
+    prob_abnormal: 0.85
+    values_abnormal:
+    - value: Enlarged right adnexa with a 5cm cystic structure, uterine deviation, and pelvic free fluid. Normal appendix.
+      flag: H
+    - value: Asymmetric enlargement of the left ovary with surrounding fat stranding. No appendicitis.
+      flag: H
+    - value: Prominent right ovary measuring 6.5cm, twisted pedicle suspected. Trace free fluid.
+      flag: H
+    value_normal: Unremarkable abdomen and pelvis. Normal ovaries and appendix.
+    is_confirmatory: false
+  urinalysis:
+    prob_abnormal: 0.2
+    values_abnormal:
+    - value: Trace blood, negative LE, negative nitrites.
+      flag: H
+    - value: 1+ ketones, negative blood, negative WBC.
+      flag: H
+    - value: Small blood, 0-2 RBCs, negative infection signs.
+      flag: H
+    value_normal: Clear, yellow, negative blood/LE/nitrites.
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - pelvic_ultrasound_tv
+  require: abnormal
+decoy:
+  test: ct_abdomen_pelvis
+  biased_finding: Mildly prominent appendix with adjacent fluid, cannot entirely exclude early appendicitis. Enlarged right
+    ovary also noted.
+  decoy_toward_disease: appendicitis
+  requires_followup:
+  - pelvic_ultrasound_tv
+red_herring:
+  disease: appendicitis
+  shared_features:
+  - pain_location
+  - nausea_vomiting
+  - abdominal_palpation
+  discriminating_features:
+  - pelvic_exam
+  - pelvic_ultrasound_tv

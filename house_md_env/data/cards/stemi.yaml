@@ -1,0 +1,399 @@
+id: stemi
+severity: critical
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 55
+  sex: male
+  chief_complaint: crushing chest pressure and sweating
+  patient_card: 55-year-old male presents with crushing substernal chest pressure radiating to his left arm, accompanied by
+    diaphoresis, which started 45 minutes ago.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 65
+  sex: male
+  chief_complaint: severe chest tightness and dizziness
+  patient_card: 65-year-old male arrives via EMS with severe chest tightness, shortness of breath, and near-syncope. He appears
+    ashen and is hypotensive.
+- variant_id: v3
+  variant_type: atypical
+  age: 75
+  sex: female
+  chief_complaint: sudden weakness and jaw ache
+  patient_card: 75-year-old female with a history of diabetes presents with sudden profound weakness, nausea, and a dull ache
+    in her lower jaw. Denies classic chest pain.
+symptom_distribution:
+  pain_location:
+    prob: 0.9
+    responses:
+    - Right in the middle of my chest.
+    - Deep inside my breastbone.
+    - It's mostly in the center, maybe a bit to the left.
+    denial_responses:
+    - I don't have any pain right now.
+    - It's not really a pain, just a weird feeling.
+  pain_character:
+    prob: 0.9
+    responses:
+    - It feels like an elephant is sitting on my chest.
+    - It's a heavy, squeezing pressure.
+    - Like a tight band wrapped around my ribs.
+    denial_responses:
+    - It's not a pressure, more of a sharp twinge.
+    - It doesn't hurt, I just feel weak.
+  pain_onset:
+    prob: 0.95
+    responses:
+    - It came on suddenly about an hour ago.
+    - It started out of nowhere while I was watching TV.
+    - Hit me like a ton of bricks this morning.
+    denial_responses:
+    - It's been coming and going for weeks.
+    - I've had it off and on for years.
+  pain_radiation:
+    prob: 0.8
+    responses:
+    - It shoots down my left arm.
+    - I feel it going up into my jaw and neck.
+    - It radiates straight through to my back.
+    denial_responses:
+    - It stays right here in my chest.
+    - No, it doesn't travel anywhere.
+  pain_severity:
+    prob: 0.9
+    responses:
+    - It's an 8 or 9 out of 10.
+    - Worst pain I've ever felt in my life.
+    - Easily a 10, I can barely breathe through it.
+    denial_responses:
+    - It's just a mild discomfort, maybe a 2.
+    - It's not severe, just annoying.
+  pain_timing:
+    prob: 0.9
+    responses:
+    - It's been constant since it started.
+    - It hasn't let up for a second.
+    - Just a steady, unrelenting pressure.
+    denial_responses:
+    - It only lasts a few seconds at a time.
+    - It comes and goes.
+  pain_triggers:
+    prob: 0.7
+    responses:
+    - Nothing makes it better, not even resting.
+    - It started when I was shoveling snow.
+    - Exertion definitely brought it on.
+    denial_responses:
+    - It only hurts when I press on it.
+    - Taking a deep breath makes it worse.
+  nausea_vomiting:
+    prob: 0.6
+    responses:
+    - I feel really sick to my stomach.
+    - I threw up once before I got here.
+    - Very nauseous, like I might be sick.
+    denial_responses:
+    - My stomach is fine.
+    - No nausea at all.
+  fever_chills:
+    prob: 0.05
+    responses:
+    - I felt a little clammy and cold.
+    - Maybe some mild chills.
+    - I feel a bit feverish, but I haven't checked.
+    denial_responses:
+    - No fever or chills.
+    - I feel my normal temperature.
+  cough:
+    prob: 0.1
+    responses:
+    - Just a little dry cough.
+    - I've been coughing a bit since this started.
+    - A mild tickle in my throat.
+    denial_responses:
+    - No cough at all.
+    - I haven't been coughing.
+  shortness_of_breath:
+    prob: 0.85
+    responses:
+    - I can't seem to catch my breath.
+    - I feel winded just sitting here.
+    - It's hard to breathe with this weight on my chest.
+    denial_responses:
+    - My breathing is totally fine.
+    - I'm breathing normally.
+  chest_pain_probe:
+    prob: 0.95
+    responses:
+    - Yes, terrible chest pain.
+    - It's a massive pressure in my chest.
+    - My chest feels incredibly tight.
+    denial_responses:
+    - No chest pain, just weakness.
+    - My chest feels fine.
+  headache_probe:
+    prob: 0.05
+    responses:
+    - I have a slight headache.
+    - My head is throbbing a bit.
+    - Just a dull ache in my head.
+    denial_responses:
+    - No headache.
+    - My head feels fine.
+  visual_neuro_changes:
+    prob: 0.2
+    responses:
+    - I felt a little lightheaded and dizzy.
+    - Things got a bit blurry for a second.
+    - I feel faint, like I might pass out.
+    denial_responses:
+    - My vision is normal.
+    - No numbness or confusion.
+  palpitations:
+    prob: 0.4
+    responses:
+    - My heart feels like it's racing.
+    - I can feel my heart pounding in my chest.
+    - It feels like it's skipping beats.
+    denial_responses:
+    - My heartbeat feels normal.
+    - No fluttering or racing.
+  lmp:
+    prob: 0.0
+    responses:
+    - I went through menopause years ago.
+    - Not applicable.
+    - I don't have periods anymore.
+    denial_responses:
+    - I'm a man.
+    - I had a hysterectomy.
+  pregnancy_possibility:
+    prob: 0.0
+    responses:
+    - No, definitely not.
+    - Impossible.
+    - Not a chance.
+    denial_responses:
+    - I'm a man.
+    - I'm way past that age.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - I've had to pee a bit more often.
+    - Maybe a little urgency.
+    - Just normal urination.
+    denial_responses:
+    - No problems peeing.
+    - Urine is totally normal.
+  bowel_changes:
+    prob: 0.05
+    responses:
+    - I felt like I needed to have a bowel movement when the pain started.
+    - A little bit of loose stool earlier.
+    - Just some mild cramping.
+    denial_responses:
+    - Bowel movements are normal.
+    - No diarrhea or blood.
+  polyuria_polydipsia:
+    prob: 0.1
+    responses:
+    - I've been a bit thirsty.
+    - Drinking more water than usual.
+    - Peeing a lot, but I'm diabetic.
+    denial_responses:
+    - No unusual thirst.
+    - Not peeing more than normal.
+  medications:
+    prob: 0.9
+    responses:
+    - I take a statin and blood pressure pills.
+    - Just baby aspirin and something for cholesterol.
+    - Metformin and lisinopril.
+    denial_responses:
+    - I don't take any prescription meds.
+    - Just vitamins.
+  allergies:
+    prob: 0.1
+    responses:
+    - I'm allergic to penicillin.
+    - Sulfa drugs give me a rash.
+    - Just seasonal allergies.
+    denial_responses:
+    - No known allergies.
+    - I can take any medication.
+  past_medical_history:
+    prob: 0.9
+    responses:
+    - I have high blood pressure and high cholesterol.
+    - I'm a borderline diabetic.
+    - I had a stent put in five years ago.
+    denial_responses:
+    - I've always been perfectly healthy.
+    - No major medical issues.
+  family_history:
+    prob: 0.8
+    responses:
+    - My dad had a heart attack at 50.
+    - Heart disease runs in my family.
+    - My brother had bypass surgery last year.
+    denial_responses:
+    - No history of heart problems in my family.
+    - Everyone lived to be 90.
+  social_travel_exposure:
+    prob: 0.7
+    responses:
+    - I smoke a pack a day.
+    - I quit smoking ten years ago.
+    - I have a few beers on the weekend.
+    denial_responses:
+    - I don't smoke or drink.
+    - No recent travel or sick contacts.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 110, BP 150/90, RR 22, Temp 37.0°C, SpO2 96%
+    - HR 120, BP 85/50, RR 24, Temp 36.8°C, SpO2 92%
+    - HR 95, BP 130/80, RR 18, Temp 37.1°C, SpO2 98%
+  general_appearance:
+    findings:
+    - Patient appears anxious, pale, and diaphoretic, clutching chest.
+    - In acute distress, ashen skin color, breathing heavily.
+    - Uncomfortable appearing, rubbing left arm, mild diaphoresis.
+  mental_status:
+    findings:
+    - Alert and oriented x3, but highly anxious.
+    - Lethargic but arousable, oriented x3.
+    - Alert, oriented, answering questions appropriately.
+  heent:
+    findings:
+    - Pupils equal and reactive, no JVD visible sitting up.
+    - Unremarkable HEENT exam, mucous membranes moist.
+    - Normal conjunctivae, no scleral icterus.
+  neck_exam:
+    findings:
+    - No JVD, no carotid bruits, supple neck.
+    - Mild JVD present at 45 degrees, no bruits.
+    - Supple, no lymphadenopathy, trachea midline.
+  cardiac_auscultation:
+    findings:
+    - Tachycardic, regular rhythm, S4 gallop present, no murmurs.
+    - Regular rate and rhythm, faint systolic murmur at apex, no rubs.
+    - Tachycardic, normal S1/S2, no murmurs, rubs, or gallops.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, no wheezes or crackles.
+    - Bibasilar crackles present, no wheezing.
+    - Diminished breath sounds at bases, otherwise clear.
+  peripheral_perfusion:
+    findings:
+    - Pulses 2+ bilaterally, cap refill < 2 seconds, no edema.
+    - Cool extremities, cap refill 3 seconds, faint distal pulses.
+    - Trace pedal edema, pulses 2+, normal cap refill.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended, normal bowel sounds.
+    - Mild epigastric tenderness on deep palpation, no guarding.
+    - Soft, non-tender, no hepatosplenomegaly.
+  cva_tenderness:
+    findings:
+    - No CVA tenderness bilaterally.
+    - Negative for CVA tenderness.
+    - No pain on percussion of the costovertebral angles.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Not indicated.
+    - Exam deferred.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact.
+    - Grossly intact cranial nerves.
+    - CN II-XII normal, no facial droop.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities, sensation intact.
+    - Moves all extremities well, normal sensation.
+    - Normal motor bulk and tone, reflexes 2+ symmetric.
+  skin_exam:
+    findings:
+    - Cool, clammy, and diaphoretic.
+    - Pale and sweaty, no rashes.
+    - Diaphoretic, normal turgor, no petechiae.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness to palpation.
+    - Chest pain is not reproducible with palpation.
+    - No tenderness over costochondral joints.
+test_sensitivities:
+  ecg:
+    prob_abnormal: 0.99
+    values_abnormal:
+    - value: Sinus tachycardia, 3mm ST elevations in V1-V4 with reciprocal changes.
+      flag: CRIT
+    - value: 2mm ST elevations in II, III, aVF with ST depressions in I and aVL.
+      flag: CRIT
+    - value: New Left Bundle Branch Block (LBBB).
+      flag: CRIT
+    value_normal: Normal sinus rhythm, normal axis, no ST-T wave changes.
+    is_confirmatory: true
+  troponin:
+    prob_abnormal: 0.95
+    values_abnormal:
+    - value: 1,250 ng/L
+      flag: CRIT
+    - value: 450 ng/L
+      flag: H
+    - value: 3,400 ng/L
+      flag: CRIT
+    value_normal: < 14 ng/L
+    is_confirmatory: true
+  chest_xray:
+    prob_abnormal: 0.3
+    values_abnormal:
+    - value: Mild pulmonary vascular congestion, normal cardiac silhouette.
+      flag: H
+    - value: Prominent interstitial markings suggestive of early pulmonary edema.
+      flag: H
+    - value: Cardiomegaly with mild cephalization of vessels.
+      flag: H
+    value_normal: Clear lungs, normal heart size, no acute cardiopulmonary process.
+    is_confirmatory: false
+  cbc:
+    prob_abnormal: 0.2
+    values_abnormal:
+    - value: WBC 11.5, Hgb 14.0, Plt 250
+      flag: H
+    - value: WBC 12.2, Hgb 13.5, Plt 220
+      flag: H
+    - value: WBC 10.8, Hgb 15.1, Plt 280
+      flag: H
+    value_normal: WBC 7.5, Hgb 14.5, Plt 260 (within normal limits)
+    is_confirmatory: false
+  bmp:
+    prob_abnormal: 0.3
+    values_abnormal:
+    - value: Na 138, K 3.4, Cr 1.2, Glu 150
+      flag: H
+    - value: Na 140, K 4.0, Cr 1.5, Glu 180
+      flag: H
+    - value: Na 135, K 3.8, Cr 1.1, Glu 210
+      flag: H
+    value_normal: Na 140, K 4.0, Cr 0.9, Glu 95 (within normal limits)
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - ecg
+  require: abnormal
+- any_of:
+  - troponin
+  require: abnormal
+decoy: null
+red_herring:
+  disease: costochondritis
+  shared_features:
+  - chest_pain_probe
+  - pain_location
+  discriminating_features:
+  - ecg
+  - troponin
+  - musculoskeletal_chest_wall

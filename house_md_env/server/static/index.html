@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>House M.D. — ER Simulation</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <!-- ========================== TOP HUD ========================== -->
+  <header class="hud">
+    <div class="hud-brand">
+      <span class="logo">⚕</span>
+      <div>
+        <div class="brand-title">House M.D.</div>
+        <div class="brand-sub">ER Decision Sim</div>
+      </div>
+    </div>
+
+    <div class="hud-stats">
+      <div class="stat">
+        <div class="stat-label">Step</div>
+        <div class="stat-val"><span id="hud-step">—</span><span class="stat-sub">/<span id="hud-step-cap">15</span></span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Cost</div>
+        <div class="stat-val">$<span id="hud-cost">0</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Time</div>
+        <div class="stat-val"><span id="hud-time">0</span><span class="stat-sub">min</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Severity</div>
+        <div class="stat-val"><span id="hud-severity" class="badge stable">stable</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Policy</div>
+        <div class="stat-val"><span id="hud-policy" class="badge policy">oracle</span></div>
+      </div>
+    </div>
+
+    <div class="hud-actions">
+      <button id="btn-new" class="btn primary">⟲ New Case</button>
+    </div>
+  </header>
+
+  <!-- ========================== MAIN STAGE ========================== -->
+  <main class="stage" id="stage">
+
+    <!-- Hospital scene background -->
+    <div class="scene-bg">
+      <div class="scene-ceiling">
+        <div class="ceiling-light"></div>
+        <div class="ceiling-light"></div>
+        <div class="ceiling-light"></div>
+        <div class="ceiling-light"></div>
+      </div>
+      <div class="scene-wall"></div>
+      <div class="scene-trim"></div>
+      <div class="scene-floor"></div>
+
+      <!-- Wall fixtures -->
+      <div class="hospital-sign">⚕ ST. HOUSE GENERAL HOSPITAL ⚕</div>
+
+      <div class="scene-window left">
+        <div class="window-pane"></div>
+        <div class="window-pane"></div>
+        <div class="window-pane"></div>
+        <div class="window-pane"></div>
+        <div class="window-sill"></div>
+      </div>
+      <div class="scene-window right">
+        <div class="window-pane"></div>
+        <div class="window-pane"></div>
+        <div class="window-pane"></div>
+        <div class="window-pane"></div>
+        <div class="window-sill"></div>
+      </div>
+
+      <div class="scene-clock">
+        <div class="clock-face"><div class="hand h"></div><div class="hand m"></div><div class="pivot"></div></div>
+      </div>
+
+      <!-- Anatomy poster -->
+      <div class="anatomy-poster">
+        <div class="poster-title">ANATOMY</div>
+        <div class="poster-body">
+          <div class="anat-head"></div>
+          <div class="anat-torso"></div>
+          <div class="anat-arm l"></div>
+          <div class="anat-arm r"></div>
+          <div class="anat-leg l"></div>
+          <div class="anat-leg r"></div>
+        </div>
+      </div>
+
+      <!-- Vital signs monitor mounted on wall -->
+      <div class="wall-monitor">
+        <div class="wm-screen">
+          <div class="wm-line ecg"></div>
+          <div class="wm-stats">
+            <span class="wm-hr">♥ 72</span>
+            <span class="wm-bp">120/80</span>
+            <span class="wm-spo2">98%</span>
+          </div>
+        </div>
+        <div class="wm-stand"></div>
+      </div>
+
+      <!-- Red cross emblem -->
+      <div class="red-cross">
+        <div class="rc-h"></div>
+        <div class="rc-v"></div>
+      </div>
+
+      <!-- EXIT sign over the door -->
+      <div class="exit-sign">EXIT →</div>
+
+      <div class="door" id="door">
+        <div class="door-frame"></div>
+        <div class="door-panel"></div>
+        <div class="door-window"></div>
+        <div class="door-knob"></div>
+      </div>
+
+      <!-- Floor plants in corner -->
+      <div class="floor-plant">
+        <div class="leaf l"></div>
+        <div class="leaf c"></div>
+        <div class="leaf r"></div>
+        <div class="pot"></div>
+      </div>
+
+      <!-- Hand sanitizer dispenser -->
+      <div class="sanitizer">
+        <div class="san-bottle"></div>
+        <div class="san-pump"></div>
+      </div>
+
+      <!-- Curtain rail with privacy curtain on right -->
+      <div class="curtain-rail"></div>
+      <div class="curtain"></div>
+
+      <!-- IV drip stand -->
+      <div class="iv-pole">
+        <div class="iv-bag"></div>
+        <div class="iv-tube"></div>
+        <div class="iv-pole-bar"></div>
+        <div class="iv-base"></div>
+      </div>
+
+      <!-- Medical waste bin -->
+      <div class="waste-bin">
+        <div class="bin-lid"></div>
+        <div class="bin-body">BIO</div>
+      </div>
+    </div>
+
+    <!-- Doctor's desk (left) -->
+    <div class="furniture desk">
+      <div class="desk-top"></div>
+      <div class="desk-leg l"></div>
+      <div class="desk-leg r"></div>
+      <div class="desk-monitor"></div>
+      <div class="desk-cup"></div>
+    </div>
+
+    <!-- Examination bed (center, behind patient) -->
+    <div class="furniture exam-bed">
+      <div class="bed-mat"></div>
+      <div class="bed-pillow"></div>
+      <div class="bed-leg l"></div>
+      <div class="bed-leg r"></div>
+    </div>
+
+    <!-- Cash counter (between exam bed and machines) -->
+    <div class="furniture cash-counter" id="cash-counter">
+      <div class="cc-sign">CASHIER</div>
+      <div class="cc-top"></div>
+      <div class="cc-front">
+        <div class="cc-register">
+          <div class="cc-screen">$</div>
+          <div class="cc-keys"></div>
+        </div>
+        <div class="cc-slot"></div>
+      </div>
+    </div>
+
+    <!-- Test machines (right side) -->
+    <div class="machines">
+      <div class="machine" data-zone="lab">
+        <div class="m-screen"><span class="led"></span>LAB</div>
+        <div class="m-body">🧪</div>
+        <div class="m-base"></div>
+        <div class="m-label">Lab Bench</div>
+      </div>
+      <div class="machine" data-zone="imaging">
+        <div class="m-screen"><span class="led"></span>IMG</div>
+        <div class="m-body">☢</div>
+        <div class="m-base"></div>
+        <div class="m-label">Imaging</div>
+      </div>
+      <div class="machine" data-zone="bedside">
+        <div class="m-screen"><span class="led"></span>POC</div>
+        <div class="m-body">📈</div>
+        <div class="m-base"></div>
+        <div class="m-label">Bedside</div>
+      </div>
+    </div>
+
+    <!-- Doctor character -->
+    <div class="character doctor" id="doctor">
+      <div class="bubble-anchor" id="doctor-bubbles"></div>
+      <div class="char-shadow"></div>
+      <div class="char-body">
+        <div class="char-head">
+          <div class="hair"></div>
+          <div class="face">
+            <div class="eye l"></div>
+            <div class="eye r"></div>
+            <div class="mouth"></div>
+            <div class="stubble"></div>
+          </div>
+        </div>
+        <div class="char-torso doctor-coat">
+          <div class="coat-collar"></div>
+          <div class="coat-pocket"></div>
+          <div class="stethoscope"></div>
+          <div class="badge-id">DR HOUSE</div>
+        </div>
+        <div class="char-arm l"></div>
+        <div class="char-arm r"><div class="cane"></div></div>
+        <div class="char-leg l"></div>
+        <div class="char-leg r"></div>
+      </div>
+      <div class="char-tag">Dr. House</div>
+    </div>
+
+    <!-- Patient character -->
+    <div class="character patient" id="patient">
+      <div class="bubble-anchor" id="patient-bubbles"></div>
+      <div class="char-shadow"></div>
+      <div class="char-body">
+        <div class="char-head">
+          <div class="hair patient-hair"></div>
+          <div class="face">
+            <div class="eye l"></div>
+            <div class="eye r"></div>
+            <div class="mouth sad"></div>
+          </div>
+        </div>
+        <div class="char-torso patient-shirt">
+          <div class="shirt-stripe"></div>
+        </div>
+        <div class="char-arm l"></div>
+        <div class="char-arm r"></div>
+        <div class="char-leg l"></div>
+        <div class="char-leg r"></div>
+      </div>
+      <div class="char-tag" id="patient-tag">Patient</div>
+      <div class="deterioration-aura" id="deterioration-aura"></div>
+    </div>
+
+    <!-- Side rail with action log + truth -->
+    <aside class="rail">
+      <div class="rail-block">
+        <div class="rail-title">⏱ Pending Tests</div>
+        <div id="pending-list" class="pending-list"><div class="empty">none</div></div>
+      </div>
+      <div class="rail-block">
+        <div class="rail-title">📜 Action Log</div>
+        <div id="action-log" class="action-log"></div>
+      </div>
+      <div class="rail-block truth-block">
+        <div class="rail-title">
+          <span>🧬 Ground Truth</span>
+          <button id="truth-toggle" class="mini-btn">reveal</button>
+        </div>
+        <div id="truth-panel" class="truth-panel hidden">
+          <div>Hidden — toggle to reveal</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ========================== BOTTOM CONTROLS ========================== -->
+  <footer class="controls">
+    <div class="controls-section">
+      <label class="ctrl-label">Mode</label>
+      <select id="ctrl-mode" class="ctrl-select">
+        <option value="auto">Auto (Agent)</option>
+        <option value="manual">Manual</option>
+      </select>
+    </div>
+
+    <div class="controls-section auto-only">
+      <label class="ctrl-label">Policy</label>
+      <select id="ctrl-policy" class="ctrl-select">
+        <option value="oracle">Oracle (smart)</option>
+        <option value="greedy">Greedy</option>
+        <option value="random">Random</option>
+      </select>
+    </div>
+
+    <div class="controls-section">
+      <label class="ctrl-label">Patient</label>
+      <select id="ctrl-disease" class="ctrl-select">
+        <option value="">Random</option>
+      </select>
+    </div>
+
+    <div class="controls-section auto-only">
+      <button id="btn-step" class="btn">⏭ Step</button>
+      <button id="btn-play" class="btn play">▶ Play</button>
+      <label class="ctrl-label">Speed</label>
+      <select id="ctrl-speed" class="ctrl-select small">
+        <option value="1">1×</option>
+        <option value="2" selected>2×</option>
+        <option value="4">4×</option>
+      </select>
+      <label class="audio-toggle" title="Use Kokoro voice narration">
+        <input id="ctrl-audio" type="checkbox" checked />
+        <span class="audio-toggle-ui"></span>
+        <span id="audio-toggle-label">Audio On</span>
+      </label>
+    </div>
+
+    <!-- Manual action panel -->
+    <div class="controls-section manual-only" id="manual-panel">
+      <select id="manual-type" class="ctrl-select">
+        <option value="INTERVIEW">INTERVIEW</option>
+        <option value="EXAMINE">EXAMINE</option>
+        <option value="ORDER_TEST">ORDER_TEST</option>
+        <option value="UPDATE_DIFFERENTIAL">UPDATE_DIFFERENTIAL</option>
+        <option value="DIAGNOSE">DIAGNOSE</option>
+      </select>
+      <select id="manual-arg" class="ctrl-select wide"></select>
+      <button id="manual-execute" class="btn primary">Execute</button>
+    </div>
+  </footer>
+
+  <!-- ========================== TERMINAL OVERLAY ========================== -->
+  <div class="overlay hidden" id="end-overlay">
+    <div class="end-card">
+      <div id="end-banner" class="end-banner">CASE CLOSED</div>
+      <div id="end-verdict" class="end-verdict"></div>
+
+      <div class="end-grid">
+        <div class="end-block">
+          <div class="end-label">Final diagnosis</div>
+          <div class="end-value" id="end-dx">—</div>
+        </div>
+        <div class="end-block">
+          <div class="end-label">True disease</div>
+          <div class="end-value" id="end-truth">—</div>
+        </div>
+        <div class="end-block">
+          <div class="end-label">Cost</div>
+          <div class="end-value">$<span id="end-cost">—</span></div>
+        </div>
+        <div class="end-block">
+          <div class="end-label">Steps used</div>
+          <div class="end-value" id="end-steps">—</div>
+        </div>
+      </div>
+
+      <div class="rewards-panel" id="rewards-panel"></div>
+
+      <div class="end-actions">
+        <button id="btn-end-next" class="btn primary">Next Patient</button>
+        <button id="btn-end-close" class="btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

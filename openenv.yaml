@@ -1,0 +1,21 @@
+spec_version: 1
+name: house_md_env
+type: space
+runtime: fastapi
+app: house_md_env.server.app:app
+port: 8000
+description: |
+  House M.D. — a POMDP RL environment where an LLM agent plays a diagnostician
+  in the ER. The agent receives a vague chief complaint and chooses among 5
+  actions (INTERVIEW, EXAMINE, ORDER_TEST, UPDATE_DIFFERENTIAL, DIAGNOSE) to
+  reach a correct diagnosis while minimizing cost, time, and patient risk.
+  15 disease cards × 3 presentation variants per disease, with red herrings and
+  decoy positive tests baked into the corpus to discourage reward hacking.
+metadata:
+  author: SnehShah, Ayush Aryan, Arjun Bhammar
+  hackathon: openenv-apr-2026
+  tags:
+    - clinical-reasoning
+    - pomdp
+    - llm-agents
+    - grpo

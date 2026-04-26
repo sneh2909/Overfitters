@@ -1,0 +1,386 @@
+id: viral_uri
+severity: stable
+presentation_variants:
+- variant_id: v1
+  variant_type: textbook
+  age: 25
+  sex: female
+  chief_complaint: runny nose and sore throat
+  patient_card: 25-year-old female presents with three days of nasal congestion, rhinorrhea, and a scratchy throat. She reports
+    a mild dry cough that started yesterday.
+- variant_id: v2
+  variant_type: acute_severe
+  age: 45
+  sex: male
+  chief_complaint: bad cough and feeling hot
+  patient_card: 45-year-old male complains of a persistent hacking cough, low-grade fever, and generalized myalgias for the
+    past four days. He feels miserable and has been unable to sleep.
+- variant_id: v3
+  variant_type: atypical
+  age: 65
+  sex: female
+  chief_complaint: tiredness and scratchy throat
+  patient_card: 65-year-old female presents primarily with fatigue and a mild scratchy throat. She denies fever but mentions
+    her grandchildren were recently sick.
+symptom_distribution:
+  pain_location:
+    prob: 0.4
+    responses:
+    - My throat hurts right in the back.
+    - It's mostly a headache and facial pressure.
+    - Just my throat and some muscle aches all over.
+    denial_responses:
+    - I don't have any real pain, just discomfort.
+    - No pain anywhere.
+  pain_character:
+    prob: 0.4
+    responses:
+    - It's a scratchy, raw feeling in my throat.
+    - A dull ache in my head and muscles.
+    - Like swallowing glass when I eat.
+    denial_responses:
+    - It's not really a pain, just annoying.
+    - No specific pain to describe.
+  pain_onset:
+    prob: 0.8
+    responses:
+    - It started gradually a couple of days ago.
+    - I woke up with a tickle in my throat yesterday.
+    - Been coming on slowly since the weekend.
+    denial_responses:
+    - I haven't had any pain.
+    - No pain, so no onset.
+  pain_radiation:
+    prob: 0.05
+    responses:
+    - My throat pain sometimes shoots to my ears.
+    - The headache goes down my neck a bit.
+    - Just radiates around my sinuses.
+    denial_responses:
+    - No, it stays in one place.
+    - Doesn't travel anywhere.
+  pain_severity:
+    prob: 0.4
+    responses:
+    - Maybe a 3 or 4 out of 10.
+    - It's mild, just very irritating.
+    - About a 2, mostly when I swallow.
+    denial_responses:
+    - I'm not in any pain.
+    - Zero pain.
+  pain_timing:
+    prob: 0.4
+    responses:
+    - My throat hurts worse in the morning.
+    - It's pretty constant throughout the day.
+    - Comes and goes, mostly when I cough.
+    denial_responses:
+    - No pain to time.
+    - Not applicable.
+  pain_triggers:
+    prob: 0.4
+    responses:
+    - Swallowing makes my throat hurt more.
+    - Coughing aggravates my headache.
+    - Blowing my nose makes my face ache.
+    denial_responses:
+    - Nothing makes it worse.
+    - No specific triggers.
+  nausea_vomiting:
+    prob: 0.1
+    responses:
+    - A little nauseous from all the post-nasal drip.
+    - My stomach is slightly upset, but no vomiting.
+    - Just a bit queasy from coughing so hard.
+    denial_responses:
+    - No nausea or vomiting.
+    - My stomach is fine.
+  fever_chills:
+    prob: 0.6
+    responses:
+    - I felt a bit feverish and had some chills last night.
+    - I haven't taken my temperature, but I feel warm.
+    - Yes, a low-grade fever around 99.5.
+    denial_responses:
+    - No fever or chills.
+    - I've felt normal temperature-wise.
+  cough:
+    prob: 0.9
+    responses:
+    - Yes, a dry, hacking cough.
+    - I've been coughing up a little bit of clear phlegm.
+    - Mainly a tickle in my throat that makes me cough.
+    denial_responses:
+    - No cough at all.
+    - Haven't been coughing.
+  shortness_of_breath:
+    prob: 0.1
+    responses:
+    - Only when my nose is completely stuffed up.
+    - A little bit if I have a coughing fit.
+    - Just feeling congested, not really short of breath.
+    denial_responses:
+    - Breathing is fine, just a stuffy nose.
+    - No shortness of breath.
+  chest_pain_probe:
+    prob: 0.1
+    responses:
+    - My chest muscles are a bit sore from coughing.
+    - Just a slight burning when I take a deep breath to cough.
+    - Only a little tightness from the congestion.
+    denial_responses:
+    - No chest pain at all.
+    - My chest feels fine.
+  headache_probe:
+    prob: 0.6
+    responses:
+    - Yes, a dull headache right behind my eyes.
+    - Just a mild tension headache.
+    - My head feels heavy and congested.
+    denial_responses:
+    - No headache.
+    - My head is clear.
+  visual_neuro_changes:
+    prob: 0.05
+    responses:
+    - My eyes are a bit watery, but vision is fine.
+    - Just feeling a little foggy from being sick.
+    - Eyes feel tired, but no real changes.
+    denial_responses:
+    - No vision changes or numbness.
+    - Everything is normal neurologically.
+  palpitations:
+    prob: 0.05
+    responses:
+    - My heart beat a little fast when I had a fever.
+    - Only after I took some decongestant.
+    - Felt a little flutter, probably from the cold medicine.
+    denial_responses:
+    - No heart racing.
+    - Heart feels completely normal.
+  lmp:
+    prob: 0.05
+    responses:
+    - A couple of weeks ago, completely normal.
+    - Last week, on schedule.
+    - I'm on my period right now.
+    denial_responses:
+    - I don't get periods anymore.
+    - Not applicable.
+  pregnancy_possibility:
+    prob: 0.05
+    responses:
+    - I don't think so, but I guess anything is possible.
+    - Very unlikely.
+    - No, we use protection.
+    denial_responses:
+    - Definitely not pregnant.
+    - Zero chance.
+  urinary_symptoms:
+    prob: 0.05
+    responses:
+    - Urine is a bit dark because I haven't drank much water.
+    - Going a little less often than usual.
+    - Normal, just trying to stay hydrated.
+    denial_responses:
+    - No burning or frequent urination.
+    - Urinating normally.
+  bowel_changes:
+    prob: 0.05
+    responses:
+    - A little constipated from not eating much.
+    - Slightly loose stool, maybe from the cough drops.
+    - Stomach is a bit off, but nothing major.
+    denial_responses:
+    - Bowel movements are normal.
+    - No diarrhea or constipation.
+  polyuria_polydipsia:
+    prob: 0.05
+    responses:
+    - I've been drinking a lot of tea for my throat.
+    - Thirsty because I'm breathing through my mouth.
+    - Drinking more fluids to flush this out.
+    denial_responses:
+    - No unusual thirst.
+    - Drinking my normal amount.
+  medications:
+    prob: 0.8
+    responses:
+    - Just taking some over-the-counter cold medicine.
+    - I took some ibuprofen for the aches.
+    - Using a saline nasal spray and some throat lozenges.
+    denial_responses:
+    - I don't take any medications.
+    - Nothing, not even Tylenol.
+  allergies:
+    prob: 0.8
+    responses:
+    - I'm allergic to penicillin.
+    - Just seasonal allergies, but this feels different.
+    - Sulfa drugs give me a rash.
+    denial_responses:
+    - No known allergies.
+    - I can take any medication.
+  past_medical_history:
+    prob: 0.8
+    responses:
+    - I have mild asthma that acts up when I get a cold.
+    - Generally healthy, just the occasional cold.
+    - I have high blood pressure, well controlled.
+    denial_responses:
+    - No major medical problems.
+    - I'm completely healthy.
+  family_history:
+    prob: 0.8
+    responses:
+    - My dad has diabetes, but that's it.
+    - Mother has hypertension.
+    - Nothing significant runs in my family.
+    denial_responses:
+    - No family history of major diseases.
+    - Everyone is pretty healthy.
+  social_travel_exposure:
+    prob: 0.8
+    responses:
+    - My kids were sick with a cold last week.
+    - A lot of people at work have been coughing.
+    - I don't smoke, but I was on a plane a few days ago.
+    denial_responses:
+    - Haven't been around anyone sick.
+    - No recent travel or sick contacts.
+exam_distribution:
+  vital_signs:
+    findings:
+    - HR 82, BP 118/76, RR 14, Temp 37.3°C, SpO2 99% on room air.
+    - HR 90, BP 122/80, RR 16, Temp 37.8°C, SpO2 98% on room air.
+    - HR 76, BP 110/70, RR 14, Temp 36.9°C, SpO2 100% on room air.
+  general_appearance:
+    findings:
+    - Well-appearing, in no acute distress, occasional sniffing.
+    - Mildly fatigued appearing, breathing comfortably, coughing occasionally.
+    - Alert and oriented, appears mildly congested but comfortable.
+  mental_status:
+    findings:
+    - Alert, oriented x3, normal speech and cognition.
+    - Awake, alert, appropriate interactions.
+    - GCS 15, normal affect, no focal deficits.
+  heent:
+    findings:
+    - Mildly erythematous oropharynx without exudate, clear rhinorrhea, TMs clear.
+    - Nasal turbinates boggy and erythematous, posterior pharyngeal cobblestoning.
+    - Mild conjunctival injection, clear nasal discharge, tonsils 1+ without exudate.
+  neck_exam:
+    findings:
+    - Supple, no meningismus. Mild bilateral anterior cervical lymphadenopathy.
+    - Shotty anterior cervical nodes, thyroid normal, no JVD.
+    - Supple neck, no significant lymphadenopathy, full range of motion.
+  cardiac_auscultation:
+    findings:
+    - Regular rate and rhythm, normal S1 and S2, no murmurs, rubs, or gallops.
+    - Normal heart sounds, no murmurs appreciated.
+    - RRR, no extra heart sounds.
+  pulmonary_auscultation:
+    findings:
+    - Clear to auscultation bilaterally, no wheezes, rales, or rhonchi.
+    - Good air movement bilaterally, clear breath sounds, no focal consolidation.
+    - Lungs clear bilaterally, normal respiratory effort.
+  peripheral_perfusion:
+    findings:
+    - Warm extremities, 2+ pulses, capillary refill < 2 seconds, no edema.
+    - Normal peripheral pulses, no cyanosis or clubbing.
+    - No lower extremity edema, brisk capillary refill.
+  abdominal_palpation:
+    findings:
+    - Soft, non-tender, non-distended, normal bowel sounds.
+    - Abdomen soft, no tenderness or organomegaly.
+    - Non-tender to palpation in all four quadrants, no guarding.
+  cva_tenderness:
+    findings:
+    - No costovertebral angle tenderness bilaterally.
+    - Negative CVA tenderness.
+    - No pain on percussion of the flanks.
+  pelvic_exam:
+    findings:
+    - Deferred.
+    - Not indicated, deferred.
+    - Exam deferred.
+  cranial_nerves:
+    findings:
+    - Cranial nerves II-XII intact.
+    - CN II-XII grossly intact.
+    - No cranial nerve deficits noted.
+  motor_sensory:
+    findings:
+    - 5/5 strength in all extremities, sensation intact to light touch.
+    - Normal gait, strength and sensation intact.
+    - No focal motor or sensory deficits.
+  skin_exam:
+    findings:
+    - Warm, dry, no rashes or petechiae.
+    - Normal skin turgor, no lesions noted.
+    - Skin is intact, no diaphoresis or rash.
+  musculoskeletal_chest_wall:
+    findings:
+    - No chest wall tenderness to palpation, normal range of motion.
+    - Mild diffuse muscle soreness, no focal joint swelling or tenderness.
+    - Chest wall non-tender, MSK exam unremarkable.
+test_sensitivities:
+  chest_xray:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: Prominent peribronchial cuffing, no focal consolidation.
+      flag: H
+    - value: Mild hyperinflation, clear lung fields.
+      flag: H
+    - value: Subsegmental atelectasis, no pneumonia.
+      flag: H
+    value_normal: Clear lungs bilaterally. No focal consolidation, pleural effusion, or pneumothorax.
+    is_confirmatory: false
+  cbc:
+    prob_abnormal: 0.1
+    values_abnormal:
+    - value: WBC 11.2 (mild elevation), Hgb 14.0, Plt 250k
+      flag: H
+    - value: WBC 3.8 (mild leukopenia), Hgb 13.5, Plt 210k
+      flag: L
+    - value: WBC 10.5, Hgb 14.2, Plt 140k (mild thrombocytopenia)
+      flag: L
+    value_normal: WBC 7.5, Hgb 14.1, Plt 260k. Normal differential.
+    is_confirmatory: false
+  pulse_oximetry:
+    prob_abnormal: 0.05
+    values_abnormal:
+    - value: 94% on room air
+      flag: L
+    - value: 95% on room air
+      flag: L
+    - value: 93% on room air
+      flag: L
+    value_normal: 98% on room air
+    is_confirmatory: false
+  crp_esr:
+    prob_abnormal: 0.15
+    values_abnormal:
+    - value: CRP 12 mg/L, ESR 25 mm/hr
+      flag: H
+    - value: CRP 8 mg/L, ESR 15 mm/hr
+      flag: H
+    - value: CRP 15 mg/L, ESR 30 mm/hr
+      flag: H
+    value_normal: CRP <3 mg/L, ESR 10 mm/hr
+    is_confirmatory: false
+minimum_evidence_set:
+- any_of:
+  - chest_xray
+  require: normal
+decoy: null
+red_herring:
+  disease: pneumonia
+  shared_features:
+  - cough
+  - fever_chills
+  - general_appearance
+  discriminating_features:
+  - pulmonary_auscultation
+  - chest_xray
+  - pulse_oximetry

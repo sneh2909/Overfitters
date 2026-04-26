@@ -69,18 +69,78 @@ with HouseMDEnv(base_url="https://snehshah-house-md-env.hf.space") as env:
 
 ### From the browser
 
-The Space root **is** the playground — a hand-built animated ER scene where
-you can hit *Play* and watch the oracle / greedy / random policies (or your
-own manual actions) walk a patient through the room, queue tests at the lab
-bench, ring up costs at the cashier, and reveal the ground-truth diagnosis
-when the case closes.
+There are two browser surfaces:
+
+- [Custom ER scene](https://snehshah-house-md-env.hf.space/) — hand-built
+  animated playground where you can hit *Play* and watch the oracle / greedy /
+  random policies, or enter manual actions.
+- [Standard OpenEnv UI](https://snehshah-house-md-env-openenv.hf.space/web/) —
+  the stock OpenEnv playground format with Reset / Step / Get state controls.
 
 - [`/`](./) — **live ER scene** (default landing page)
+- [`/web/`](./web/) — standard OpenEnv playground when `HOUSE_MD_OPENENV_UI=true`
 - [`/docs`](./docs) — FastAPI Swagger UI
 - [`/schema`](./schema) — JSON schemas for action / observation / state
 - [`/health`](./health) — health check
 
 ---
+
+## Testing in the standard OpenEnv UI
+
+Open <https://snehshah-house-md-env-openenv.hf.space/web/> and click
+**Reset** first. The raw JSON response will show the patient's
+`chief_complaint`, `age`, `sex`, `intake_vitals`, current `step`, and visible
+history.
+
+For **Step**, fill these action fields:
+
+- `type`: one of `INTERVIEW`, `EXAMINE`, `ORDER_TEST`,
+  `UPDATE_DIFFERENTIAL`, `DIAGNOSE`
+- `argument`: the target id for that action
+- `rationale`: any short reason; it is logged but does not change transitions
+- `board`: leave blank/null except for `UPDATE_DIFFERENTIAL`
+
+Good smoke-test sequence:
+
+```json
+{"type": "INTERVIEW", "argument": "pain_location", "rationale": "localize the complaint"}
+```
+
+```json
+{"type": "EXAMINE", "argument": "general_appearance", "rationale": "quick global assessment"}
+```
+
+```json
+{"type": "ORDER_TEST", "argument": "cbc", "rationale": "screen for infection or anemia"}
+```
+
+```json
+{"type": "ORDER_TEST", "argument": "urinalysis", "rationale": "cheap same-step urinary screen"}
+```
+
+To test a differential update, use:
+
+```json
+{
+  "type": "UPDATE_DIFFERENTIAL",
+  "argument": "working differential after first pass",
+  "rationale": "rank likely causes before committing",
+  "board": [
+    {"disease": "appendicitis", "prob": 0.45},
+    {"disease": "ectopic_pregnancy", "prob": 0.35},
+    {"disease": "viral_gastroenteritis", "prob": 0.20}
+  ]
+}
+```
+
+To end the episode, diagnose with any disease id from the corpus, for example:
+
+```json
+{"type": "DIAGNOSE", "argument": "appendicitis", "rationale": "commit to the leading diagnosis"}
+```
+
+After `DIAGNOSE`, the response sets `terminal: true` and includes the reward
+breakdown in `observation.rewards`.
 
 ## Action space
 

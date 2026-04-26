@@ -50,10 +50,16 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-# Disable the Gradio auto-UI before importing create_app so we control `/`.
-# create_app reads this env var lazily inside its body, so setting it here
-# is enough as long as it happens before the call to create_app() below.
-os.environ["ENABLE_WEB_INTERFACE"] = "false"
+_USE_OPENENV_UI = os.getenv("HOUSE_MD_OPENENV_UI", "false").lower() in (
+    "true",
+    "1",
+    "yes",
+)
+
+# Disable the Gradio auto-UI before importing create_app so the default build
+# keeps the custom ER scene at `/`. Deployment variants can opt back into the
+# stock OpenEnv interface with HOUSE_MD_OPENENV_UI=true.
+os.environ["ENABLE_WEB_INTERFACE"] = "true" if _USE_OPENENV_UI else "false"
 
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse  # noqa: E402
 from fastapi.staticfiles import StaticFiles  # noqa: E402
@@ -99,13 +105,14 @@ app = create_app(
 _STATIC_DIR = Path(__file__).resolve().parent / "static"
 _INDEX_HTML = _STATIC_DIR / "index.html"
 
-if _STATIC_DIR.is_dir():
+if not _USE_OPENENV_UI and _STATIC_DIR.is_dir():
     app.mount(
         "/static", StaticFiles(directory=str(_STATIC_DIR)), name="static"
     )
 
-# Register the legacy /api/* routes that the static UI calls.
-register_playground(app, prefix="/api")
+# Register the legacy /api/* routes only for the custom ER scene.
+if not _USE_OPENENV_UI:
+    register_playground(app, prefix="/api")
 
 
 # Plain-text fallback if static assets aren't shipped (eg. someone runs the
@@ -126,21 +133,22 @@ _FALLBACK_LANDING = """<!DOCTYPE html>
 """
 
 
-@app.get("/", include_in_schema=False)
-async def landing():
-    if _INDEX_HTML.is_file():
-        return FileResponse(str(_INDEX_HTML))
-    return HTMLResponse(_FALLBACK_LANDING)
+if not _USE_OPENENV_UI:
+    @app.get("/", include_in_schema=False)
+    async def landing():
+        if _INDEX_HTML.is_file():
+            return FileResponse(str(_INDEX_HTML))
+        return HTMLResponse(_FALLBACK_LANDING)
 
 
-# The HF Space iframe + health probes sometimes hit `/web` and `/web/`
-# because `openenv push` historically wired a Gradio UI there. We disabled
-# Gradio in favor of the richer ER scene at `/`, so silently redirect those
-# probes to the new home rather than spamming 404s in the logs.
-@app.get("/web", include_in_schema=False)
-@app.get("/web/", include_in_schema=False)
-async def web_redirect():
-    return RedirectResponse(url="/", status_code=307)
+    # The HF Space iframe + health probes sometimes hit `/web` and `/web/`
+    # because `openenv push` historically wired a Gradio UI there. We disabled
+    # Gradio in favor of the richer ER scene at `/`, so silently redirect those
+    # probes to the new home rather than spamming 404s in the logs.
+    @app.get("/web", include_in_schema=False)
+    @app.get("/web/", include_in_schema=False)
+    async def web_redirect():
+        return RedirectResponse(url="/", status_code=307)
 
 
 # ---------------------------------------------------------------------------

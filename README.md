@@ -6,6 +6,7 @@
 
 [![OpenEnv](https://img.shields.io/badge/OpenEnv-spec_v1-orange)](https://github.com/meta-pytorch/OpenEnv)
 [![HF Space](https://img.shields.io/badge/🤗_Space-SnehShah/house--md--env-yellow)](https://huggingface.co/spaces/SnehShah/house-md-env)
+[![OpenEnv UI Space](https://img.shields.io/badge/🤗_OpenEnv_UI-SnehShah/house--md--env--openenv-yellow)](https://huggingface.co/spaces/SnehShah/house-md-env-openenv)
 [![SFT adapter](https://img.shields.io/badge/🤗_Model-house--md--sft--gemma3--4b-blue)](https://huggingface.co/SnehShah/house-md-sft-gemma3-4b)
 [![GRPO adapter](https://img.shields.io/badge/🤗_Model-house--md--grpo--optimized--gemma3--4b--v3-blue)](https://huggingface.co/SnehShah/house-md-grpo-optimized-gemma3-4b-v3)
 [![W&B](https://img.shields.io/badge/W%26B-house--md-yellow)](https://wandb.ai/sneh2909-christ-university/house-md?nw=nwusersneh2909)
@@ -107,6 +108,7 @@ you can hit *Play* and watch the oracle / greedy / random policies (or your
 own manual actions) walk a patient through the room.
 
 - <https://snehshah-house-md-env.hf.space/> — live ER scene
+- <https://snehshah-house-md-env-openenv.hf.space/web/> — standard OpenEnv playground
 - <https://snehshah-house-md-env.hf.space/docs> — FastAPI Swagger UI
 - <https://snehshah-house-md-env.hf.space/schema> — JSON schemas
 
@@ -119,6 +121,7 @@ real adapters — no local GPU needed for `01` and `04`.
 
 | # | Notebook | Hardware | Time | What it does |
 |---|----------|----------|------|--------------|
+| 00 | [`notebooks/00_run_all.ipynb`](notebooks/00_run_all.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/00_run_all.ipynb) | CPU (GPU optional) | ~3 min CPU / ~40 min GPU | **All-in-one**: connect to the Space, schema tour, manual/random/oracle episodes, OpenEnv UI test inputs, eval comparison plot, plus optional mini SFT + mini GRPO + live mini-eval. |
 | 01 | [`notebooks/01_explore_env.ipynb`](notebooks/01_explore_env.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/01_explore_env.ipynb) | CPU | ~3 min | Connects to the live Space; runs manual / random / oracle episodes; prints the reward breakdown. |
 | 02 | [`notebooks/02_sft.ipynb`](notebooks/02_sft.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/02_sft.ipynb) | T4 | ~12 min | Mini SFT loop on Gemma 3 4B-IT, 200 oracle traces × 1 epoch, pushes a LoRA adapter. |
 | 03 | [`notebooks/03_grpo.ipynb`](notebooks/03_grpo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/03_grpo.ipynb) | T4 | ~25 min | 30-step GRPO loop against the live Space, plots reward curve, pushes a LoRA adapter. |

@@ -227,9 +227,9 @@ openenv push --repo-id SnehShah/house-md-env
 
 ## Authors
 
-- **Sneh Shah** — env design, reward engineering, GRPO training
-- **Ayush Aryan** — disease cards, oracle, eval pipeline
-- **Arjun Bhammar** — UI, infra
+- **Sneh Shah**
+- **Ayush Aryan** 
+- **Arjun Bhammar** 
 
 ---
 

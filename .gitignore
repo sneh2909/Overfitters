@@ -21,11 +21,12 @@ htmlcov/
 .nox/
 .cache/
 
-# Virtual environments
-.venv/
-venv/
-ENV/
-env/
+# Virtual environments (anchored to repo root so we don't accidentally ignore
+# package subdirs literally named `env/`, e.g. clinical_rl/env/)
+/.venv/
+/venv/
+/ENV/
+/env/
 
 # IDE / editor
 .idea/

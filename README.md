@@ -37,7 +37,7 @@ GRPO is good at sharpening.
 
 | What | Path |
 |---|---|
-| **Mini blog post** | [`docs/blog_post.md`](docs/blog_post.md) |
+| **blog post** | [`docs/blog.md`](docs/blog.md) |
 | **HF Space — custom ER scene** | [`SnehShah/house-md-env`](https://huggingface.co/spaces/SnehShah/house-md-env) → <https://snehshah-house-md-env.hf.space/> |
 | **HF Space — OpenEnv UI** | [`SnehShah/house-md-env-openenv`](https://huggingface.co/spaces/SnehShah/house-md-env-openenv) → <https://snehshah-house-md-env-openenv.hf.space/web/> |
 | **All-in-one notebook** (env tour + mini SFT + mini GRPO + eval) | [`notebooks/00_run_all.ipynb`](notebooks/00_run_all.ipynb) |

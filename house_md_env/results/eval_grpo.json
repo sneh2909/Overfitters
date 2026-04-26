@@ -1,0 +1,4288 @@
+{
+  "model_tag": "grpo",
+  "model_id": "google/gemma-3-4b-it",
+  "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3",
+  "base_url": "http://127.0.0.1:8000",
+  "summary": {
+    "n_evaluated": 45,
+    "n_patients_total": 45,
+    "correct": 28,
+    "correct_pct": 62.2,
+    "avg_rewards": {
+      "r1_accuracy": 0.5778,
+      "r2_cost": 0.7858,
+      "r6_anchoring": 0.6,
+      "r7_safety": -0.2578,
+      "r8_format": 1.0,
+      "total": 1.9707
+    },
+    "avg_oracle_pct": 68.9,
+    "avg_steps": 9.5,
+    "avg_cost": 398.7,
+    "total_malformed": 0,
+    "total_actions": 427,
+    "malformed_rate": 0.0,
+    "by_difficulty": {
+      "critical_acute_severe": {
+        "n": 5,
+        "correct_pct": 100.0,
+        "avg_total": 2.59,
+        "avg_oracle_pct": 96.0
+      },
+      "critical_atypical": {
+        "n": 5,
+        "correct_pct": 40.0,
+        "avg_total": 0.92,
+        "avg_oracle_pct": 39.0
+      },
+      "critical_textbook": {
+        "n": 5,
+        "correct_pct": 100.0,
+        "avg_total": 2.91,
+        "avg_oracle_pct": 101.0
+      },
+      "stable_acute_severe": {
+        "n": 5,
+        "correct_pct": 80.0,
+        "avg_total": 2.596,
+        "avg_oracle_pct": 88.2
+      },
+      "stable_atypical": {
+        "n": 5,
+        "correct_pct": 40.0,
+        "avg_total": 1.742,
+        "avg_oracle_pct": 58.7
+      },
+      "stable_textbook": {
+        "n": 5,
+        "correct_pct": 60.0,
+        "avg_total": 2.182,
+        "avg_oracle_pct": 72.6
+      },
+      "urgent_acute_severe": {
+        "n": 5,
+        "correct_pct": 60.0,
+        "avg_total": 2.018,
+        "avg_oracle_pct": 68.9
+      },
+      "urgent_atypical": {
+        "n": 5,
+        "correct_pct": 20.0,
+        "avg_total": 0.796,
+        "avg_oracle_pct": 28.3
+      },
+      "urgent_textbook": {
+        "n": 5,
+        "correct_pct": 60.0,
+        "avg_total": 1.982,
+        "avg_oracle_pct": 67.6
+      }
+    }
+  },
+  "patients": [
+    {
+      "patient_id": "ectopic_pregnancy__v1__s100",
+      "disease": "ectopic_pregnancy",
+      "difficulty": "critical_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.98
+      },
+      "steps_taken": 10,
+      "cost": 335.0,
+      "diagnosis": "ectopic_pregnancy",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.98,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pregnancy_possibility",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pregnancy_possibility\",\"rationale\":\"Rule pregnancy in/out before pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.502},{\"disease\":\"appendicitis\",\"prob\":0.346},{\"disease\":\"ovarian_torsion\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urine_pregnancy_qualitative",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urine_pregnancy_qualitative\",\"rationale\":\"POC pregnancy \\u2014 gates pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "pelvic_ultrasound_tv",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pelvic_ultrasound_tv\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports ectopic_pregnancy.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports ectopic_pregnancy.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"ovarian_torsion\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "ectopic_pregnancy",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"ectopic_pregnancy\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "ectopic_pregnancy__v2__s200",
+      "disease": "ectopic_pregnancy",
+      "difficulty": "critical_acute_severe",
+      "rewards": {
+        "r1_accuracy": 0.5,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 2.18
+      },
+      "steps_taken": 10,
+      "cost": 335.0,
+      "diagnosis": "ectopic_pregnancy",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.0125,
+      "oracle_ceiling_pct": 72.4,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pregnancy_possibility",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pregnancy_possibility\",\"rationale\":\"Rule pregnancy in/out before pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.502},{\"disease\":\"appendicitis\",\"prob\":0.346},{\"disease\":\"ovarian_torsion\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urine_pregnancy_qualitative",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urine_pregnancy_qualitative\",\"rationale\":\"POC pregnancy \\u2014 gates pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "pelvic_ultrasound_tv",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pelvic_ultrasound_tv\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports ectopic_pregnancy.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports ectopic_pregnancy.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"ovarian_torsion\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "ectopic_pregnancy",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"ectopic_pregnancy\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "ectopic_pregnancy__v3__s300",
+      "disease": "ectopic_pregnancy",
+      "difficulty": "critical_atypical",
+      "rewards": {
+        "r1_accuracy": 0.5,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 1.98
+      },
+      "steps_taken": 10,
+      "cost": 335.0,
+      "diagnosis": "ectopic_pregnancy",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 1.98,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_triggers",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_triggers\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.502},{\"disease\":\"appendicitis\",\"prob\":0.346},{\"disease\":\"ovarian_torsion\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urine_pregnancy_qualitative",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urine_pregnancy_qualitative\",\"rationale\":\"POC pregnancy \\u2014 gates pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "pelvic_ultrasound_tv",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pelvic_ultrasound_tv\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports ectopic_pregnancy.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports ectopic_pregnancy.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"ovarian_torsion\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "ectopic_pregnancy",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"ectopic_pregnancy\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "stemi__v1__s100",
+      "disease": "stemi",
+      "difficulty": "critical_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.98
+      },
+      "steps_taken": 10,
+      "cost": 280.0,
+      "diagnosis": "stemi",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.84,
+      "oracle_ceiling_pct": 104.9,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"stemi\",\"prob\":0.502},{\"disease\":\"costochondritis\",\"prob\":0.346},{\"disease\":\"pulmonary_embolism\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "ecg",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ecg\",\"rationale\":\"Rapid bedside cardiac evaluation.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "troponin",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"troponin\",\"rationale\":\"Cardiac biomarker \\u2014 rule out STEMI/NSTEMI.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "pain_radiation",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_radiation\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports stemi.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports stemi.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"stemi\",\"prob\":0.92},{\"disease\":\"costochondritis\",\"prob\":0.05},{\"disease\":\"pulmonary_embolism\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "stemi",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"stemi\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "stemi__v2__s200",
+      "disease": "stemi",
+      "difficulty": "critical_acute_severe",
+      "rewards": {
+        "r1_accuracy": 0.5,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 1.98
+      },
+      "steps_taken": 11,
+      "cost": 280.0,
+      "diagnosis": "stemi",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 1.84,
+      "oracle_ceiling_pct": 107.6,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_radiation",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_radiation\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"stemi\",\"prob\":0.502},{\"disease\":\"costochondritis\",\"prob\":0.346},{\"disease\":\"pulmonary_embolism\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ecg",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ecg\",\"rationale\":\"Rapid bedside cardiac evaluation.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "troponin",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"troponin\",\"rationale\":\"Cardiac biomarker \\u2014 rule out STEMI/NSTEMI.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports stemi.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports stemi.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"stemi\",\"prob\":0.92},{\"disease\":\"costochondritis\",\"prob\":0.05},{\"disease\":\"pulmonary_embolism\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 11,
+          "action_type": "DIAGNOSE",
+          "argument": "stemi",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"stemi\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "stemi__v3__s300",
+      "disease": "stemi",
+      "difficulty": "critical_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.03
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.84,
+      "oracle_ceiling_pct": -1.1,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"anxiety_attack\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"anxiety_attack\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "pulmonary_embolism__v1__s100",
+      "disease": "pulmonary_embolism",
+      "difficulty": "critical_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.77
+      },
+      "steps_taken": 9,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.77,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"anxiety_attack\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "pain_radiation",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_radiation\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"anxiety_attack\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "pulmonary_embolism__v2__s200",
+      "disease": "pulmonary_embolism",
+      "difficulty": "critical_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 2.97
+      },
+      "steps_taken": 9,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.97,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"costochondritis\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "pain_radiation",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_radiation\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"costochondritis\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "pulmonary_embolism__v3__s300",
+      "disease": "pulmonary_embolism",
+      "difficulty": "critical_atypical",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.77
+      },
+      "steps_taken": 9,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.77,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"anxiety_attack\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "social_travel_exposure",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"social_travel_exposure\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"anxiety_attack\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v1__s100",
+      "disease": "subarachnoid_hemorrhage",
+      "difficulty": "critical_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.86,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.91
+      },
+      "steps_taken": 8,
+      "cost": 165.0,
+      "diagnosis": "subarachnoid_hemorrhage",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.91,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "headache_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"headache_probe\",\"rationale\":\"Characterize headache \\u2014 thunderclap vs gradual is decisive.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for neuro presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for neuro presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.606},{\"disease\":\"migraine\",\"prob\":0.394}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "csf_analysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"csf_analysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports subarachnoid_hemorrhage.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports subarachnoid_hemorrhage.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.92},{\"disease\":\"migraine\",\"prob\":0.05}]}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "DIAGNOSE",
+          "argument": "subarachnoid_hemorrhage",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"subarachnoid_hemorrhage\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v2__s200",
+      "disease": "subarachnoid_hemorrhage",
+      "difficulty": "critical_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.86,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.91
+      },
+      "steps_taken": 8,
+      "cost": 165.0,
+      "diagnosis": "subarachnoid_hemorrhage",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.91,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_onset",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_onset\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "headache_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"headache_probe\",\"rationale\":\"Characterize headache \\u2014 thunderclap vs gradual is decisive.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for neuro presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for neuro presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.606},{\"disease\":\"migraine\",\"prob\":0.394}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "csf_analysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"csf_analysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports subarachnoid_hemorrhage.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports subarachnoid_hemorrhage.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.92},{\"disease\":\"migraine\",\"prob\":0.05}]}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "DIAGNOSE",
+          "argument": "subarachnoid_hemorrhage",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"subarachnoid_hemorrhage\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v3__s300",
+      "disease": "subarachnoid_hemorrhage",
+      "difficulty": "critical_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.03
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.91,
+      "oracle_ceiling_pct": -1.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"costochondritis\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "medications",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"medications\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"costochondritis\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "bacterial_meningitis__v1__s100",
+      "disease": "bacterial_meningitis",
+      "difficulty": "critical_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.86,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.91
+      },
+      "steps_taken": 9,
+      "cost": 165.0,
+      "diagnosis": "bacterial_meningitis",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.91,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "headache_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"headache_probe\",\"rationale\":\"Characterize headache \\u2014 thunderclap vs gradual is decisive.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for infectious presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for infectious presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"bacterial_meningitis\",\"prob\":0.502},{\"disease\":\"migraine\",\"prob\":0.346},{\"disease\":\"sepsis_uti\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "csf_analysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"csf_analysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports bacterial_meningitis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports bacterial_meningitis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"bacterial_meningitis\",\"prob\":0.92},{\"disease\":\"migraine\",\"prob\":0.05},{\"disease\":\"sepsis_uti\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "bacterial_meningitis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"bacterial_meningitis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "bacterial_meningitis__v2__s200",
+      "disease": "bacterial_meningitis",
+      "difficulty": "critical_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.86,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.91
+      },
+      "steps_taken": 9,
+      "cost": 165.0,
+      "diagnosis": "bacterial_meningitis",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.91,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "headache_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"headache_probe\",\"rationale\":\"Characterize headache \\u2014 thunderclap vs gradual is decisive.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for infectious presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for infectious presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"bacterial_meningitis\",\"prob\":0.502},{\"disease\":\"migraine\",\"prob\":0.346},{\"disease\":\"sepsis_uti\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "csf_analysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"csf_analysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports bacterial_meningitis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports bacterial_meningitis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"bacterial_meningitis\",\"prob\":0.92},{\"disease\":\"migraine\",\"prob\":0.05},{\"disease\":\"sepsis_uti\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "bacterial_meningitis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"bacterial_meningitis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "bacterial_meningitis__v3__s300",
+      "disease": "bacterial_meningitis",
+      "difficulty": "critical_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.46,
+        "r6_anchoring": 0.6,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.09
+      },
+      "steps_taken": 10,
+      "cost": 65.0,
+      "diagnosis": "sepsis_uti",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.91,
+      "oracle_ceiling_pct": -3.1,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "cough",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"cough\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for infectious presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for infectious presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"sepsis_uti\",\"prob\":0.502},{\"disease\":\"viral_uri\",\"prob\":0.346},{\"disease\":\"bacterial_meningitis\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urinalysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urinalysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "cbc",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"cbc\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports sepsis_uti.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports sepsis_uti.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"sepsis_uti\",\"prob\":0.92},{\"disease\":\"viral_uri\",\"prob\":0.05},{\"disease\":\"bacterial_meningitis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "sepsis_uti",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"sepsis_uti\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "appendicitis__v1__s100",
+      "disease": "appendicitis",
+      "difficulty": "urgent_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.98
+      },
+      "steps_taken": 9,
+      "cost": 270.0,
+      "diagnosis": "appendicitis",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.98,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_triggers",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_triggers\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.502},{\"disease\":\"ovarian_torsion\",\"prob\":0.346},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "abdominal_ultrasound",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"abdominal_ultrasound\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports appendicitis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports appendicitis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.92},{\"disease\":\"ovarian_torsion\",\"prob\":0.05},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "appendicitis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"appendicitis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "appendicitis__v2__s200",
+      "disease": "appendicitis",
+      "difficulty": "urgent_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.98
+      },
+      "steps_taken": 9,
+      "cost": 270.0,
+      "diagnosis": "appendicitis",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.98,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "bowel_changes",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"bowel_changes\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.502},{\"disease\":\"ovarian_torsion\",\"prob\":0.346},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "abdominal_ultrasound",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"abdominal_ultrasound\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports appendicitis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports appendicitis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.92},{\"disease\":\"ovarian_torsion\",\"prob\":0.05},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "appendicitis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"appendicitis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "appendicitis__v3__s300",
+      "disease": "appendicitis",
+      "difficulty": "urgent_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.47
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.82,
+      "oracle_ceiling_pct": 16.7,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "shortness_of_breath",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"shortness_of_breath\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"stemi\",\"prob\":0.346},{\"disease\":\"costochondritis\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "pain_radiation",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_radiation\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"stemi\",\"prob\":0.05},{\"disease\":\"costochondritis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "ovarian_torsion__v1__s100",
+      "disease": "ovarian_torsion",
+      "difficulty": "urgent_textbook",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.68
+      },
+      "steps_taken": 10,
+      "cost": 335.0,
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.98,
+      "oracle_ceiling_pct": 22.8,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pregnancy_possibility",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pregnancy_possibility\",\"rationale\":\"Rule pregnancy in/out before pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.502},{\"disease\":\"appendicitis\",\"prob\":0.346},{\"disease\":\"ovarian_torsion\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urine_pregnancy_qualitative",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urine_pregnancy_qualitative\",\"rationale\":\"POC pregnancy \\u2014 gates pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "pelvic_ultrasound_tv",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pelvic_ultrasound_tv\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports ectopic_pregnancy.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports ectopic_pregnancy.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"ovarian_torsion\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "ectopic_pregnancy",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"ectopic_pregnancy\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "ovarian_torsion__v2__s200",
+      "disease": "ovarian_torsion",
+      "difficulty": "urgent_acute_severe",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.68
+      },
+      "steps_taken": 10,
+      "cost": 335.0,
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.98,
+      "oracle_ceiling_pct": 22.8,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pregnancy_possibility",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pregnancy_possibility\",\"rationale\":\"Rule pregnancy in/out before pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.502},{\"disease\":\"appendicitis\",\"prob\":0.346},{\"disease\":\"ovarian_torsion\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urine_pregnancy_qualitative",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urine_pregnancy_qualitative\",\"rationale\":\"POC pregnancy \\u2014 gates pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "pelvic_ultrasound_tv",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pelvic_ultrasound_tv\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports ectopic_pregnancy.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports ectopic_pregnancy.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"ovarian_torsion\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "ectopic_pregnancy",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"ectopic_pregnancy\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "ovarian_torsion__v3__s300",
+      "disease": "ovarian_torsion",
+      "difficulty": "urgent_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.68
+      },
+      "steps_taken": 10,
+      "cost": 335.0,
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.98,
+      "oracle_ceiling_pct": 22.8,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_onset",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_onset\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.502},{\"disease\":\"appendicitis\",\"prob\":0.346},{\"disease\":\"ovarian_torsion\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urine_pregnancy_qualitative",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urine_pregnancy_qualitative\",\"rationale\":\"POC pregnancy \\u2014 gates pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "pelvic_ultrasound_tv",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pelvic_ultrasound_tv\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports ectopic_pregnancy.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports ectopic_pregnancy.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"ectopic_pregnancy\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"ovarian_torsion\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "ectopic_pregnancy",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"ectopic_pregnancy\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "pneumonia__v1__s100",
+      "disease": "pneumonia",
+      "difficulty": "urgent_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.92,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.94
+      },
+      "steps_taken": 10,
+      "cost": 180.0,
+      "diagnosis": "pneumonia",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.94,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "cough",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"cough\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for respiratory presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for respiratory presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pneumonia\",\"prob\":0.502},{\"disease\":\"viral_uri\",\"prob\":0.346},{\"disease\":\"bacterial_meningitis\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "pulmonary_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"pulmonary_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "pulse_oximetry",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pulse_oximetry\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pneumonia.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pneumonia.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pneumonia\",\"prob\":0.92},{\"disease\":\"viral_uri\",\"prob\":0.05},{\"disease\":\"bacterial_meningitis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pneumonia",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pneumonia\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "pneumonia__v2__s200",
+      "disease": "pneumonia",
+      "difficulty": "urgent_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.92,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.14
+      },
+      "steps_taken": 10,
+      "cost": 180.0,
+      "diagnosis": "pneumonia",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.14,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "shortness_of_breath",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"shortness_of_breath\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for respiratory presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for respiratory presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pneumonia\",\"prob\":0.502},{\"disease\":\"costochondritis\",\"prob\":0.346},{\"disease\":\"anxiety_attack\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "pulmonary_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"pulmonary_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "pulse_oximetry",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pulse_oximetry\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pneumonia.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pneumonia.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pneumonia\",\"prob\":0.92},{\"disease\":\"costochondritis\",\"prob\":0.05},{\"disease\":\"anxiety_attack\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pneumonia",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pneumonia\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "pneumonia__v3__s300",
+      "disease": "pneumonia",
+      "difficulty": "urgent_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.47
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.94,
+      "oracle_ceiling_pct": 16.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "shortness_of_breath",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"shortness_of_breath\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"costochondritis\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "pain_triggers",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_triggers\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "medications",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"medications\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"costochondritis\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "dka__v1__s100",
+      "disease": "dka",
+      "difficulty": "urgent_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 2.9
+      },
+      "steps_taken": 11,
+      "cost": 60.0,
+      "diagnosis": "dka",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.9,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "polyuria_polydipsia",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"polyuria_polydipsia\",\"rationale\":\"Screen for hyperglycemia / DKA presentation.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for endocrine presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for endocrine presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"dka\",\"prob\":0.606},{\"disease\":\"viral_gastroenteritis\",\"prob\":0.394}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "mental_status",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"mental_status\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "blood_glucose_fingerstick",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"blood_glucose_fingerstick\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "urinalysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urinalysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "ORDER_TEST",
+          "argument": "bmp",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"bmp\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports dka.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports dka.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"dka\",\"prob\":0.92},{\"disease\":\"viral_gastroenteritis\",\"prob\":0.05}]}",
+          "malformed": false
+        },
+        {
+          "step": 11,
+          "action_type": "DIAGNOSE",
+          "argument": "dka",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"dka\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "dka__v2__s200",
+      "disease": "dka",
+      "difficulty": "urgent_acute_severe",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.8,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.58
+      },
+      "steps_taken": 9,
+      "cost": 150.0,
+      "diagnosis": "viral_uri",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.7,
+      "oracle_ceiling_pct": 21.5,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "cough",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"cough\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for benign presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for benign presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.458},{\"disease\":\"pneumonia\",\"prob\":0.293},{\"disease\":\"anxiety_attack\",\"prob\":0.129},{\"disease\":\"viral_gastroenteritis\"",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "general_appearance",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"general_appearance\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports viral_uri.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports viral_uri.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.92},{\"disease\":\"pneumonia\",\"prob\":0.05},{\"disease\":\"viral_gastroenteritis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "viral_uri",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"viral_uri\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "dka__v3__s300",
+      "disease": "dka",
+      "difficulty": "urgent_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.68
+      },
+      "steps_taken": 9,
+      "cost": 270.0,
+      "diagnosis": "appendicitis",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.7,
+      "oracle_ceiling_pct": 25.2,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "bowel_changes",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"bowel_changes\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.502},{\"disease\":\"ovarian_torsion\",\"prob\":0.346},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "abdominal_ultrasound",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"abdominal_ultrasound\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports appendicitis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports appendicitis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.92},{\"disease\":\"ovarian_torsion\",\"prob\":0.05},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "appendicitis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"appendicitis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "sepsis_uti__v1__s100",
+      "disease": "sepsis_uti",
+      "difficulty": "urgent_textbook",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.46,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.41
+      },
+      "steps_taken": 9,
+      "cost": 65.0,
+      "diagnosis": "viral_uri",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.71,
+      "oracle_ceiling_pct": 15.1,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "urinary_symptoms",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"urinary_symptoms\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for benign presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for benign presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.458},{\"disease\":\"sepsis_uti\",\"prob\":0.293},{\"disease\":\"pneumonia\",\"prob\":0.129},{\"disease\":\"anxiety_attack\",\"prob\":0.1",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "urinalysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urinalysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "cbc",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"cbc\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports viral_uri.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports viral_uri.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.92},{\"disease\":\"sepsis_uti\",\"prob\":0.05},{\"disease\":\"pneumonia\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "viral_uri",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"viral_uri\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "sepsis_uti__v2__s200",
+      "disease": "sepsis_uti",
+      "difficulty": "urgent_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.46,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.71
+      },
+      "steps_taken": 10,
+      "cost": 65.0,
+      "diagnosis": "sepsis_uti",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.71,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "cough",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"cough\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for infectious presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for infectious presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"sepsis_uti\",\"prob\":0.502},{\"disease\":\"viral_uri\",\"prob\":0.346},{\"disease\":\"bacterial_meningitis\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "urinalysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urinalysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "cbc",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"cbc\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports sepsis_uti.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports sepsis_uti.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"sepsis_uti\",\"prob\":0.92},{\"disease\":\"viral_uri\",\"prob\":0.05},{\"disease\":\"bacterial_meningitis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "sepsis_uti",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"sepsis_uti\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "sepsis_uti__v3__s300",
+      "disease": "sepsis_uti",
+      "difficulty": "urgent_atypical",
+      "rewards": {
+        "r1_accuracy": 0.5,
+        "r2_cost": 0.4,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 1.68
+      },
+      "steps_taken": 10,
+      "cost": 50.0,
+      "diagnosis": "sepsis_uti",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.77,
+      "oracle_ceiling_pct": 60.6,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "fever_chills",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"fever_chills\",\"rationale\":\"Systemic infection screen.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "cough",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"cough\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for infectious presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for infectious presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"sepsis_uti\",\"prob\":0.502},{\"disease\":\"viral_uri\",\"prob\":0.346},{\"disease\":\"pneumonia\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "general_appearance",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"general_appearance\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "cbc",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"cbc\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "social_travel_exposure",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"social_travel_exposure\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "ORDER_TEST",
+          "argument": "urinalysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"urinalysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports sepsis_uti.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports sepsis_uti.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"sepsis_uti\",\"prob\":0.92},{\"disease\":\"viral_uri\",\"prob\":0.05},{\"disease\":\"pneumonia\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "sepsis_uti",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"sepsis_uti\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "migraine__v1__s100",
+      "disease": "migraine",
+      "difficulty": "stable_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.86,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.11
+      },
+      "steps_taken": 8,
+      "cost": 165.0,
+      "diagnosis": "migraine",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.11,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "headache_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"headache_probe\",\"rationale\":\"Characterize headache \\u2014 thunderclap vs gradual is decisive.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for neuro presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for neuro presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"migraine\",\"prob\":0.606},{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.394}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "csf_analysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"csf_analysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports migraine.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports migraine.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"migraine\",\"prob\":0.92},{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.05}]}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "DIAGNOSE",
+          "argument": "migraine",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"migraine\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "migraine__v2__s200",
+      "disease": "migraine",
+      "difficulty": "stable_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.86,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.91
+      },
+      "steps_taken": 9,
+      "cost": 165.0,
+      "diagnosis": "migraine",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.91,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "headache_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"headache_probe\",\"rationale\":\"Characterize headache \\u2014 thunderclap vs gradual is decisive.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "visual_neuro_changes",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"visual_neuro_changes\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for neuro presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for neuro presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"migraine\",\"prob\":0.606},{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.394}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "csf_analysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"csf_analysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports migraine.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports migraine.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"migraine\",\"prob\":0.92},{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.05}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "migraine",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"migraine\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "migraine__v3__s300",
+      "disease": "migraine",
+      "difficulty": "stable_atypical",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.86,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.11
+      },
+      "steps_taken": 9,
+      "cost": 165.0,
+      "diagnosis": "migraine",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.11,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "headache_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"headache_probe\",\"rationale\":\"Characterize headache \\u2014 thunderclap vs gradual is decisive.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "visual_neuro_changes",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"visual_neuro_changes\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for neuro presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for neuro presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"migraine\",\"prob\":0.606},{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.394}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "neck_exam",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"neck_exam\",\"rationale\":\"Meningismus screening \\u2014 Kernig/Brudzinski.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "csf_analysis",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"csf_analysis\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports migraine.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports migraine.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"migraine\",\"prob\":0.92},{\"disease\":\"subarachnoid_hemorrhage\",\"prob\":0.05}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "migraine",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"migraine\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "costochondritis__v1__s100",
+      "disease": "costochondritis",
+      "difficulty": "stable_textbook",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.77
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 3.18,
+      "oracle_ceiling_pct": 24.2,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_radiation",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_radiation\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"costochondritis\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"costochondritis\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "costochondritis__v2__s200",
+      "disease": "costochondritis",
+      "difficulty": "stable_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.18
+      },
+      "steps_taken": 10,
+      "cost": 280.0,
+      "diagnosis": "costochondritis",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.18,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"costochondritis\",\"prob\":0.502},{\"disease\":\"stemi\",\"prob\":0.346},{\"disease\":\"pulmonary_embolism\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "ecg",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ecg\",\"rationale\":\"Rapid bedside cardiac evaluation.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "troponin",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"troponin\",\"rationale\":\"Cardiac biomarker \\u2014 rule out STEMI/NSTEMI.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports costochondritis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports costochondritis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"costochondritis\",\"prob\":0.92},{\"disease\":\"stemi\",\"prob\":0.05},{\"disease\":\"pulmonary_embolism\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "costochondritis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"costochondritis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "costochondritis__v3__s300",
+      "disease": "costochondritis",
+      "difficulty": "stable_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.77
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 3.18,
+      "oracle_ceiling_pct": 24.2,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"stemi\",\"prob\":0.356},{\"disease\":\"costochondritis\",\"prob\":0.141}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"stemi\",\"prob\":0.05},{\"disease\":\"costochondritis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "viral_uri__v1__s100",
+      "disease": "viral_uri",
+      "difficulty": "stable_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.8,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.08
+      },
+      "steps_taken": 9,
+      "cost": 150.0,
+      "diagnosis": "viral_uri",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.08,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "shortness_of_breath",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"shortness_of_breath\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for benign presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for benign presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.458},{\"disease\":\"pneumonia\",\"prob\":0.293},{\"disease\":\"anxiety_attack\",\"prob\":0.129},{\"disease\":\"viral_gastroenteritis\"",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "general_appearance",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"general_appearance\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports viral_uri.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports viral_uri.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.92},{\"disease\":\"pneumonia\",\"prob\":0.05},{\"disease\":\"viral_gastroenteritis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "viral_uri",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"viral_uri\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "viral_uri__v2__s200",
+      "disease": "viral_uri",
+      "difficulty": "stable_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.92,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.14
+      },
+      "steps_taken": 10,
+      "cost": 180.0,
+      "diagnosis": "viral_uri",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.08,
+      "oracle_ceiling_pct": 101.9,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "cough",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"cough\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for benign presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for benign presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.458},{\"disease\":\"pneumonia\",\"prob\":0.293},{\"disease\":\"anxiety_attack\",\"prob\":0.129},{\"disease\":\"viral_gastroenteritis\"",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "pulmonary_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"pulmonary_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "pulse_oximetry",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"pulse_oximetry\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "social_travel_exposure",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"social_travel_exposure\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports viral_uri.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports viral_uri.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.92},{\"disease\":\"pneumonia\",\"prob\":0.05},{\"disease\":\"viral_gastroenteritis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "viral_uri",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"viral_uri\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "viral_uri__v3__s300",
+      "disease": "viral_uri",
+      "difficulty": "stable_atypical",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 0.8,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.08
+      },
+      "steps_taken": 9,
+      "cost": 150.0,
+      "diagnosis": "viral_uri",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.08,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "cough",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"cough\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "shortness_of_breath",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"shortness_of_breath\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for benign presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for benign presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.458},{\"disease\":\"pneumonia\",\"prob\":0.293},{\"disease\":\"anxiety_attack\",\"prob\":0.129},{\"disease\":\"viral_gastroenteritis\"",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "general_appearance",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"general_appearance\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "chest_xray",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"chest_xray\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports viral_uri.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports viral_uri.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_uri\",\"prob\":0.92},{\"disease\":\"pneumonia\",\"prob\":0.05},{\"disease\":\"viral_gastroenteritis\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "viral_uri",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"viral_uri\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v1__s100",
+      "disease": "viral_gastroenteritis",
+      "difficulty": "stable_textbook",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 3.18
+      },
+      "steps_taken": 9,
+      "cost": 270.0,
+      "diagnosis": "viral_gastroenteritis",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 3.18,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "bowel_changes",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"bowel_changes\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for benign presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for benign presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_gastroenteritis\",\"prob\":0.502},{\"disease\":\"appendicitis\",\"prob\":0.346},{\"disease\":\"viral_uri\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "abdominal_ultrasound",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"abdominal_ultrasound\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports viral_gastroenteritis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports viral_gastroenteritis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_gastroenteritis\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"viral_uri\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "viral_gastroenteritis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"viral_gastroenteritis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v2__s200",
+      "disease": "viral_gastroenteritis",
+      "difficulty": "stable_acute_severe",
+      "rewards": {
+        "r1_accuracy": 1.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 2.98
+      },
+      "steps_taken": 8,
+      "cost": 250.0,
+      "diagnosis": "viral_gastroenteritis",
+      "correct": true,
+      "timed_out": false,
+      "oracle_ceiling": 2.98,
+      "oracle_ceiling_pct": 100.0,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "pregnancy_possibility",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pregnancy_possibility\",\"rationale\":\"Rule pregnancy in/out before pelvic imaging.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for benign presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for benign presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_gastroenteritis\",\"prob\":0.458},{\"disease\":\"appendicitis\",\"prob\":0.291},{\"disease\":\"viral_uri\",\"prob\":0.129},{\"disease\":\"anxiety_atta",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "general_appearance",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"general_appearance\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "abdominal_ultrasound",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"abdominal_ultrasound\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports viral_gastroenteritis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports viral_gastroenteritis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"viral_gastroenteritis\",\"prob\":0.92},{\"disease\":\"appendicitis\",\"prob\":0.05},{\"disease\":\"viral_uri\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "DIAGNOSE",
+          "argument": "viral_gastroenteritis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"viral_gastroenteritis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v3__s300",
+      "disease": "viral_gastroenteritis",
+      "difficulty": "stable_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.98
+      },
+      "steps_taken": 9,
+      "cost": 270.0,
+      "diagnosis": "appendicitis",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 3.18,
+      "oracle_ceiling_pct": 30.8,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "pain_location",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_location\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for abdominal presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for abdominal presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.502},{\"disease\":\"ovarian_torsion\",\"prob\":0.346},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "abdominal_palpation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"abdominal_palpation\",\"rationale\":\"Localize tenderness, check for peritoneal signs.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "abdominal_ultrasound",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"abdominal_ultrasound\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports appendicitis.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports appendicitis.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"appendicitis\",\"prob\":0.92},{\"disease\":\"ovarian_torsion\",\"prob\":0.05},{\"disease\":\"ectopic_pregnancy\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "appendicitis",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"appendicitis\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "anxiety_attack__v1__s100",
+      "disease": "anxiety_attack",
+      "difficulty": "stable_textbook",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.77
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 1.98,
+      "oracle_ceiling_pct": 38.9,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "palpitations",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"palpitations\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"anxiety_attack\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "medications",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"medications\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"anxiety_attack\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "anxiety_attack__v2__s200",
+      "disease": "anxiety_attack",
+      "difficulty": "stable_acute_severe",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.77
+      },
+      "steps_taken": 9,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 1.98,
+      "oracle_ceiling_pct": 38.9,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "shortness_of_breath",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"shortness_of_breath\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"anxiety_attack\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "INTERVIEW",
+          "argument": "past_medical_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"past_medical_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "medications",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"medications\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"anxiety_attack\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    },
+    {
+      "patient_id": "anxiety_attack__v3__s300",
+      "disease": "anxiety_attack",
+      "difficulty": "stable_atypical",
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.58,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.77
+      },
+      "steps_taken": 10,
+      "cost": 920.0,
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "oracle_ceiling": 2.0,
+      "oracle_ceiling_pct": 38.5,
+      "malformed_actions": 0,
+      "malformed_rate": 0.0,
+      "step_log": [
+        {
+          "step": 1,
+          "action_type": "INTERVIEW",
+          "argument": "pain_severity",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"pain_severity\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 2,
+          "action_type": "INTERVIEW",
+          "argument": "shortness_of_breath",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"shortness_of_breath\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 3,
+          "action_type": "INTERVIEW",
+          "argument": "chest_pain_probe",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"chest_pain_probe\",\"rationale\":\"Characterize chest pain \\u2014 pleuritic vs pressure narrows the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 4,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Initial differential for chest presentation.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Initial differential for chest presentation.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.502},{\"disease\":\"anxiety_attack\",\"prob\":0.346},{\"disease\":\"stemi\",\"prob\":0.151}]}",
+          "malformed": false
+        },
+        {
+          "step": 5,
+          "action_type": "EXAMINE",
+          "argument": "cardiac_auscultation",
+          "raw_output": "{\"type\":\"EXAMINE\",\"argument\":\"cardiac_auscultation\",\"rationale\":\"Physical exam to refine the differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 6,
+          "action_type": "ORDER_TEST",
+          "argument": "ct_chest_pe_protocol",
+          "raw_output": "{\"type\":\"ORDER_TEST\",\"argument\":\"ct_chest_pe_protocol\",\"rationale\":\"Targeted workup for the leading hypotheses.\"}",
+          "malformed": false
+        },
+        {
+          "step": 7,
+          "action_type": "INTERVIEW",
+          "argument": "medications",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"medications\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 8,
+          "action_type": "INTERVIEW",
+          "argument": "family_history",
+          "raw_output": "{\"type\":\"INTERVIEW\",\"argument\":\"family_history\",\"rationale\":\"Gather history relevant to differential.\"}",
+          "malformed": false
+        },
+        {
+          "step": 9,
+          "action_type": "UPDATE_DIFFERENTIAL",
+          "argument": "Evidence supports pulmonary_embolism.",
+          "raw_output": "{\"type\":\"UPDATE_DIFFERENTIAL\",\"argument\":\"Evidence supports pulmonary_embolism.\",\"rationale\":\"Update beliefs given evidence so far.\",\"board\":[{\"disease\":\"pulmonary_embolism\",\"prob\":0.92},{\"disease\":\"anxiety_attack\",\"prob\":0.05},{\"disease\":\"stemi\",\"prob\":0.03}]}",
+          "malformed": false
+        },
+        {
+          "step": 10,
+          "action_type": "DIAGNOSE",
+          "argument": "pulmonary_embolism",
+          "raw_output": "{\"type\":\"DIAGNOSE\",\"argument\":\"pulmonary_embolism\",\"rationale\":\"Evidence supports this diagnosis.\"}",
+          "malformed": false
+        }
+      ],
+      "model_tag": "grpo",
+      "model_id": "google/gemma-3-4b-it",
+      "adapter_path": "SnehShah/house-md-grpo-optimized-gemma3-4b-v3"
+    }
+  ]
+}

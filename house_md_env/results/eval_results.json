@@ -1,0 +1,1806 @@
+{
+  "random": [
+    {
+      "patient_id": "ectopic_pregnancy__v1__s100",
+      "disease": "ectopic_pregnancy",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "cost": 250,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.8999999999999999,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.26999999999999996
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "ectopic_pregnancy__v2__s200",
+      "disease": "ectopic_pregnancy",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "anxiety_attack",
+      "correct": false,
+      "timed_out": false,
+      "cost": 55,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.42000000000000004,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.29
+      },
+      "oracle_total": 3.0125
+    },
+    {
+      "patient_id": "ectopic_pregnancy__v3__s300",
+      "disease": "ectopic_pregnancy",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "stemi",
+      "correct": false,
+      "timed_out": false,
+      "cost": 25,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.30000000000000004,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.35
+      },
+      "oracle_total": 1.98
+    },
+    {
+      "patient_id": "stemi__v1__s100",
+      "disease": "stemi",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "pneumonia",
+      "correct": false,
+      "timed_out": false,
+      "cost": 380,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.0
+      },
+      "oracle_total": 2.84
+    },
+    {
+      "patient_id": "stemi__v2__s200",
+      "disease": "stemi",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "subarachnoid_hemorrhage",
+      "correct": false,
+      "timed_out": false,
+      "cost": 45,
+      "steps": 10,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.38,
+        "r6_anchoring": 0.8999999999999999,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.040000000000000036
+      },
+      "oracle_total": 1.84
+    },
+    {
+      "patient_id": "stemi__v3__s300",
+      "disease": "stemi",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "pneumonia",
+      "correct": false,
+      "timed_out": false,
+      "cost": 30,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.32,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.33999999999999997
+      },
+      "oracle_total": 2.84
+    },
+    {
+      "patient_id": "pulmonary_embolism__v1__s100",
+      "disease": "pulmonary_embolism",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "appendicitis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 300,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.09
+      },
+      "oracle_total": 2.77
+    },
+    {
+      "patient_id": "pulmonary_embolism__v2__s200",
+      "disease": "pulmonary_embolism",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "subarachnoid_hemorrhage",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 1,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.4
+      },
+      "oracle_total": 2.97
+    },
+    {
+      "patient_id": "pulmonary_embolism__v3__s300",
+      "disease": "pulmonary_embolism",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "dka",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 1,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.4
+      },
+      "oracle_total": 2.77
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v1__s100",
+      "disease": "subarachnoid_hemorrhage",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "bacterial_meningitis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 1,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.4
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v2__s200",
+      "disease": "subarachnoid_hemorrhage",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "migraine",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 6,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.6,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.1
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v3__s300",
+      "disease": "subarachnoid_hemorrhage",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "migraine",
+      "correct": false,
+      "timed_out": false,
+      "cost": 30,
+      "steps": 6,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.32,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.33999999999999997
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "bacterial_meningitis__v1__s100",
+      "disease": "bacterial_meningitis",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "viral_gastroenteritis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 620,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.88,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.03
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "bacterial_meningitis__v2__s200",
+      "disease": "bacterial_meningitis",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "migraine",
+      "correct": false,
+      "timed_out": false,
+      "cost": 225,
+      "steps": 14,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 1.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.3
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "bacterial_meningitis__v3__s300",
+      "disease": "bacterial_meningitis",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "sepsis_uti",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 1,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.4
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "appendicitis__v1__s100",
+      "disease": "appendicitis",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "stemi",
+      "correct": false,
+      "timed_out": false,
+      "cost": 10,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.24000000000000002,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.12000000000000001
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "appendicitis__v2__s200",
+      "disease": "appendicitis",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": null,
+      "correct": false,
+      "timed_out": true,
+      "cost": 930,
+      "steps": 15,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.5700000000000001,
+        "r6_anchoring": 1.0,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.08500000000000002
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "appendicitis__v3__s300",
+      "disease": "appendicitis",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "bacterial_meningitis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 45,
+      "steps": 6,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.38,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.28
+      },
+      "oracle_total": 2.82
+    },
+    {
+      "patient_id": "ovarian_torsion__v1__s100",
+      "disease": "ovarian_torsion",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "anxiety_attack",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.28
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "ovarian_torsion__v2__s200",
+      "disease": "ovarian_torsion",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": null,
+      "correct": false,
+      "timed_out": true,
+      "cost": 1370,
+      "steps": 15,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.13,
+        "r6_anchoring": 0.8999999999999999,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.16500000000000004
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "ovarian_torsion__v3__s300",
+      "disease": "ovarian_torsion",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "viral_gastroenteritis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 15,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.26,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.22
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "pneumonia__v1__s100",
+      "disease": "pneumonia",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "ovarian_torsion",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 2,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.19
+      },
+      "oracle_total": 2.94
+    },
+    {
+      "patient_id": "pneumonia__v2__s200",
+      "disease": "pneumonia",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "anxiety_attack",
+      "correct": false,
+      "timed_out": false,
+      "cost": 15,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.26,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.22
+      },
+      "oracle_total": 3.14
+    },
+    {
+      "patient_id": "pneumonia__v3__s300",
+      "disease": "pneumonia",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "sepsis_uti",
+      "correct": false,
+      "timed_out": false,
+      "cost": 30,
+      "steps": 12,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.32,
+        "r6_anchoring": 0.8999999999999999,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.42999999999999994
+      },
+      "oracle_total": 2.94
+    },
+    {
+      "patient_id": "dka__v1__s100",
+      "disease": "dka",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "viral_gastroenteritis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 120,
+      "steps": 11,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6799999999999999,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.42999999999999994
+      },
+      "oracle_total": 2.9
+    },
+    {
+      "patient_id": "dka__v2__s200",
+      "disease": "dka",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "migraine",
+      "correct": false,
+      "timed_out": false,
+      "cost": 505,
+      "steps": 7,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.995,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.4975
+      },
+      "oracle_total": 2.7
+    },
+    {
+      "patient_id": "dka__v3__s300",
+      "disease": "dka",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 1065,
+      "steps": 9,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.43500000000000005,
+        "r6_anchoring": 0.8999999999999999,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.4875
+      },
+      "oracle_total": 2.7
+    },
+    {
+      "patient_id": "sepsis_uti__v1__s100",
+      "disease": "sepsis_uti",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "bacterial_meningitis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.1
+      },
+      "oracle_total": 2.71
+    },
+    {
+      "patient_id": "sepsis_uti__v2__s200",
+      "disease": "sepsis_uti",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "cost": 1500,
+      "steps": 2,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.0,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.0
+      },
+      "oracle_total": 2.71
+    },
+    {
+      "patient_id": "sepsis_uti__v3__s300",
+      "disease": "sepsis_uti",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "costochondritis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 90,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.56,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.37
+      },
+      "oracle_total": 2.77
+    },
+    {
+      "patient_id": "migraine__v1__s100",
+      "disease": "migraine",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "ovarian_torsion",
+      "correct": false,
+      "timed_out": false,
+      "cost": 90,
+      "steps": 10,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.56,
+        "r6_anchoring": 1.0,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.88
+      },
+      "oracle_total": 3.11
+    },
+    {
+      "patient_id": "migraine__v2__s200",
+      "disease": "migraine",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "dka",
+      "correct": false,
+      "timed_out": false,
+      "cost": 10,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.24000000000000002,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.51
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "migraine__v3__s300",
+      "disease": "migraine",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "viral_uri",
+      "correct": false,
+      "timed_out": false,
+      "cost": 85,
+      "steps": 6,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.54,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.66
+      },
+      "oracle_total": 3.11
+    },
+    {
+      "patient_id": "costochondritis__v1__s100",
+      "disease": "costochondritis",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "cost": 40,
+      "steps": 9,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.36000000000000004,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.66
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "costochondritis__v2__s200",
+      "disease": "costochondritis",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "pneumonia",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.49
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "costochondritis__v3__s300",
+      "disease": "costochondritis",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "pneumonia",
+      "correct": false,
+      "timed_out": false,
+      "cost": 10,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.24000000000000002,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.51
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "viral_uri__v1__s100",
+      "disease": "viral_uri",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "sepsis_uti",
+      "correct": false,
+      "timed_out": false,
+      "cost": 15,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.26,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.52
+      },
+      "oracle_total": 3.08
+    },
+    {
+      "patient_id": "viral_uri__v2__s200",
+      "disease": "viral_uri",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "pulmonary_embolism",
+      "correct": false,
+      "timed_out": false,
+      "cost": 450,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.8
+      },
+      "oracle_total": 3.08
+    },
+    {
+      "patient_id": "viral_uri__v3__s300",
+      "disease": "viral_uri",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "viral_gastroenteritis",
+      "correct": false,
+      "timed_out": false,
+      "cost": 40,
+      "steps": 4,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.36000000000000004,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.66
+      },
+      "oracle_total": 3.08
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v1__s100",
+      "disease": "viral_gastroenteritis",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "dka",
+      "correct": false,
+      "timed_out": false,
+      "cost": 10,
+      "steps": 8,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.24000000000000002,
+        "r6_anchoring": 0.6,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.6
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v2__s200",
+      "disease": "viral_gastroenteritis",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "viral_uri",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.4
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v3__s300",
+      "disease": "viral_gastroenteritis",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "stemi",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 1,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.4
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "anxiety_attack__v1__s100",
+      "disease": "anxiety_attack",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "ovarian_torsion",
+      "correct": false,
+      "timed_out": false,
+      "cost": 15,
+      "steps": 3,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.26,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.52
+      },
+      "oracle_total": 1.98
+    },
+    {
+      "patient_id": "anxiety_attack__v2__s200",
+      "disease": "anxiety_attack",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "sepsis_uti",
+      "correct": false,
+      "timed_out": false,
+      "cost": 0,
+      "steps": 2,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.2,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.49
+      },
+      "oracle_total": 1.98
+    },
+    {
+      "patient_id": "anxiety_attack__v3__s300",
+      "disease": "anxiety_attack",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "sepsis_uti",
+      "correct": false,
+      "timed_out": false,
+      "cost": 25,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.30000000000000004,
+        "r6_anchoring": 0.0,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.45
+      },
+      "oracle_total": 2.0
+    }
+  ],
+  "greedy": [
+    {
+      "patient_id": "ectopic_pregnancy__v1__s100",
+      "disease": "ectopic_pregnancy",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": true,
+      "timed_out": false,
+      "cost": 50,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.2,
+        "r2_cost": 0.4,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.99
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "ectopic_pregnancy__v2__s200",
+      "disease": "ectopic_pregnancy",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": true,
+      "timed_out": false,
+      "cost": 50,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.2,
+        "r2_cost": 0.4,
+        "r6_anchoring": 0.3,
+        "r7_safety": 0.0,
+        "r8_format": 1.0,
+        "total": 1.19
+      },
+      "oracle_total": 3.0125
+    },
+    {
+      "patient_id": "ectopic_pregnancy__v3__s300",
+      "disease": "ectopic_pregnancy",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": true,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.2,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 1.01
+      },
+      "oracle_total": 1.98
+    },
+    {
+      "patient_id": "stemi__v1__s100",
+      "disease": "stemi",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.08999999999999994
+      },
+      "oracle_total": 2.84
+    },
+    {
+      "patient_id": "stemi__v2__s200",
+      "disease": "stemi",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.08999999999999994
+      },
+      "oracle_total": 1.84
+    },
+    {
+      "patient_id": "stemi__v3__s300",
+      "disease": "stemi",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.19
+      },
+      "oracle_total": 2.84
+    },
+    {
+      "patient_id": "pulmonary_embolism__v1__s100",
+      "disease": "pulmonary_embolism",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.08999999999999994
+      },
+      "oracle_total": 2.77
+    },
+    {
+      "patient_id": "pulmonary_embolism__v2__s200",
+      "disease": "pulmonary_embolism",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.19
+      },
+      "oracle_total": 2.97
+    },
+    {
+      "patient_id": "pulmonary_embolism__v3__s300",
+      "disease": "pulmonary_embolism",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.08999999999999994
+      },
+      "oracle_total": 2.77
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v1__s100",
+      "disease": "subarachnoid_hemorrhage",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 430,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.09
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v2__s200",
+      "disease": "subarachnoid_hemorrhage",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 430,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.09
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "subarachnoid_hemorrhage__v3__s300",
+      "disease": "subarachnoid_hemorrhage",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.19
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "bacterial_meningitis__v1__s100",
+      "disease": "bacterial_meningitis",
+      "variant_id": "v1",
+      "difficulty": "critical_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 430,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": 0.09
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "bacterial_meningitis__v2__s200",
+      "disease": "bacterial_meningitis",
+      "variant_id": "v2",
+      "difficulty": "critical_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.08999999999999994
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "bacterial_meningitis__v3__s300",
+      "disease": "bacterial_meningitis",
+      "variant_id": "v3",
+      "difficulty": "critical_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -1.0,
+        "r8_format": 1.0,
+        "total": -0.19
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "appendicitis__v1__s100",
+      "disease": "appendicitis",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.31
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "appendicitis__v2__s200",
+      "disease": "appendicitis",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 50,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.4,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.29000000000000004
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "appendicitis__v3__s300",
+      "disease": "appendicitis",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.31
+      },
+      "oracle_total": 2.82
+    },
+    {
+      "patient_id": "ovarian_torsion__v1__s100",
+      "disease": "ovarian_torsion",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 50,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.4,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.29000000000000004
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "ovarian_torsion__v2__s200",
+      "disease": "ovarian_torsion",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 50,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.4,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.29000000000000004
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "ovarian_torsion__v3__s300",
+      "disease": "ovarian_torsion",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.31
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "pneumonia__v1__s100",
+      "disease": "pneumonia",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 160,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.8400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.51
+      },
+      "oracle_total": 2.94
+    },
+    {
+      "patient_id": "pneumonia__v2__s200",
+      "disease": "pneumonia",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 160,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.8400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.51
+      },
+      "oracle_total": 3.14
+    },
+    {
+      "patient_id": "pneumonia__v3__s300",
+      "disease": "pneumonia",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.31
+      },
+      "oracle_total": 2.94
+    },
+    {
+      "patient_id": "dka__v1__s100",
+      "disease": "dka",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.31
+      },
+      "oracle_total": 2.9
+    },
+    {
+      "patient_id": "dka__v2__s200",
+      "disease": "dka",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 160,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.8400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.51
+      },
+      "oracle_total": 2.7
+    },
+    {
+      "patient_id": "dka__v3__s300",
+      "disease": "dka",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 50,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.4,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.29000000000000004
+      },
+      "oracle_total": 2.7
+    },
+    {
+      "patient_id": "sepsis_uti__v1__s100",
+      "disease": "sepsis_uti",
+      "variant_id": "v1",
+      "difficulty": "urgent_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.41000000000000003
+      },
+      "oracle_total": 2.71
+    },
+    {
+      "patient_id": "sepsis_uti__v2__s200",
+      "disease": "sepsis_uti",
+      "variant_id": "v2",
+      "difficulty": "urgent_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.41000000000000003
+      },
+      "oracle_total": 2.71
+    },
+    {
+      "patient_id": "sepsis_uti__v3__s300",
+      "disease": "sepsis_uti",
+      "variant_id": "v3",
+      "difficulty": "urgent_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.5,
+        "r8_format": 1.0,
+        "total": 0.31
+      },
+      "oracle_total": 2.77
+    },
+    {
+      "patient_id": "migraine__v1__s100",
+      "disease": "migraine",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 430,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.89
+      },
+      "oracle_total": 3.11
+    },
+    {
+      "patient_id": "migraine__v2__s200",
+      "disease": "migraine",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 430,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 1.0,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.89
+      },
+      "oracle_total": 2.91
+    },
+    {
+      "patient_id": "migraine__v3__s300",
+      "disease": "migraine",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 3.11
+    },
+    {
+      "patient_id": "costochondritis__v1__s100",
+      "disease": "costochondritis",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.7100000000000001
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "costochondritis__v2__s200",
+      "disease": "costochondritis",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "costochondritis__v3__s300",
+      "disease": "costochondritis",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "viral_uri__v1__s100",
+      "disease": "viral_uri",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 3.08
+    },
+    {
+      "patient_id": "viral_uri__v2__s200",
+      "disease": "viral_uri",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 160,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.8400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.81
+      },
+      "oracle_total": 3.08
+    },
+    {
+      "patient_id": "viral_uri__v3__s300",
+      "disease": "viral_uri",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 3.08
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v1__s100",
+      "disease": "viral_gastroenteritis",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v2__s200",
+      "disease": "viral_gastroenteritis",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 2.98
+    },
+    {
+      "patient_id": "viral_gastroenteritis__v3__s300",
+      "disease": "viral_gastroenteritis",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 3.18
+    },
+    {
+      "patient_id": "anxiety_attack__v1__s100",
+      "disease": "anxiety_attack",
+      "variant_id": "v1",
+      "difficulty": "stable_textbook",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.7100000000000001
+      },
+      "oracle_total": 1.98
+    },
+    {
+      "patient_id": "anxiety_attack__v2__s200",
+      "disease": "anxiety_attack",
+      "variant_id": "v2",
+      "difficulty": "stable_acute_severe",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 110,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.6400000000000001,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.7100000000000001
+      },
+      "oracle_total": 1.98
+    },
+    {
+      "patient_id": "anxiety_attack__v3__s300",
+      "disease": "anxiety_attack",
+      "variant_id": "v3",
+      "difficulty": "stable_atypical",
+      "diagnosis": "ectopic_pregnancy",
+      "correct": false,
+      "timed_out": false,
+      "cost": 60,
+      "steps": 5,
+      "rewards": {
+        "r1_accuracy": 0.0,
+        "r2_cost": 0.44,
+        "r6_anchoring": 0.3,
+        "r7_safety": -0.2,
+        "r8_format": 1.0,
+        "total": 0.61
+      },
+      "oracle_total": 2.0
+    }
+  ]
+}

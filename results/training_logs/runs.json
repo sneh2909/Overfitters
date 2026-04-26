@@ -1,0 +1,70 @@
+{
+  "wandb_project": "sneh2909-christ-university/house-md",
+  "fetched_at": "2026-04-26T13:55:00Z",
+  "philosophy": "Iterate on small models (Gemma 3 4B + QLoRA r=16, 4-bit) instead of betting compute on a single huge run. Each run below was a deliberate iteration testing one hypothesis about the env or reward shape. The eval set (45 patients) is the source of truth, not the training-time reward curves.",
+  "runs": [
+    {
+      "log_file": "grpo_5step_failed.jsonl",
+      "run_id": "njzqhomh",
+      "display_name": "grpo-gemma3-4b-5steps",
+      "state": "failed",
+      "steps_completed": 0,
+      "started_at": "2026-04-25T12:43:28Z",
+      "ended_at": "2026-04-25T12:43:29Z",
+      "config": { "lr": 1e-5, "group_size": 4, "total_steps": 5, "include_menu": true },
+      "purpose": "First end-to-end smoke test of the GRPO loop on a 5-step run.",
+      "outcome": "Crashed at startup before logging anything. Iteration fix: verified the smoke-test log_prob path before spending compute on real rollouts. No history rows."
+    },
+    {
+      "log_file": "grpo_10step_baseline.jsonl",
+      "run_id": "5kk4u59d",
+      "display_name": "grpo-optimized-gemma3-4b-10steps",
+      "state": "finished",
+      "steps_completed": 10,
+      "runtime_seconds": 2565,
+      "started_at": "2026-04-26T01:40:15Z",
+      "ended_at": "2026-04-26T02:23:00Z",
+      "config": { "lr": 1e-5, "group_size": 4, "total_steps": 10, "include_menu": true, "compact_menu": false, "curriculum_level_2_step": 3, "curriculum_level_3_step": 7 },
+      "purpose": "Sanity-check the full curriculum (L1 → L2 → L3) compresses correctly into 10 steps and that each rubric is moving.",
+      "outcome": "Format = 1.0 throughout, accuracy 25%, total reward mean 1.26. Confirmed the loop trains; tiny step budget too small for real signal. Iteration fix: extend to 50 steps with bigger group size."
+    },
+    {
+      "log_file": "grpo_50step_main.jsonl",
+      "run_id": "vdwq8nh9",
+      "display_name": "grpo-optimized-gemma3-4b-50steps",
+      "state": "finished",
+      "steps_completed": 50,
+      "runtime_seconds": 18409,
+      "started_at": "2026-04-26T02:46:44Z",
+      "ended_at": "2026-04-26T07:53:34Z",
+      "config": { "lr": 1e-5, "group_size": 6, "total_steps": 50, "include_menu": true, "compact_menu": false, "curriculum_level_2_step": 16, "curriculum_level_3_step": 34 },
+      "purpose": "Production run — full action menu in the prompt, 50 steps, group size 6. The adapter promoted to v3 on the Hub.",
+      "outcome": "Format pinned at 1.0, accuracy 50%, total reward mean 1.63 with healthy variance across rollouts. Action mix stays diverse (5 unique diagnoses, 12-15 differential updates per batch). This is the run with eval_grpo.json on the held-out set."
+    },
+    {
+      "log_file": "grpo_50step_compact.jsonl",
+      "run_id": "j6jg49hf",
+      "display_name": "compact-grpo-optimized-gemma3-4b-50steps",
+      "state": "running_at_pull",
+      "steps_completed": 47,
+      "runtime_seconds": 22678,
+      "started_at": "2026-04-26T03:08:36Z",
+      "ended_at": null,
+      "config": { "lr": 1e-5, "group_size": 8, "total_steps": 50, "include_menu": false, "compact_menu": true, "curriculum_level_2_step": 16, "curriculum_level_3_step": 34 },
+      "purpose": "Ablation — drop the 2000-token full action menu, keep only a compact valid-IDs list. Hypothesis: 4× cheaper rollouts at no quality cost. Group size bumped to 8 because each rollout is cheaper.",
+      "outcome": "Faster per step but at step 45 hit unique_diagnoses=1 / diagnosis_mode_rate=1.0 / advantage_std=0.013 — classic mode-collapse signature on a single-disease batch. Reward looks great (~2.9) but only because every rollout converged on the same answer for the same patient. Iteration fix: this is why we kept the full-menu run as the production checkpoint and didn't promote this one. The training-script's own batch monitor flags this with a 'diagnosis mode collapse' warning."
+    }
+  ],
+  "key_columns_in_jsonl": [
+    "step", "curriculum",
+    "reward/mean", "reward/max", "reward/min", "reward/std",
+    "loss", "kl",
+    "batch/r1_accuracy_mean", "batch/r2_cost_mean", "batch/r6_anchoring_mean", "batch/r7_safety_mean", "batch/r8_format_mean",
+    "batch/total_mean", "batch/correct_rate", "batch/timeout_rate",
+    "batch/avg_cost", "batch/avg_turns", "batch/avg_tests", "batch/avg_diagnosis_turn",
+    "batch/action_interview_rate", "batch/action_order_test_rate", "batch/action_examine_rate", "batch/action_update_differential_rate", "batch/action_diagnose_rate",
+    "batch/diagnosis_mode_rate", "batch/unique_diagnoses",
+    "batch/invalid_action_rate", "batch/fallback_action_rate"
+  ],
+  "notes": "Logs were pulled via the W&B MCP server. To refresh, set WANDB_API_KEY and run `python scripts/build_training_plots.py --refresh`. Without --refresh, the cached JSONLs in this directory are the source of truth."
+}

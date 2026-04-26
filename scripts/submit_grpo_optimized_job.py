@@ -43,6 +43,9 @@ HF_USERNAME   = os.environ.get("HF_USERNAME", "")
 WANDB_API_KEY = os.environ.get("WANDB_API_KEY", "")
 TOTAL_STEPS   = os.environ.get("TOTAL_STEPS", "50")   # override → TOTAL_STEPS=50
 INSTANT_TESTS = os.environ.get("INSTANT_TESTS", "false")
+ADAPTIVE_DISEASE_SAMPLING = os.environ.get("ADAPTIVE_DISEASE_SAMPLING", "false")
+ADAPTIVE_SAMPLING_BETA = os.environ.get("ADAPTIVE_SAMPLING_BETA", "0.0")
+ADAPTIVE_SAMPLING_MIN_STEPS = os.environ.get("ADAPTIVE_SAMPLING_MIN_STEPS", "10")
 
 # The SFT adapter to start GRPO from.
 SFT_MODEL_ID  = os.environ.get("SFT_MODEL_ID", f"{HF_USERNAME}/house-md-sft-gemma3-4b")
@@ -178,6 +181,9 @@ def main() -> None:
             "CLIP_EPS":      "0.2",
             "MAX_NEW_TOKENS": "150",
             "FAST_GRPO_LOGPROBS": "true",
+            "ADAPTIVE_DISEASE_SAMPLING": ADAPTIVE_DISEASE_SAMPLING,
+            "ADAPTIVE_SAMPLING_BETA": ADAPTIVE_SAMPLING_BETA,
+            "ADAPTIVE_SAMPLING_MIN_STEPS": ADAPTIVE_SAMPLING_MIN_STEPS,
             "EVAL_EVERY":    "999",
             "EVAL_PATIENTS": "5",
             "EVAL_AT_STEP_ZERO": "false",

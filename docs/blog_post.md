@@ -20,7 +20,7 @@ tags:
 > - **Live environment**: [`SnehShah/house-md-env`](https://huggingface.co/spaces/SnehShah/house-md-env)
 > - **Final adapter**:    [`SnehShah/house-md-grpo-optimized-gemma3-4b-v3`](https://huggingface.co/SnehShah/house-md-grpo-optimized-gemma3-4b-v3)
 > - **W&B run**:          [`sneh2909-christ-university/house-md`](https://wandb.ai/sneh2909-christ-university/house-md?nw=nwusersneh2909)
-> - **Repo + notebooks**: <https://github.com/SnehShah/house-md-env>
+> - **Repo + notebooks**: <https://github.com/sneh2909/Overfitters>
 
 ---
 
@@ -132,7 +132,7 @@ We left several rubrics deliberately *low-weighted* and watched what happened:
 - **"Order everything"** — there are 35 tests and a hard 15-step cap, so ordering them all is impossible, but ordering 14 of them and timing out is a real attractor. R7 (safety) catches it: timing out on a critical patient costs -2, dwarfing the tiny R2 advantage of hedging.
 - **Format degradation** — if R8 dropped below 0.8 across rollouts, the LR was too high. We saw this once at 1e-4 and dropped to 1e-5 for the production run.
 
-The full reward code lives in [`clinical_rl/rewards.py`](https://github.com/SnehShah/house-md-env/blob/main/clinical_rl/rewards.py); the design notes are alongside the dry-run at [`docs/grpo_dry_run.md`](https://github.com/SnehShah/house-md-env/blob/main/docs/grpo_dry_run.md).
+The full reward code lives in [`clinical_rl/rewards.py`](https://github.com/sneh2909/Overfitters/blob/main/clinical_rl/rewards.py); the design notes are alongside the dry-run at [`docs/grpo_dry_run.md`](https://github.com/sneh2909/Overfitters/blob/main/docs/grpo_dry_run.md).
 
 ---
 
@@ -165,7 +165,7 @@ Adapter: [`SnehShah/house-md-sft-gemma3-4b`](https://huggingface.co/SnehShah/hou
 
 ### GRPO — the actual reasoning lesson
 
-`scripts/train_grpo_optimized.py` — 100 steps × 8 rollouts per group on Level-1 → Level-2 → full curriculum. The full dry-run-with-tensors-and-shapes is at [`docs/grpo_dry_run.md`](https://github.com/SnehShah/house-md-env/blob/main/docs/grpo_dry_run.md), but the loop is just:
+`scripts/train_grpo_optimized.py` — 100 steps × 8 rollouts per group on Level-1 → Level-2 → full curriculum. The full dry-run-with-tensors-and-shapes is at [`docs/grpo_dry_run.md`](https://github.com/sneh2909/Overfitters/blob/main/docs/grpo_dry_run.md), but the loop is just:
 
 ```python
 for step in range(TOTAL_STEPS):
@@ -190,7 +190,7 @@ There are two non-obvious wins inside this loop:
 1. **No menu in rollout prompts** (`include_menu=False`). SFT taught the model the closed vocabulary; carrying the 2 000-token menu in every rollout would 4× the forward pass cost. We rely on **constrained decoding** (`prompt.build_action_schema(catalogs)`) to keep the JSON valid token-by-token.
 2. **Old log-probs cached at rollout time** (`FAST_GRPO_LOGPROBS=true`). The standard PPO ratio needs `π_old(a|s)`. If we re-forward the prompt under the *current* policy when computing the ratio, that's twice the GPU work. Instead we save the chosen-token log-probs during sampling and compute the ratio against `π_θ` only at gradient time.
 
-The full hyperparameters are encoded at the top of [`train_grpo_optimized.py`](https://github.com/SnehShah/house-md-env/blob/main/scripts/train_grpo_optimized.py) and visible in the W&B config:
+The full hyperparameters are encoded at the top of [`train_grpo_optimized.py`](https://github.com/sneh2909/Overfitters/blob/main/scripts/train_grpo_optimized.py) and visible in the W&B config:
 
 ```text
 lr                         = 1e-5
@@ -250,14 +250,14 @@ The "atypical" buckets are the ones GRPO has the most room to move on: same dise
 
 ## 6. Reproduce in 30 minutes
 
-We packaged everything in [`notebooks/`](https://github.com/SnehShah/house-md-env/tree/main/notebooks) so judges (or you) can re-run the entire pipeline:
+We packaged everything in [`notebooks/`](https://github.com/sneh2909/Overfitters/tree/main/notebooks) so judges (or you) can re-run the entire pipeline:
 
 | Notebook | Hardware | Time | What it does |
 | --- | --- | --- | --- |
-| [`01_explore_env.ipynb`](https://github.com/SnehShah/house-md-env/blob/main/notebooks/01_explore_env.ipynb) | CPU | ~3 min | Connects to the live Space, runs random + oracle episodes, prints reward breakdown. |
-| [`02_sft.ipynb`](https://github.com/SnehShah/house-md-env/blob/main/notebooks/02_sft.ipynb) | T4 | ~12 min | Mini SFT loop on Gemma 3 4B-IT, 200 samples × 1 epoch, pushes adapter. |
-| [`03_grpo.ipynb`](https://github.com/SnehShah/house-md-env/blob/main/notebooks/03_grpo.ipynb) | T4 | ~25 min | 30-step GRPO loop talking to the live Space, plots reward curve, pushes adapter. |
-| [`04_eval_compare.ipynb`](https://github.com/SnehShah/house-md-env/blob/main/notebooks/04_eval_compare.ipynb) | CPU (or T4 for live mini-eval) | ~1 min (5 sec to plot, 15 min for live mode) | Loads the pre-computed eval JSONs and plots the comparison. |
+| [`01_explore_env.ipynb`](https://github.com/sneh2909/Overfitters/blob/main/notebooks/01_explore_env.ipynb) | CPU | ~3 min | Connects to the live Space, runs random + oracle episodes, prints reward breakdown. |
+| [`02_sft.ipynb`](https://github.com/sneh2909/Overfitters/blob/main/notebooks/02_sft.ipynb) | T4 | ~12 min | Mini SFT loop on Gemma 3 4B-IT, 200 samples × 1 epoch, pushes adapter. |
+| [`03_grpo.ipynb`](https://github.com/sneh2909/Overfitters/blob/main/notebooks/03_grpo.ipynb) | T4 | ~25 min | 30-step GRPO loop talking to the live Space, plots reward curve, pushes adapter. |
+| [`04_eval_compare.ipynb`](https://github.com/sneh2909/Overfitters/blob/main/notebooks/04_eval_compare.ipynb) | CPU (or T4 for live mini-eval) | ~1 min (5 sec to plot, 15 min for live mode) | Loads the pre-computed eval JSONs and plots the comparison. |
 
 For headless / CI mode:
 

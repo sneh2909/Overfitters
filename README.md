@@ -10,7 +10,7 @@
 [![GRPO adapter](https://img.shields.io/badge/🤗_Model-house--md--grpo--optimized--gemma3--4b--v3-blue)](https://huggingface.co/SnehShah/house-md-grpo-optimized-gemma3-4b-v3)
 [![W&B](https://img.shields.io/badge/W%26B-house--md-yellow)](https://wandb.ai/sneh2909-christ-university/house-md?nw=nwusersneh2909)
 [![Blog](https://img.shields.io/badge/Blog-Teaching_Gemma_3_to_Diagnose-purple)](docs/blog_post.md)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SnehShah/house-md-env/blob/main/notebooks/01_explore_env.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/01_explore_env.ipynb)
 [![License](https://img.shields.io/badge/license-Apache_2.0-green)](LICENSE)
 
 ---
@@ -97,7 +97,7 @@ with HouseMDEnv(base_url="https://snehshah-house-md-env.hf.space") as env:
     print("Per-rubric:",  res.observation.rewards)
 ```
 
-(`pip install git+https://github.com/SnehShah/house-md-env.git#subdirectory=house_md_env`
+(`pip install git+https://github.com/sneh2909/Overfitters.git#subdirectory=house_md_env`
 to install the package locally; the four notebooks already do this for you.)
 
 ### Open the live ER scene in your browser
@@ -119,10 +119,10 @@ real adapters — no local GPU needed for `01` and `04`.
 
 | # | Notebook | Hardware | Time | What it does |
 |---|----------|----------|------|--------------|
-| 01 | [`notebooks/01_explore_env.ipynb`](notebooks/01_explore_env.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SnehShah/house-md-env/blob/main/notebooks/01_explore_env.ipynb) | CPU | ~3 min | Connects to the live Space; runs manual / random / oracle episodes; prints the reward breakdown. |
-| 02 | [`notebooks/02_sft.ipynb`](notebooks/02_sft.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SnehShah/house-md-env/blob/main/notebooks/02_sft.ipynb) | T4 | ~12 min | Mini SFT loop on Gemma 3 4B-IT, 200 oracle traces × 1 epoch, pushes a LoRA adapter. |
-| 03 | [`notebooks/03_grpo.ipynb`](notebooks/03_grpo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SnehShah/house-md-env/blob/main/notebooks/03_grpo.ipynb) | T4 | ~25 min | 30-step GRPO loop against the live Space, plots reward curve, pushes a LoRA adapter. |
-| 04 | [`notebooks/04_eval_compare.ipynb`](notebooks/04_eval_compare.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SnehShah/house-md-env/blob/main/notebooks/04_eval_compare.ipynb) | CPU | ~1 min | Loads the frozen eval JSONs and plots the base / SFT / GRPO comparison. |
+| 01 | [`notebooks/01_explore_env.ipynb`](notebooks/01_explore_env.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/01_explore_env.ipynb) | CPU | ~3 min | Connects to the live Space; runs manual / random / oracle episodes; prints the reward breakdown. |
+| 02 | [`notebooks/02_sft.ipynb`](notebooks/02_sft.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/02_sft.ipynb) | T4 | ~12 min | Mini SFT loop on Gemma 3 4B-IT, 200 oracle traces × 1 epoch, pushes a LoRA adapter. |
+| 03 | [`notebooks/03_grpo.ipynb`](notebooks/03_grpo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/03_grpo.ipynb) | T4 | ~25 min | 30-step GRPO loop against the live Space, plots reward curve, pushes a LoRA adapter. |
+| 04 | [`notebooks/04_eval_compare.ipynb`](notebooks/04_eval_compare.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sneh2909/Overfitters/blob/main/notebooks/04_eval_compare.ipynb) | CPU | ~1 min | Loads the frozen eval JSONs and plots the base / SFT / GRPO comparison. |
 
 ### Headless / CI-style
 
@@ -180,7 +180,7 @@ Default composite weights: `{r1: 2.0, r2: 0.5, r6: 0.3, r7: 1.0, r8: 0.5}`.
 ## Local development
 
 ```bash
-git clone https://github.com/SnehShah/house-md-env.git
+git clone https://github.com/sneh2909/Overfitters.git
 cd house-md-env
 
 # Run the env locally

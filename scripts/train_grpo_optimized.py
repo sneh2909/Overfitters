@@ -56,6 +56,9 @@ Running locally (for debugging)
 ────────────────────────────────
     HF_TOKEN=... HF_USERNAME=... python scripts/train_grpo_optimized.py --steps 5
 
+Adaptive disease sampling is opt-in:
+    ADAPTIVE_DISEASE_SAMPLING=true ADAPTIVE_SAMPLING_BETA=1.0 python scripts/train_grpo_optimized.py
+
 Submitting to HF A100
 ──────────────────────
     python scripts/submit_grpo_optimized_job.py
@@ -64,6 +67,7 @@ Submitting to HF A100
 from __future__ import annotations
 
 import json
+import math
 import os
 import random
 import statistics
@@ -71,17 +75,11 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-# Resolve clinical_rl package location once at module load time. Supported
-# layouts:
-#   - new repo:  scripts/../house_md_env/clinical_rl   (this submission)
-#   - HF Job:    scripts/clinical_rl                   (sibling, flattened)
-#   - legacy:    scripts/../clinical_rl                (old in-repo layout)
+# Resolve clinical_rl package location once at module load time.
+# Supports local dev (scripts/../clinical_rl) and HF Job containers
+# where train_grpo_optimized.py sits next to clinical_rl/ in the same directory.
 _script_path = Path(__file__).resolve()
-for _p in [
-    _script_path.parents[1] / "house_md_env",  # new repo: house_md_env/clinical_rl
-    _script_path.parents[1],                    # legacy:  ./clinical_rl at repo root
-    _script_path.parent,                        # HF Job:  scripts/clinical_rl
-]:
+for _p in [_script_path.parents[1], _script_path.parent]:
     if (_p / "clinical_rl").exists():
         sys.path.insert(0, str(_p))
         break
@@ -112,6 +110,14 @@ LR             = float(os.environ.get("LR", "1e-5"))   # much lower than SFT's 2
 CLIP_EPS       = float(os.environ.get("CLIP_EPS", "0.2"))  # PPO ratio clip range
 GRAD_CLIP      = float(os.environ.get("GRAD_CLIP", "0.5"))
 MAX_NEW_TOKENS = int(os.environ.get("MAX_NEW_TOKENS", "150"))
+
+# Optional adaptive disease sampling for training. Disabled by default so
+# existing runs keep the same uniform curriculum behavior unless opted in.
+ADAPTIVE_DISEASE_SAMPLING = (
+    os.environ.get("ADAPTIVE_DISEASE_SAMPLING", "false").lower() == "true"
+)
+ADAPTIVE_SAMPLING_BETA = float(os.environ.get("ADAPTIVE_SAMPLING_BETA", "0.0"))
+ADAPTIVE_SAMPLING_MIN_STEPS = int(os.environ.get("ADAPTIVE_SAMPLING_MIN_STEPS", "10"))
 
 def _fraction_env(*names: str, default: str) -> float:
     """Read a fraction from env. Accepts either 0.33 or 33."""
@@ -218,6 +224,9 @@ def login() -> None:
                 "temperature": TEMPERATURE,
                 "lr": LR,
                 "clip_eps": CLIP_EPS,
+                "adaptive_disease_sampling": ADAPTIVE_DISEASE_SAMPLING,
+                "adaptive_sampling_beta": ADAPTIVE_SAMPLING_BETA,
+                "adaptive_sampling_min_steps": ADAPTIVE_SAMPLING_MIN_STEPS,
                 "curriculum_level_2_fraction": CURRICULUM_LEVEL_2_FRACTION,
                 "curriculum_level_3_fraction": CURRICULUM_LEVEL_3_FRACTION,
                 "curriculum_level_2_step": CURRICULUM_LEVEL_2_STEP,
@@ -765,6 +774,121 @@ def _mean(values: list[float]) -> float:
     return sum(values) / len(values) if values else 0.0
 
 
+class AdaptiveDiseaseSampler:
+    """Track per-disease rewards and bias sampling toward weaker diseases."""
+
+    def __init__(
+        self,
+        *,
+        enabled: bool,
+        beta: float,
+        min_steps: int,
+    ) -> None:
+        self.enabled = enabled
+        self.beta = max(0.0, beta)
+        self.min_steps = max(0, min_steps)
+        self.reward_sums: dict[str, float] = {}
+        self.counts: dict[str, int] = {}
+        self.total_updates = 0
+        self._last_probs: dict[str, float] = {}
+
+    def mean_reward(self, disease: str) -> float | None:
+        count = self.counts.get(disease, 0)
+        if count == 0:
+            return None
+        return self.reward_sums[disease] / count
+
+    def _global_mean(self) -> float:
+        total_count = sum(self.counts.values())
+        if total_count == 0:
+            return 0.0
+        return sum(self.reward_sums.values()) / total_count
+
+    def _uniform_probs(self, disease_pool: list[str]) -> dict[str, float]:
+        if not disease_pool:
+            return {}
+        prob = 1.0 / len(disease_pool)
+        return {disease: prob for disease in disease_pool}
+
+    def probabilities(self, disease_pool: list[str]) -> dict[str, float]:
+        pool = list(dict.fromkeys(disease_pool))
+        uniform = self._uniform_probs(pool)
+        if (
+            not self.enabled
+            or self.beta <= 0.0
+            or self.total_updates < self.min_steps
+            or not pool
+        ):
+            return uniform
+
+        fallback_mean = self._global_mean()
+        means = {
+            disease: self.mean_reward(disease)
+            for disease in pool
+        }
+        scores = [
+            -(means[disease] if means[disease] is not None else fallback_mean)
+            for disease in pool
+        ]
+        max_score = max(scores)
+        weights = [math.exp(self.beta * (score - max_score)) for score in scores]
+        weight_total = sum(weights)
+        adaptive = {
+            disease: weight / weight_total
+            for disease, weight in zip(pool, weights)
+        }
+
+        # Blend with the uniform base distribution. beta=0 is exactly uniform;
+        # larger beta values increasingly trust the reward-driven distribution.
+        adaptive_weight = self.beta / (1.0 + self.beta)
+        return {
+            disease: (
+                (1.0 - adaptive_weight) * uniform[disease]
+                + adaptive_weight * adaptive[disease]
+            )
+            for disease in pool
+        }
+
+    def sample(self, disease_pool: list[str], rng: random.Random) -> tuple[str, float]:
+        probs = self.probabilities(disease_pool)
+        if not probs:
+            raise ValueError("disease_pool must contain at least one disease")
+        diseases = list(probs)
+        weights = [probs[disease] for disease in diseases]
+        selected = rng.choices(diseases, weights=weights, k=1)[0]
+        self._last_probs = probs
+        return selected, probs[selected]
+
+    def update(self, disease: str, reward: float) -> None:
+        self.reward_sums[disease] = self.reward_sums.get(disease, 0.0) + reward
+        self.counts[disease] = self.counts.get(disease, 0) + 1
+        self.total_updates += 1
+
+    def metrics(self, selected_disease: str, selected_prob: float) -> dict[str, float]:
+        mean = self.mean_reward(selected_disease)
+        return {
+            "adaptive/enabled": float(self.enabled),
+            "adaptive/beta": self.beta,
+            "adaptive/min_steps": float(self.min_steps),
+            "adaptive/updates": float(self.total_updates),
+            "adaptive/active": float(
+                self.enabled
+                and self.beta > 0.0
+                and self.total_updates >= self.min_steps
+            ),
+            "adaptive/selected_prob": selected_prob,
+            "adaptive/selected_mean_reward": mean if mean is not None else 0.0,
+            "adaptive/selected_count": float(self.counts.get(selected_disease, 0)),
+        }
+
+    def top_probabilities(self, limit: int = 5) -> list[tuple[str, float]]:
+        return sorted(
+            self._last_probs.items(),
+            key=lambda item: item[1],
+            reverse=True,
+        )[:limit]
+
+
 def _action_entries(episode) -> list:
     return [e for e in episode.obs.action_log if e.kind == "action" and e.action is not None]
 
@@ -1042,8 +1166,19 @@ def main() -> None:
     all_diseases = list(catalogs.diseases.keys())
     variants     = ["v1", "v2", "v3"]
     rng          = random.Random(42)
+    disease_sampler = AdaptiveDiseaseSampler(
+        enabled=ADAPTIVE_DISEASE_SAMPLING,
+        beta=ADAPTIVE_SAMPLING_BETA,
+        min_steps=ADAPTIVE_SAMPLING_MIN_STEPS,
+    )
 
     print(f"\nStarting GRPO training for {TOTAL_STEPS} steps ...\n")
+    if ADAPTIVE_DISEASE_SAMPLING:
+        print(
+            "Adaptive disease sampling enabled: "
+            f"beta={ADAPTIVE_SAMPLING_BETA}, "
+            f"min_steps={ADAPTIVE_SAMPLING_MIN_STEPS}"
+        )
 
     for step in range(TOTAL_STEPS):
         # ── Curriculum ───────────────────────────────────────────────────────
@@ -1060,7 +1195,7 @@ def main() -> None:
             disease_pool = all_diseases
             curriculum_level = 3
 
-        disease      = rng.choice(disease_pool)
+        disease, disease_prob = disease_sampler.sample(disease_pool, rng)
         variant_id   = rng.choice(variants)
         # Randomise seed so the patient draw is fresh every step but
         # stays out of the eval seed range (100, 200, 300).
@@ -1089,6 +1224,7 @@ def main() -> None:
         # ── Phase 2: Group-relative advantages ───────────────────────────────
         rewards = [r for _, r in rollouts]
         mean_r  = statistics.mean(rewards)
+        disease_sampler.update(disease, mean_r)
         # Floor std so we don't divide by zero when all 8 rollouts score
         # identically (rare but can happen for trivial diseases early in L1).
         std_r   = max(statistics.pstdev(rewards), 1e-6)
@@ -1114,6 +1250,7 @@ def main() -> None:
             "advantage/std": std_r,
             "curriculum":   curriculum_level,
         }
+        log_dict.update(disease_sampler.metrics(disease, disease_prob))
 
         monitor_table_rows = []
         if step % MONITOR_EVERY == 0:
@@ -1144,11 +1281,17 @@ def main() -> None:
         print(
             f"step {step:>4}/{TOTAL_STEPS}  "
             f"disease={disease:<22} "
+            f"p={disease_prob:.3f}  "
             f"r_mean={mean_r:+.2f}  r_std={std_r:.2f}  "
             f"loss={mean_loss:.4f}  kl={mean_kl:.4f}  "
             f"curriculum=L{curriculum_level}",
             flush=True,
         )
+        if ADAPTIVE_DISEASE_SAMPLING and step % MONITOR_EVERY == 0:
+            top_probs = ", ".join(
+                f"{name}:{prob:.2f}" for name, prob in disease_sampler.top_probabilities()
+            )
+            print(f"  adaptive_probs: {top_probs}")
 
         # ── Warning: KL divergence monitor ───────────────────────────────────
         # If KL consistently exceeds 0.5, the policy is drifting too fast.

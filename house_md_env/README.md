@@ -28,7 +28,7 @@ reach a correct diagnosis while **minimizing cost, time, and patient risk**.
 
 > Built for the **Apr '26 Meta OpenEnv Hackathon**. Trained with **GRPO** on
 > **Gemma 3 4B-IT**. See the
-> [GitHub repo](https://github.com/SnehShah/house-md-env) for the full
+> [GitHub repo](https://github.com/sneh2909/Overfitters) for the full
 > training pipeline, four reproduction notebooks, and the HF blog post.
 
 ---
@@ -132,4 +132,4 @@ Default composite weights: `{r1: 2.0, r2: 0.5, r6: 0.3, r7: 1.0, r8: 0.5}`.
 
 ## License
 
-Apache 2.0. See [the LICENSE in the parent repo](https://github.com/SnehShah/house-md-env/blob/main/LICENSE).
+Apache 2.0. See [the LICENSE in the parent repo](https://github.com/sneh2909/Overfitters/blob/main/LICENSE).
